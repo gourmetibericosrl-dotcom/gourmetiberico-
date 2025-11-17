@@ -1,453 +1,169 @@
-/* === PALETA DE COLORES ELEGANTES === */
+/*===================================================================
+  ESTILOS GENERALES
+  ===================================================================*/
+
+/* Variables CSS para facilitar la gestión del tema */
 :root {
-    --color-negro: #1A1A1A;      /* Fondo Oscuro Refinado */
-    --color-gris-oscuro: #2C2C2C; /* Fondo de Cards Sobrio */
-    --color-dorado: #A3885C;     /* Dorado Antiguo/Mate para Elegancia */
-    --color-rojo: #C60807;       /* Rojo Intenso de Marca */
-    --color-blanco: #F5F5F5;     /* Texto Limpio */
-    --color-gris-claro: #AAAAAA; /* Texto Secundario Suave */
+    --color-primary: #333; /* Texto principal oscuro */
+    --color-secondary: #555; /* Texto secundario */
+    --color-background: #f7f7f7; /* Fondo de la página */
+    --color-card-background: #fff; /* Fondo de las tarjetas */
+    --color-accent: #007bff; /* Color de acento para enlaces/botones */
+    --color-border: #eee; /* Color de bordes suaves */
+    --font-main: 'Helvetica Neue', Arial, sans-serif;
+    --shadow-light: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
-/* === ESTILOS GENERALES Y TIPOGRAFÍA === */
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 80px; 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    background-color: var(--color-negro);
-    color: var(--color-blanco);
-    font-family: 'Times New Roman', Times, serif; 
-    margin: 0;
-    padding: 0;
-    line-height: 1.7; 
-    min-height: 100vh;
+    font-family: var(--font-main);
+    line-height: 1.6;
+    color: var(--color-primary);
+    background-color: var(--color-background);
 }
 
-a {
-    color: var(--color-blanco);
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-a:hover {
-    color: var(--color-dorado);
-}
-
+/* Contenedor principal para centrar el contenido */
 .container {
-    width: 85%; 
-    max-width: 1300px;
+    max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* === I. ENCABEZADO Y NAVEGACIÓN PRINCIPAL === */
+/* Estilos de encabezado y navegación */
 header {
-    background-color: var(--color-negro);
-    border-bottom: 1px solid var(--color-dorado); 
-    padding: 20px 0; 
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    background-color: var(--color-card-background);
+    box-shadow: var(--shadow-light);
+    padding: 15px 0;
+    margin-bottom: 30px;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo a {
-    font-size: 2em; 
-    font-weight: 300; 
-    color: var(--color-dorado) !important;
-    letter-spacing: 2px; 
-    text-transform: uppercase;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 35px; 
-    align-items: center;
-    font-weight: 300;
-    transition: transform 0.3s ease-in-out; /* Transición para el menú móvil */
-}
-
-/* Botón de menú hamburguesa (solo visible en móvil) */
-.menu-toggle {
-    display: none; 
+header h1 {
     font-size: 1.8em;
-    cursor: pointer;
-    color: var(--color-dorado);
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-/* Botones y CTAs */
-.ofertas a, .area-clientes a {
-    background-color: transparent; 
-    padding: 10px 18px;
-    border-radius: 2px; 
-    font-weight: 400;
-    color: var(--color-rojo) !important; 
-    border: 1px solid var(--color-rojo); 
-    transition: all 0.3s;
-}
-.ofertas a:hover, .area-clientes a:hover {
-    background-color: var(--color-rojo); 
-    color: var(--color-blanco) !important; 
-    border-color: var(--color-rojo);
-}
-
-/* Dropdown Catálogo */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: var(--color-gris-oscuro);
-    min-width: 160px;
-    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.8); 
-    z-index: 1;
-    padding: 5px 0;
-    border-top: 3px solid var(--color-dorado);
-}
-.dropdown-content a {
-    color: var(--color-blanco);
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-.dropdown-content a:hover {
-    background-color: var(--color-negro);
-}
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* === SECCIÓN HERO (BANNER) === */
-#hero {
-    text-align: center;
-    padding: 120px 0; 
-    background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), url('https://picsum.photos/1200/600') no-repeat center center/cover;
-}
-#hero h1 {
-    color: var(--color-dorado); 
-    font-size: 3.8em; 
-    font-weight: 300;
-    letter-spacing: 1.5px;
-    text-shadow: none; 
-}
-#hero p {
-    font-size: 1.2em;
-    color: var(--color-gris-claro);
-}
-
-.area-clientes-btn {
-    display: inline-block;
-    margin-top: 40px;
-    background-color: transparent; 
-    color: var(--color-rojo) !important; 
-    padding: 18px 40px; 
-    border-radius: 2px;
-    font-weight: 400;
-    font-size: 1.2em;
-    border: 2px solid var(--color-dorado); 
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s;
-}
-.area-clientes-btn:hover {
-    background-color: var(--color-dorado);
-    color: var(--color-negro) !important;
-}
-
-/* === COMPONENTES UX === */
-section {
-    padding: 80px 0; 
-    border-bottom: none; 
-}
-
-/* Rutas de Navegación (Breadcrumbs) */
-#breadcrumbs {
-    padding: 30px 0 0 0;
-    background-color: var(--color-negro);
-    border: none;
-    margin-top: 5px; 
-}
-/* ... estilos breadcrumbs sin cambios ... */
-
-/* Títulos de Sección */
-h2 {
-    color: var(--color-dorado);
-    text-align: center;
-    font-size: 2.8em;
-    font-weight: 300;
-    margin-bottom: 50px;
-    border-bottom: 1px solid var(--color-rojo); 
-    padding-bottom: 15px;
-    letter-spacing: 1px;
-    display: block;
-    width: auto;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-h3 {
-    color: var(--color-blanco);
-    font-size: 1.6em;
-    font-weight: 400;
-    margin-top: 0;
-    margin-bottom: 10px;
-}
-
-/* Grid y Cards - General */
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px; 
-    margin-top: 20px;
-}
-
-/* Product Category Cards - Clickable */
-.product-card {
-    background-color: var(--color-gris-oscuro);
-    padding: 30px; 
-    border-radius: 2px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.4); 
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
+    color: var(--color-primary);
     text-align: center;
 }
-.product-card:hover {
-    transform: translateY(-8px); 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 5px var(--color-dorado); 
-}
-/* ... otros estilos de cards sin cambios ... */
 
-/* III. SECCIÓN DE CALIDAD Y PROVEEDORES */
-/* Estilos específicos de proveedores */
-.proveedor-item {
-    background-color: var(--color-gris-oscuro);
-    padding: 20px 30px;
-    margin-bottom: 20px;
-    border-left: 5px solid var(--color-dorado);
-    border-radius: 2px;
-}
+/*===================================================================
+  VISTA DE DETALLE / PRODUCTOS (El área modificada para el diseño limpio)
+  ===================================================================*/
 
-.certificacion-icon {
-    color: var(--color-dorado);
-    font-size: 1.1em;
-    margin-right: 5px;
-}
-
-/* === VISTA DE DETALLE === */
+/* Grid de productos */
 .product-item-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
-    margin-top: 40px;
+    /* Por defecto: 2 columnas, cambia a 3 en pantallas más grandes */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* Espacio entre las tarjetas */
+    padding-bottom: 50px;
 }
 
+/* Tarjeta individual de producto */
 .product-item {
-    background-color: var(--color-gris-oscuro);
-    border-radius: 2px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
-    transition: transform 0.3s;
-    cursor: pointer;
+    background-color: var(--color-card-background);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+    overflow: hidden; /* Importante para bordes redondeados y limpieza */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none; /* Si la tarjeta es un enlace */
+    display: flex;
+    flex-direction: column;
 }
 
 .product-item:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px); /* Efecto de elevación sutil */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
 }
 
-.product-item img {
+/* Contenedor de la imagen (Clave para la altura uniforme) */
+.product-item-img-wrapper {
+    /* Define una altura fija para todas las imágenes */
+    height: 250px; 
     width: 100%;
-    height: 200px; /* Altura fija para uniformidad */
-    object-fit: cover;
-    border-bottom: 1px solid var(--color-negro);
+    overflow: hidden; 
 }
 
+/* Imagen dentro del contenedor */
+.product-item-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    /* Asegura que la imagen cubra el contenedor sin distorsión */
+    object-fit: cover; 
+    transition: transform 0.3s ease;
+}
+
+/* Efecto de zoom en hover de la tarjeta */
+.product-item:hover .product-item-img-wrapper img {
+    transform: scale(1.05);
+}
+
+/* Contenido de texto del producto */
 .product-item-content {
     padding: 15px;
+    flex-grow: 1; /* Permite que el contenido ocupe el espacio restante */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.product-item-content h4 {
-    color: var(--color-blanco);
-    margin-top: 0;
-    font-size: 1.1em;
+.product-item-content h2 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: var(--color-primary);
+    min-height: 40px; /* Asegura una altura mínima para el título */
 }
 
-.back-link {
-    color: var(--color-rojo);
-    margin-bottom: 30px;
-    display: inline-block;
-}
-.back-link:hover {
-    text-decoration: underline;
-}
-
-/* FOOTER STYLES */
-footer {
-    background-color: var(--color-gris-oscuro);
-    border-top: 1px solid var(--color-dorado);
-    padding: 40px 0 20px 0;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    padding-bottom: 20px;
-}
-
-.footer-col h4 {
-    color: var(--color-dorado);
-    font-size: 1.4em;
+.product-item-content p {
+    font-size: 0.9em;
+    color: var(--color-secondary);
     margin-bottom: 15px;
 }
 
-.footer-col ul {
-    list-style: none;
-    padding: 0;
+.product-item-price {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: var(--color-accent);
+    margin-top: 10px;
 }
 
-.footer-col ul li {
-    margin-bottom: 8px;
-}
-
-.footer-copy {
-    grid-column: 1 / -1;
+/* Botón de acción */
+.btn-primary {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--color-accent);
+    color: var(--color-card-background);
     text-align: center;
-    border-top: 1px solid var(--color-gris-oscuro);
-    padding-top: 20px;
-    margin-top: 20px;
-    font-size: 0.85em;
-    color: var(--color-gris-claro);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-weight: 600;
 }
 
-/* ======================================= */
-/* === MEDIA QUERIES PARA RESPONSIVIDAD === */
-/* ======================================= */
-
-/* 1. Ajustes para Tablet/Desktop Intermedio (769px a 1100px) */
-@media (min-width: 769px) and (max-width: 1100px) {
-    .container {
-        width: 90%;
-    }
-    .logo a {
-        font-size: 1.8em;
-    }
-    .nav-links {
-        gap: 20px; 
-    }
-    /* Las grillas mantienen 2 o 3 columnas, pero con un minmax más estricto */
-    .card-grid, .product-item-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-        gap: 30px;
-    }
-    .footer-grid {
-         grid-template-columns: repeat(2, 1fr);
-    }
+.btn-primary:hover {
+    background-color: #0056b3; /* Un azul más oscuro */
 }
-        
-/* 2. Ajustes para MÓVIL (hasta 768px) */
+
+/*===================================================================
+  RESPONSIVE DESIGN (Ajustes para móviles)
+  ===================================================================*/
+
 @media (max-width: 768px) {
-    .container {
-        width: 90%;
+    /* En pantallas pequeñas, el grid se mantiene en 1 columna si el contenido es complejo */
+    /* Dejamos 'auto-fit' para que se adapte al ancho disponible */
+    .product-item-grid {
+        gap: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
     
-    /* Header y Navegación */
-    header {
-        padding: 15px 0;
-    }
-    .logo a {
+    header h1 {
         font-size: 1.5em;
-        letter-spacing: 1px;
-    }
-    .menu-toggle {
-        display: block; /* Muestra el botón de hamburguesa */
-    }
-    nav {
-        flex-direction: row; /* Mantiene logo e icono en fila */
-        position: relative; /* Para posicionar el menú debajo */
-    }
-
-    .nav-links {
-        flex-direction: column;
-        width: 100%;
-        gap: 0;
-        position: absolute;
-        top: 55px; /* Altura del header ajustada */
-        left: 0;
-        background-color: var(--color-negro);
-        border-top: 1px solid var(--color-dorado);
-        padding: 10px 0;
-        transform: translateX(-100%); /* Oculto inicialmente */
-        display: flex; /* Siempre en display, oculto con transform */
-    }
-    .nav-links.active {
-        transform: translateX(0); /* Muestra el menú al activarse */
-    }
-
-    .nav-links li {
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
-        border-bottom: 1px solid var(--color-gris-oscuro);
-    }
-    .nav-links li:last-child {
-        border-bottom: none;
-    }
-    /* Los elementos del dropdown se apilan */
-    .dropdown-content {
-        position: static; 
-        width: 100%;
-        box-shadow: none;
-        border-top: none;
-        background-color: #242424; /* Tono ligeramente más claro para el submenú */
-    }
-    
-    /* Hero */
-    #hero {
-        padding: 80px 0;
-    }
-    #hero h1 {
-        font-size: 2.2em;
-    }
-    .area-clientes-btn {
-        padding: 12px 25px;
-        font-size: 1em;
-    }
-    
-    /* Títulos y Secciones */
-    section {
-        padding: 50px 0;
-    }
-    h2 {
-        font-size: 2em;
-        margin-bottom: 30px;
-        padding-bottom: 10px;
-    }
-    
-    /* Grillas (Una columna en móvil) */
-    .card-grid, .product-item-grid {
-        grid-template-columns: 1fr; 
-        gap: 25px;
-    }
-    
-    /* Footer */
-    .footer-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
-    }
-    .footer-col h4 {
-        margin-top: 20px;
     }
 }
