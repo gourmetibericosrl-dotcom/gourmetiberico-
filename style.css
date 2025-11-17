@@ -1,169 +1,358 @@
-/*===================================================================
-  ESTILOS GENERALES
-  ===================================================================*/
-
-/* Variables CSS para facilitar la gestión del tema */
+/* === PALETA DE COLORES === */
 :root {
-    --color-primary: #333; /* Texto principal oscuro */
-    --color-secondary: #555; /* Texto secundario */
-    --color-background: #f7f7f7; /* Fondo de la página */
-    --color-card-background: #fff; /* Fondo de las tarjetas */
-    --color-accent: #007bff; /* Color de acento para enlaces/botones */
-    --color-border: #eee; /* Color de bordes suaves */
-    --font-main: 'Helvetica Neue', Arial, sans-serif;
-    --shadow-light: 0 2px 5px rgba(0, 0, 0, 0.05);
+    --color-negro: #121212;      /* Fondo, Dominante */
+    --color-gris-oscuro: #555555; /* Más claro que el anterior, mejor contraste con negro */
+    --color-dorado: #D4AF37;     /* Branding, Calidad, Premium */
+    --color-rojo: #C82333;       /* CTAs, Ofertas, Alertas */
+    --color-blanco: #E0E0E0;     /* Texto Principal */
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/* === ESTILOS GENERALES Y FIX DE SCROLL === */
+/* FIX: Esta propiedad es CRÍTICA para que el header fijo no oculte el contenido al hacer click en anclajes (#) */
+html {
+    scroll-behavior: smooth; /* Permite el smooth scroll nativo (backup para el JS) */
+    scroll-padding-top: 80px; /* Ajusta el scroll para dejar espacio al header fijo */
 }
 
 body {
-    font-family: var(--font-main);
+    font-family: 'Georgia', serif; 
+    background-color: var(--color-negro);
+    color: var(--color-blanco);
+    margin: 0;
+    padding: 0;
     line-height: 1.6;
-    color: var(--color-primary);
-    background-color: var(--color-background);
 }
 
-/* Contenedor principal para centrar el contenido */
+a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: var(--color-dorado);
+}
+
 .container {
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
 }
 
-/* Estilos de encabezado y navegación */
+/* === I. ENCABEZADO Y NAVEGACIÓN PRINCIPAL === */
 header {
-    background-color: var(--color-card-background);
-    box-shadow: var(--shadow-light);
+    background-color: var(--color-negro);
+    border-bottom: 2px solid var(--color-dorado);
     padding: 15px 0;
-    margin-bottom: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
-
-header h1 {
-    font-size: 1.8em;
-    color: var(--color-primary);
-    text-align: center;
-}
-
-/*===================================================================
-  VISTA DE DETALLE / PRODUCTOS (El área modificada para el diseño limpio)
-  ===================================================================*/
-
-/* Grid de productos */
-.product-item-grid {
-    display: grid;
-    /* Por defecto: 2 columnas, cambia a 3 en pantallas más grandes */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px; /* Espacio entre las tarjetas */
-    padding-bottom: 50px;
-}
-
-/* Tarjeta individual de producto */
-.product-item {
-    background-color: var(--color-card-background);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    box-shadow: var(--shadow-light);
-    overflow: hidden; /* Importante para bordes redondeados y limpieza */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-decoration: none; /* Si la tarjeta es un enlace */
+/* Estilos de navegación, logo, dropdown, y CTAs (sin cambios) */
+nav {
     display: flex;
-    flex-direction: column;
-}
-
-.product-item:hover {
-    transform: translateY(-5px); /* Efecto de elevación sutil */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Contenedor de la imagen (Clave para la altura uniforme) */
-.product-item-img-wrapper {
-    /* Define una altura fija para todas las imágenes */
-    height: 250px; 
-    width: 100%;
-    overflow: hidden; 
-}
-
-/* Imagen dentro del contenedor */
-.product-item-img-wrapper img {
-    width: 100%;
-    height: 100%;
-    /* Asegura que la imagen cubra el contenedor sin distorsión */
-    object-fit: cover; 
-    transition: transform 0.3s ease;
-}
-
-/* Efecto de zoom en hover de la tarjeta */
-.product-item:hover .product-item-img-wrapper img {
-    transform: scale(1.05);
-}
-
-/* Contenido de texto del producto */
-.product-item-content {
-    padding: 15px;
-    flex-grow: 1; /* Permite que el contenido ocupe el espacio restante */
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+}
+.logo a {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: var(--color-dorado) !important;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+.ofertas a {
+    background-color: var(--color-rojo);
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: var(--color-blanco) !important;
+    transition: background-color 0.3s;
+}
+.ofertas a:hover {
+    background-color: #A01C29;
+}
+.area-clientes a {
+    background-color: var(--color-rojo);
+    color: var(--color-dorado) !important;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    border: 1px solid var(--color-dorado);
+    transition: background-color 0.3s;
+}
+.area-clientes a:hover {
+    background-color: var(--color-dorado);
+    color: var(--color-negro) !important;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--color-gris-oscuro);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
+    z-index: 1;
+    padding: 5px 0;
+    border-top: 3px solid var(--color-dorado);
+}
+.dropdown-content a {
+    color: var(--color-blanco);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    background-color: var(--color-negro);
+}
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
-.product-item-content h2 {
-    font-size: 1.2em;
-    margin-bottom: 5px;
-    color: var(--color-primary);
-    min-height: 40px; /* Asegura una altura mínima para el título */
+/* === SECCIÓN HERO (BANNER) === */
+#hero {
+    text-align: center;
+    padding: 100px 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://picsum.photos/1200/600') no-repeat center center/cover;
+}
+#hero h1 {
+    color: var(--color-dorado); 
+    font-size: 3.5em; 
+    text-shadow: 2px 2px 4px #000;
+}
+#hero p {
+    font-size: 1.5em; 
+    margin-top: 20px;
+}
+.area-clientes-btn {
+    display: inline-block;
+    margin-top: 30px;
+    background-color: var(--color-rojo);
+    color: var(--color-dorado) !important;
+    padding: 15px 30px;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1.1em;
+    border: 2px solid var(--color-dorado);
+    text-transform: uppercase;
+}
+.area-clientes-btn:hover {
+    background-color: var(--color-dorado);
+    color: var(--color-negro) !important;
 }
 
-.product-item-content p {
+/* === COMPONENTES UX === */
+section {
+    padding: 60px 0;
+    border-bottom: 1px solid var(--color-gris-oscuro);
+}
+
+/* Rutas de Navegación (Breadcrumbs) */
+#breadcrumbs {
+    padding: 20px 0 0 0;
+    background-color: var(--color-negro);
+    border: none;
+    /* FIX: Ajuste de margen superior para separarse visualmente del header sin solapamiento */
+    margin-top: 5px; 
+}
+.breadcrumbs-path {
     font-size: 0.9em;
-    color: var(--color-secondary);
+    color: var(--color-gris-oscuro);
+    margin: 0;
+}
+.breadcrumbs-path a {
+    color: var(--color-gris-oscuro);
+    text-decoration: none;
+}
+.breadcrumbs-path a:hover {
+    color: var(--color-dorado);
+}
+.breadcrumbs-path a:after {
+    content: " > ";
+    margin: 0 5px;
+    color: var(--color-gris-oscuro);
+}
+.breadcrumbs-path a:last-child::after {
+    content: "";
+}
+
+/* Títulos de Sección */
+h2 {
+    color: var(--color-dorado);
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--color-rojo);
+    display: inline-block;
+    padding-bottom: 10px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+h3 {
+    color: var(--color-blanco);
+    font-size: 1.5em;
+    margin-top: 0;
+    border-bottom: 1px solid var(--color-dorado);
+    padding-bottom: 5px;
     margin-bottom: 15px;
 }
 
-.product-item-price {
-    font-size: 1.4em;
+/* Grid y Cards */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+.product-card {
+    background-color: var(--color-gris-oscuro);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    transition: transform 0.3s;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(212, 175, 55, 0.3);
+}
+.product-card ul {
+    list-style: none;
+    padding: 0;
+}
+.product-card li {
+    padding: 5px 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+/* Contenido de Atractivo (Dorado/Rojo) */
+.destacado {
+    color: var(--color-rojo);
     font-weight: bold;
-    color: var(--color-accent);
-    margin-top: 10px;
-}
-
-/* Botón de acción */
-.btn-primary {
     display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: var(--color-accent);
-    color: var(--color-card-background);
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+.calidad-tag {
+    color: var(--color-dorado);
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 10px;
+    display: block;
+    font-size: 0.9em;
+}
+
+/* Enlaces Contextuales dentro de Cards */
+.calidad-tag a, .destacado a {
+    color: var(--color-blanco);
+    text-decoration: underline;
+    text-decoration-color: var(--color-rojo);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.calidad-tag a:hover, .destacado a:hover {
+    color: var(--color-dorado);
+    text-decoration-color: var(--color-dorado);
+}
+
+/* III. SECCIÓN DE CALIDAD Y PROVEEDORES */
+.proveedor-item {
+    background-color: var(--color-gris-oscuro);
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border-left: 5px solid var(--color-dorado);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+.proveedor-item h3 {
+    color: var(--color-dorado);
+    border-bottom: 2px solid var(--color-rojo);
+    padding-bottom: 5px;
+    margin-top: 0;
+    display: inline-block;
+}
+.certificacion-icon {
+    color: var(--color-dorado);
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+/* === IV. PIE DE PÁGINA (FOOTER) AVANZADO === */
+footer {
+    background-color: var(--color-negro);
+    padding: 40px 0 20px 0;
+    border-top: 3px solid var(--color-dorado);
+    text-align: left;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    padding-bottom: 30px;
+}
+.footer-col h4 {
+    color: var(--color-dorado);
+    font-size: 1.1em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-col li {
+    margin-bottom: 8px;
+}
+.footer-col a {
+    color: var(--color-gris-oscuro);
+    font-size: 0.95em;
+}
+.footer-col a:hover {
+    color: var(--color-blanco);
+}
+.footer-col p {
+    color: var(--color-gris-oscuro);
+    font-size: 0.95em;
+    margin: 5px 0;
+}
+.footer-copy {
+    grid-column: 1 / -1; 
     text-align: center;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    font-weight: 600;
+    border-top: 1px dashed var(--color-gris-oscuro);
+    padding-top: 20px;
+    margin-top: 10px;
+    color: var(--color-gris-oscuro);
+    font-size: 0.9em;
 }
 
-.btn-primary:hover {
-    background-color: #0056b3; /* Un azul más oscuro */
-}
-
-/*===================================================================
-  RESPONSIVE DESIGN (Ajustes para móviles)
-  ===================================================================*/
-
+/* Media Query para móvil */
 @media (max-width: 768px) {
-    /* En pantallas pequeñas, el grid se mantiene en 1 columna si el contenido es complejo */
-    /* Dejamos 'auto-fit' para que se adapte al ancho disponible */
-    .product-item-grid {
-        gap: 20px;
-        padding-left: 10px;
-        padding-right: 10px;
+    .nav-links {
+        display: none;
     }
-    
-    header h1 {
+    nav {
+        justify-content: center;
+    }
+    .logo a {
         font-size: 1.5em;
+    }
+    #hero h1 {
+        font-size: 2.5em;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
     }
 }
