@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GOURMET IBÉRICO.SL - Catálogo Interactivo</title>
+    <title>GOURMET IBÉRICO.SL - Suministro Premium para Hostelería</title>
 
     <style>
         /* === PALETA DE COLORES === */
@@ -13,10 +13,10 @@
             --color-dorado: #D4AF37;     /* Branding, Calidad, Premium */
             --color-rojo: #C82333;       /* CTAs, Ofertas, Alertas */
             --color-blanco: #E0E0E0;     /* Texto Principal */
-            --color-gris-claro: #A0A0A0;
         }
 
         /* === ESTILOS GENERALES Y FIX DE SCROLL === */
+        /* FIX CRÍTICO: Para que el anclaje a las secciones funcione correctamente con el header fijo */
         html {
             scroll-behavior: smooth;
             scroll-padding-top: 80px; 
@@ -218,48 +218,53 @@
             margin-bottom: 15px;
         }
 
-        /* Grid y Cards - General */
+        /* Grid y Cards */
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             margin-top: 20px;
         }
-        
-        /* Product Category Cards - Clickable */
         .product-card {
             background-color: var(--color-gris-oscuro);
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
             transition: transform 0.3s;
-            cursor: pointer; /* Indica que se puede hacer clic */
-            text-align: center;
         }
         .product-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 15px rgba(212, 175, 55, 0.3);
         }
-        
-        /* Estilo para las listas de productos (Ahora serán botones) */
-        .product-card ul {
-            list-style: none;
-            padding: 0;
-            margin-top: 15px;
-            color: var(--color-gris-claro);
-        }
-        .product-card li {
-            font-size: 0.9em;
-        }
 
         /* Contenido de Atractivo (Dorado/Rojo) */
-        .destacado, .calidad-tag {
+        .destacado {
+            color: var(--color-rojo);
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+        .calidad-tag {
             color: var(--color-dorado);
             font-weight: bold;
             font-style: italic;
             margin-top: 10px;
             display: block;
             font-size: 0.9em;
+        }
+
+        /* Enlaces Contextuales dentro de Cards */
+        .calidad-tag a, .destacado a {
+            color: var(--color-blanco);
+            text-decoration: underline;
+            text-decoration-color: var(--color-rojo);
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .calidad-tag a:hover, .destacado a:hover {
+            color: var(--color-dorado);
+            text-decoration-color: var(--color-dorado);
         }
 
         /* III. SECCIÓN DE CALIDAD Y PROVEEDORES */
@@ -272,56 +277,7 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
 
-        /* === NEW DETAIL VIEW STYLES === */
-        #product-detail-view {
-            padding: 60px 0;
-        }
-        .product-item-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .product-item {
-            background-color: var(--color-gris-oscuro);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-            transition: transform 0.3s;
-            cursor: pointer;
-        }
-        .product-item:hover {
-            transform: scale(1.03);
-            box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
-        }
-        .product-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-bottom: 3px solid var(--color-rojo);
-        }
-        .product-item-content {
-            padding: 15px;
-            text-align: center;
-        }
-        .product-item-content h4 {
-            color: var(--color-dorado);
-            margin: 0;
-            font-size: 1.3em;
-        }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 30px;
-            color: var(--color-rojo);
-            font-weight: bold;
-            font-size: 1.1em;
-            transition: color 0.3s;
-        }
-        .back-link:hover {
-            color: var(--color-dorado);
-        }
-
-        /* === IV. PIE DE PÁGINA (FOOTER) === */
+        /* === IV. PIE DE PÁGINA (FOOTER) AVANZADO === */
         footer {
             background-color: var(--color-negro);
             padding: 40px 0 20px 0;
@@ -383,8 +339,8 @@
                     <li class="dropdown">
                         <a href="#">CATÁLOGO</a>
                         <div class="dropdown-content">
-                            <a href="#main-catalogue-view">CATÁLOGO COMPLETO</a>
-                            <a href="#calidad">CALIDAD</a>
+                            <a href="#frescos">FRESCOS</a>
+                            <a href="#bebidas">BEBIDAS</a>
                         </div>
                     </li>
                     <li><a href="#calidad">NUESTRA CALIDAD / TRAZABILIDAD</a></li>
@@ -399,7 +355,7 @@
 
     <main>
         <section id="breadcrumbs" class="container">
-            <p class="breadcrumbs-path"><a href="#hero" id="home-link">Inicio</a></p>
+            <p class="breadcrumbs-path"><a href="/">Inicio</a></p>
         </section>
 
         <section id="hero">
@@ -410,99 +366,112 @@
             </div>
         </section>
 
-        <div id="main-catalogue-view">
-
-            <section id="frescos" class="catalogo-section">
-                <div class="container">
-                    <h2>Catálogo FRESCOS</h2>
-                    <div class="card-grid">
-                        
-                        <div class="product-card" data-category="CARNES">
-                            <h3>CARNES</h3>
-                            <p>Tomo ibérico, Ternera, Cordero, Pollo.</p>
-                            <span class="calidad-tag">🥩 Ver todos los productos</span>
-                        </div>
-
-                        <div class="product-card" data-category="PESCADO">
-                            <h3>PESCADO</h3>
-                            <p>Gambón, Bacalao, Salmón, Merluza.</p>
-                            <span class="calidad-tag">🐟 Ver todos los productos</span>
-                        </div>
-
-                        <div class="product-card" data-category="VERDURAS Y FRUTAS">
-                            <h3>VERDURAS Y FRUTAS</h3>
-                            <p>Patatas, Tomate, Naranja, Plátano de Canarias.</p>
-                            <span class="calidad-tag">🍏 Ver todos los productos</span>
-                        </div>
-
-                        <div class="product-card" data-category="OTROS FRESCOS">
-                            <h3>OTROS FRESCOS</h3>
-                            <p>Huevos M y L.</p>
-                            <span class="calidad-tag">🥚 Ver todos los productos</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="bebidas" class="catalogo-section">
-                <div class="container">
-                    <h2>Catálogo BEBIDAS</h2>
-                    <div class="card-grid">
-                        
-                        <div class="product-card" data-category="ZUMOS Y REFRESCOS">
-                            <h3>ZUMOS Y REFRESCOS</h3>
-                            <p>Coca-Cola, Zumo de Naranja NFC.</p>
-                            <span class="destacado">🥤 Ver todos los productos</span>
-                        </div>
-                        
-                        <div class="product-card" data-category="AGUAS">
-                            <h3>AGUAS</h3>
-                            <p>AGUA MINERAL (varios formatos).</p>
-                            <span class="destacado">💧 Ver todos los productos</span>
-                        </div>
-
-                        <div class="product-card" data-category="BEBIDAS ALCOHÓLICAS">
-                            <h3>BEBIDAS ALCOHÓLICAS</h3>
-                            <p>Ron Zacapa, Whisky Jack Daniel's, Jägermeister.</p>
-                            <span class="destacado">🥃 Ver todos los productos</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="calidad">
-                <div class="container">
-                    <h2>Nuestra Calidad y Proveedores Exclusivos</h2>
-                    
-                    <div class="proveedor-item" id="medina">
-                        <h3>GRUPO MEDINA (VACUNO)</h3>
-                        <p><span class="certificacion-icon">✨</span> **Compromiso con la Calidad Cárnica** (Dorado)</p>
-                        <p>Aplicamos un Modelo de Calidad Total con **ÚLTIMA TECNOLOGÍA**. Destacamos la Sostenibilidad, con **Mejoras Energéticas** en sus plantas de Buñol, Leganés y Montellos.</p>
-                    </div>
-
-                    <div class="proveedor-item" id="zuvamesa">
-                        <h3>ZUMOS VALENCIANOS DEL MEDITERRÁNEO (ZUVAMESA)</h3>
-                        <p><span class="certificacion-icon">🍊</span> **Innovación y Sostenibilidad en Cada Gota** (Dorado)</p>
-                        <p>Fabricación de productos de calidad excepcional con materia prima de más alta calidad, destacando el uso de **Zumos NFC**. Excelente equipo de innovación.</p>
-                    </div>
-
-                    <div class="proveedor-item" id="garcia">
-                        <h3>FRUTAS Y VERDURAS GARCÍA</h3>
-                        <p><span class="certificacion-icon">🍏</span> **De la Horta a su Mesa: Frescura Digitalizada** (Dorado)</p>
-                        <p>Trayectoria Desde **2005**, cultivando parte de los productos en la Horta Nord. Uso de **SOFTWARE PARA LA AUTOMATIZACIÓN** como ejemplo de tecnología.</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-        
-        <section id="product-detail-view" style="display: none;">
+        <section id="frescos" class="catalogo-section">
             <div class="container">
-                <a href="#" class="back-link" id="back-to-catalogue">&lt; Volver al Catálogo Principal</a>
-                
-                <h2 id="detail-view-title"></h2> 
-                
-                <div class="product-item-grid" id="product-list-container">
+                <h2>Catálogo FRESCOS</h2>
+                <div class="card-grid">
+                    <div class="product-card">
+                        <h3>CARNES</h3>
+                        <ul>
+                            [cite_start]<li>Tomo de cerdo ibérico [cite: 7]</li>
+                            [cite_start]<li>Carne de cordero [cite: 9]</li>
+                            [cite_start]<li>Chuletas de ternera [cite: 8]</li>
+                            [cite_start]<li>Pollo entero [cite: 16]</li>
+                            [cite_start]<li>Muslos de pollo [cite: 17]</li>
+                        </ul>
+                        <span class="calidad-tag">🥩 Suministro de Vacuno por <a href="#medina">**Grupo Medina**</a>, EMPRESA LÍDER EN ESPAÑA.</span>
+                        <span class="calidad-tag">45 AÑOS PRODUCIENDO LA MEJOR CARNE DE VACUNO.</span>
                     </div>
+
+                    <div class="product-card">
+                        <h3>PESCADO</h3>
+                        <ul>
+                            [cite_start]<li>Gambón grande [cite: 11]</li>
+                            [cite_start]<li>Bacalao congelado [cite: 14]</li>
+                            [cite_start]<li>SALMÓN [cite: 13]</li>
+                            [cite_start]<li>Merluza fresca [cite: 12]</li>
+                        </ul>
+                        <p>Nuestra selección marina garantiza la frescura y la cadena de frío, esencial para el sector HORECA.</p>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>VERDURAS Y FRUTAS</h3>
+                        <ul>
+                            [cite_start]<li>Patatas [cite: 23][cite_start], Tomate [cite: 25][cite_start], Zanahoria [cite: 24][cite_start], Cebolla [cite: 26]</li>
+                            [cite_start]<li>Naranja [cite: 29][cite_start], Plátano de Canarias [cite: 28][cite_start], Uva blanca [cite: 30]</li>
+                        </ul>
+                        <span class="calidad-tag">Proveedores: <a href="#garcia">**Frutas y Verduras García**</a>, Cultivando Frescura desde 2005.</span>
+                        <span class="calidad-tag">🌱 Innovación: Uso de **SOFTWARE PARA LA AUTOMATIZACIÓN**.</span>
+                    </div>
+
+                    <div class="product-card">
+                        <h3>OTROS FRESCOS</h3>
+                        <ul>
+                            [cite_start]<li>Huevos M (docena) [cite: 19]</li>
+                            [cite_start]<li>Huevos L (docena) [cite: 20]</li>
+                        </ul>
+                        <p>Productos de primera necesidad con la máxima garantía de trazabilidad.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="bebidas" class="catalogo-section">
+            <div class="container">
+                <h2>Catálogo BEBIDAS</h2>
+                <div class="card-grid">
+                    <div class="product-card">
+                        <h3>ZUMOS Y REFRESCOS</h3>
+                        <ul>
+                            [cite_start]<li>COCA-COLA / Coca-Cola [cite: 33, 35]</li>
+                            [cite_start]<li>ZUMO DE NARANJA [cite: 37]</li>
+                        </ul>
+                        <span class="destacado">🍊 **ZUMO DE NARANJA** de <a href="#zuvamesa">Zuvamesa</a>: **Zumos NFC**.</span>
+                        <span class="destacado">Compromiso con la **Sostenibilidad** (fábrica de residuo cero).</span>
+                    </div>
+                    <div class="product-card">
+                        <h3>AGUAS</h3>
+                        <ul>
+                            [cite_start]<li>AGUA MINERAL (formatos hostelería) [cite: 32]</li>
+                        </ul>
+                        <p>Las mejores marcas para su negocio, con la logística optimizada.</p>
+                    </div>
+                    <div class="product-card">
+                        <h3>BEBIDAS ALCOHÓLICAS</h3>
+                        <ul>
+                            [cite_start]<li>Ron Zacapa [cite: 38]</li>
+                            [cite_start]<li>Whisky Jack Daniel's [cite: 39]</li>
+                            [cite_start]<li>Jägermeister [cite: 44]</li>
+                            [cite_start]<li>Havan Club ANEJO 3 AN [cite: 45, 46]</li>
+                        </ul>
+                        <p>Selección de destilados y licores para la alta coctelería.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="calidad">
+            <div class="container">
+                <h2>Nuestra Calidad y Proveedores Exclusivos</h2>
+                
+                <div class="proveedor-item" id="medina">
+                    <h3>GRUPO MEDINA (VACUNO)</h3>
+                    <p><span class="certificacion-icon">✨</span> **Nuestro Compromiso con la Calidad Cárnica** (Dorado)</p>
+                    <p>Aplicamos un Modelo de Calidad Total con **ÚLTIMA TECNOLOGÍA**. Destacamos la Sostenibilidad, con **Mejoras Energéticas** en sus plantas de Buñol, Leganés y Montellos.</p>
+                </div>
+
+                <div class="proveedor-item" id="zuvamesa">
+                    <h3>ZUMOS VALENCIANOS DEL MEDITERRÁNEO (ZUVAMESA)</h3>
+                    <p><span class="certificacion-icon">🍊</span> **Innovación y Sostenibilidad en Cada Gota** (Dorado)</p>
+                    <p>Fabricación de productos de calidad excepcional con materia prima de más alta calidad, destacando el uso de **Zumos NFC**. Excelente equipo de innovación.</p>
+                </div>
+
+                <div class="proveedor-item" id="garcia">
+                    <h3>FRUTAS Y VERDURAS GARCÍA</h3>
+                    <p><span class="certificacion-icon">🍏</span> **De la Horta a su Mesa: Frescura Digitalizada** (Dorado)</p>
+                    <p>Trayectoria Desde **2005**, cultivando parte de los productos en la Horta Nord. Uso de **SOFTWARE PARA LA AUTOMATIZACIÓN** como ejemplo de tecnología.</p>
+                </div>
+
             </div>
         </section>
 
@@ -538,165 +507,40 @@
     </footer>
 
     <script>
-        // Base de datos de productos y sus imágenes/detalles
-        const productData = {
-            "CARNES": [
-                { name: "Tomo de cerdo ibérico", image: "https://picsum.photos/400/300?random=1", detail: "Lomo ibérico de alta calidad, ideal para hostelería." },
-                { name: "Chuletas de ternera", image: "https://picsum.photos/400/300?random=2", detail: "Cortes premium de ternera. Suministro Grupo Medina." },
-                { name: "Carne de cordero", image: "https://picsum.photos/400/300?random=3", detail: "Cordero seleccionado para platos gourmet." },
-                { name: "Pollo entero", image: "https://picsum.photos/400/300?random=4", detail: "Pollo fresco." },
-                { name: "Muslos de pollo", image: "https://picsum.photos/400/300?random=5", detail: "Muslos de pollo frescos." }
-            ],
-            "PESCADO": [
-                { name: "Gambón grande", image: "https://picsum.photos/400/300?random=6", detail: "Gambón congelado de gran tamaño." },
-                { name: "Bacalao congelado", image: "https://picsum.photos/400/300?random=7", detail: "Lomos de bacalao de primera." },
-                { name: "SALMÓN", image: "https://picsum.photos/400/300?random=8", detail: "Salmón fresco, listo para corte." },
-                { name: "Merluza fresca", image: "https://picsum.photos/400/300?random=9", detail: "Merluza del día, garantizando frescura." }
-            ],
-            "VERDURAS Y FRUTAS": [
-                { name: "Patatas", image: "https://picsum.photos/400/300?random=10", detail: "Patatas de la Horta Nord. Proveedor García." },
-                { name: "Zanahoria", image: "https://picsum.photos/400/300?random=11", detail: "Zanahorias frescas." },
-                { name: "Tomate", image: "https://picsum.photos/400/300?random=12", detail: "Tomate de temporada, alta calidad." },
-                { name: "Cebolla", image: "https://picsum.photos/400/300?random=13", detail: "Cebolla fresca." },
-                { name: "Naranja", image: "https://picsum.photos/400/300?random=14", detail: "Naranja de Canarias/Valencia." },
-                { name: "Plátano de Canarias", image: "https://picsum.photos/400/300?random=15", detail: "Plátano con Denominación de Origen." },
-                { name: "Uva blanca", image: "https://picsum.photos/400/300?random=16", detail: "Uva de mesa blanca." }
-            ],
-            "OTROS FRESCOS": [
-                { name: "Huevos M (docena)", image: "https://picsum.photos/400/300?random=17", detail: "Huevos M por docenas." },
-                { name: "Huevos L (docena)", image: "https://picsum.photos/400/300?random=18", detail: "Huevos L por docenas." }
-            ],
-            "ZUMOS Y REFRESCOS": [
-                { name: "COCA-COLA / Coca-Cola", image: "https://picsum.photos/400/300?random=19", detail: "Variedad de Coca-Cola (regular y zero)." },
-                { name: "ZUMO DE NARANJA", image: "https://picsum.photos/400/300?random=20", detail: "Zumo NFC de Zuvamesa." }
-            ],
-            "AGUAS": [
-                { name: "AGUA MINERAL", image: "https://picsum.photos/400/300?random=21", detail: "Agua mineral natural en formatos de hostelería." }
-            ],
-            "BEBIDAS ALCOHÓLICAS": [
-                { name: "Ron Zacapa", image: "https://picsum.photos/400/300?random=22", detail: "Ron premium para coctelería." },
-                { name: "Whisky Jack Daniel's", image: "https://picsum.photos/400/300?random=23", detail: "Whisky clásico." },
-                { name: "Jägermeister", image: "https://picsum.photos/400/300?random=24", detail: "Licor de hierbas." },
-                { name: "Havan Club ANEJO 3 AN", image: "https://picsum.photos/400/300?random=25", detail: "Ron añejo." }
-            ]
-        };
-
-        const mainCatalogueView = document.getElementById('main-catalogue-view');
-        const productDetailView = document.getElementById('product-detail-view');
-        const detailViewTitle = document.getElementById('detail-view-title');
-        const productListContainer = document.getElementById('product-list-container');
-        const breadcrumbsPath = document.querySelector('.breadcrumbs-path');
-        const homeLink = document.getElementById('home-link');
-
-        // Función para cambiar la vista
-        function switchView(showDetail) {
-            if (showDetail) {
-                mainCatalogueView.style.display = 'none';
-                productDetailView.style.display = 'block';
-            } else {
-                mainCatalogueView.style.display = 'block';
-                productDetailView.style.display = 'none';
-            }
-            window.scrollTo(0, 0); // Ir arriba al cambiar de vista
-        }
-
-        // Función para renderizar los productos de una categoría
-        function renderProductList(categoryName) {
-            const products = productData[categoryName];
-            
-            // 1. Actualizar título y breadcrumbs
-            detailViewTitle.textContent = categoryName;
-            breadcrumbsPath.innerHTML = `<a href="#hero" id="home-link-dynamic">Inicio</a> > <a href="#" id="category-link">${categoryName}</a>`;
-            
-            // 2. Limpiar contenedor
-            productListContainer.innerHTML = '';
-
-            // 3. Crear HTML para cada producto
-            products.forEach((product, index) => {
-                const productHtml = `
-                    <div class="product-item" data-product-index="${index}" data-category-name="${categoryName}">
-                        <img src="${product.image}" alt="Imagen de ${product.name}">
-                        <div class="product-item-content">
-                            <h4>${product.name}</h4>
-                        </div>
-                    </div>
-                `;
-                productListContainer.insertAdjacentHTML('beforeend', productHtml);
-            });
-
-            // 4. Añadir listeners de click a los productos individuales
-            document.querySelectorAll('.product-item').forEach(item => {
-                item.addEventListener('click', handleProductClick);
-            });
-
-            // 5. Mostrar la vista de detalle
-            switchView(true);
-        }
-
-        // Manejar el click en un producto individual
-        function handleProductClick(event) {
-            const item = event.currentTarget;
-            const categoryName = item.dataset.categoryName;
-            const productIndex = parseInt(item.dataset.productIndex);
-            const product = productData[categoryName][productIndex];
-            
-            alert(`Detalles del Producto: ${product.name}\n\nDescripción: ${product.detail}\n\n(En una web real, esto abriría una página de detalle con más información.)`);
-        }
-
-        // Lógica de inicialización
         document.addEventListener('DOMContentLoaded', () => {
+            // Intenta obtener el valor de la variable CSS para el color de fondo base
             const rootStyle = getComputedStyle(document.documentElement);
             const colorNegro = rootStyle.getPropertyValue('--color-negro').trim() || '#121212';
-            const header = document.querySelector('header');
-            
-            // 1. Manejo de los botones CTA (sin cambios)
-            document.querySelectorAll('.area-clientes a, .ofertas a, .area-clientes-btn').forEach(button => {
+
+            // 1. Manejo del click en los CTAs (Área Clientes, Ofertas)
+            const ctaButtons = document.querySelectorAll('.area-clientes a, .ofertas a, .area-clientes-btn');
+
+            ctaButtons.forEach(button => {
                 button.addEventListener('click', (e) => {
+                    // Simulación de acción para enlaces '#'
                     if (button.getAttribute('href') === '#') {
                         e.preventDefault();
-                        setTimeout(() => { alert('Accediendo a la plataforma profesional...'); }, 300);
+                        console.log(`Acceso a ${button.textContent.trim()} solicitado.`);
+                        
+                        setTimeout(() => {
+                            alert('Accediendo a la plataforma profesional...');
+                        }, 300);
                     }
                 });
             });
 
-            // 2. Funcionalidad Sticky Header (sin cambios)
+            // 2. Funcionalidad visual: Destacar el encabezado al hacer scroll
+            const header = document.querySelector('header');
+            
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
+                    // Fondo semitransparente para efecto 'sticky' premium 
                     header.style.backgroundColor = 'rgba(18, 18, 18, 0.95)';
                     header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.5)';
                 } else {
+                    // Vuelve al color base sin transparencia ni sombra
                     header.style.backgroundColor = colorNegro; 
                     header.style.boxShadow = 'none';
-                }
-            });
-
-            // 3. Manejo de clicks en las tarjetas de Categoría
-            document.querySelectorAll('.product-card').forEach(card => {
-                card.addEventListener('click', (e) => {
-                    const category = card.dataset.category;
-                    if (category) {
-                        renderProductList(category);
-                    }
-                });
-            });
-
-            // 4. Manejo del botón de "Volver"
-            document.getElementById('back-to-catalogue').addEventListener('click', (e) => {
-                e.preventDefault();
-                switchView(false); // Volver a la vista principal
-                breadcrumbsPath.innerHTML = `<a href="#hero" id="home-link">Inicio</a>`;
-            });
-            
-            // 5. Manejo del enlace "Inicio" dinámico
-            document.addEventListener('click', (e) => {
-                if (e.target.id === 'home-link-dynamic' || e.target.id === 'category-link') {
-                    e.preventDefault();
-                    if(e.target.id === 'category-link') {
-                        // Si se clickea el link de la categoría en el breadcrumb, no hacemos nada, ya estamos en esa vista
-                        return;
-                    }
-                    switchView(false);
-                    breadcrumbsPath.innerHTML = `<a href="#hero" id="home-link">Inicio</a>`;
                 }
             });
         });
