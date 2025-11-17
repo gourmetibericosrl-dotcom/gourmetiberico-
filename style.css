@@ -1,26 +1,27 @@
 /* === PALETA DE COLORES === */
 :root {
     --color-negro: #121212;      /* Fondo, Dominante */
-    --color-gris-oscuro: #555555; /* Más claro que el anterior, mejor contraste con negro */
+    --color-gris-oscuro: #555555; /* Fondo de Cards y Dropdown */
     --color-dorado: #D4AF37;     /* Branding, Calidad, Premium */
     --color-rojo: #C82333;       /* CTAs, Ofertas, Alertas */
     --color-blanco: #E0E0E0;     /* Texto Principal */
 }
 
 /* === ESTILOS GENERALES Y FIX DE SCROLL === */
-/* FIX: Esta propiedad es CRÍTICA para que el header fijo no oculte el contenido al hacer click en anclajes (#) */
+/* FIX CRÍTICO: Para que el anclaje a las secciones funcione correctamente con el header fijo */
 html {
-    scroll-behavior: smooth; /* Permite el smooth scroll nativo (backup para el JS) */
-    scroll-padding-top: 80px; /* Ajusta el scroll para dejar espacio al header fijo */
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; 
 }
 
 body {
-    font-family: 'Georgia', serif; 
     background-color: var(--color-negro);
     color: var(--color-blanco);
+    font-family: 'Georgia', serif; 
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    min-height: 100vh;
 }
 
 a {
@@ -48,12 +49,13 @@ header {
     top: 0;
     z-index: 1000;
 }
-/* Estilos de navegación, logo, dropdown, y CTAs (sin cambios) */
+
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .logo a {
     font-size: 1.8em;
     font-weight: bold;
@@ -61,12 +63,15 @@ nav {
     letter-spacing: 1px;
     text-transform: uppercase;
 }
+
 .nav-links {
     list-style: none;
     display: flex;
     gap: 25px;
     align-items: center;
 }
+
+/* Botones y CTAs */
 .ofertas a {
     background-color: var(--color-rojo);
     padding: 8px 15px;
@@ -91,6 +96,8 @@ nav {
     background-color: var(--color-dorado);
     color: var(--color-negro) !important;
 }
+
+/* Dropdown Catálogo */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -122,16 +129,13 @@ nav {
 #hero {
     text-align: center;
     padding: 100px 0;
+    /*  */
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://picsum.photos/1200/600') no-repeat center center/cover;
 }
 #hero h1 {
     color: var(--color-dorado); 
     font-size: 3.5em; 
     text-shadow: 2px 2px 4px #000;
-}
-#hero p {
-    font-size: 1.5em; 
-    margin-top: 20px;
 }
 .area-clientes-btn {
     display: inline-block;
@@ -161,7 +165,6 @@ section {
     padding: 20px 0 0 0;
     background-color: var(--color-negro);
     border: none;
-    /* FIX: Ajuste de margen superior para separarse visualmente del header sin solapamiento */
     margin-top: 5px; 
 }
 .breadcrumbs-path {
@@ -171,7 +174,6 @@ section {
 }
 .breadcrumbs-path a {
     color: var(--color-gris-oscuro);
-    text-decoration: none;
 }
 .breadcrumbs-path a:hover {
     color: var(--color-dorado);
@@ -227,14 +229,6 @@ h3 {
     transform: translateY(-5px);
     box-shadow: 0 6px 15px rgba(212, 175, 55, 0.3);
 }
-.product-card ul {
-    list-style: none;
-    padding: 0;
-}
-.product-card li {
-    padding: 5px 0;
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
-}
 
 /* Contenido de Atractivo (Dorado/Rojo) */
 .destacado {
@@ -275,18 +269,6 @@ h3 {
     border-left: 5px solid var(--color-dorado);
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
-.proveedor-item h3 {
-    color: var(--color-dorado);
-    border-bottom: 2px solid var(--color-rojo);
-    padding-bottom: 5px;
-    margin-top: 0;
-    display: inline-block;
-}
-.certificacion-icon {
-    color: var(--color-dorado);
-    font-size: 1.5em;
-    margin-right: 10px;
-}
 
 /* === IV. PIE DE PÁGINA (FOOTER) AVANZADO === */
 footer {
@@ -308,24 +290,12 @@ footer {
     margin-bottom: 15px;
     text-transform: uppercase;
 }
-.footer-col ul {
-    list-style: none;
-    padding: 0;
-}
-.footer-col li {
-    margin-bottom: 8px;
-}
 .footer-col a {
     color: var(--color-gris-oscuro);
     font-size: 0.95em;
 }
 .footer-col a:hover {
     color: var(--color-blanco);
-}
-.footer-col p {
-    color: var(--color-gris-oscuro);
-    font-size: 0.95em;
-    margin: 5px 0;
 }
 .footer-copy {
     grid-column: 1 / -1; 
@@ -344,12 +314,6 @@ footer {
     }
     nav {
         justify-content: center;
-    }
-    .logo a {
-        font-size: 1.5em;
-    }
-    #hero h1 {
-        font-size: 2.5em;
     }
     .footer-grid {
         grid-template-columns: 1fr;
