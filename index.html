@@ -5,34 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GOURMET IBÉRICO.SL - Catálogo Premium</title>
     
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    
-    <link rel="icon" type="image/png" href="URL_DEL_LOGO_GOURMET_IBERICO.png">
-    
     <style>
         /* === PALETA DE COLORES ELEGANTES === */
         :root {
-            --color-negro: #1A1A1A;      /* Fondo Oscuro Refinado */
+            --color-negro: #1A1A1A;      /* Fondo Oscuro Refinado */
             --color-gris-oscuro: #2C2C2C; /* Fondo de Cards Sobrio */
-            --color-dorado: #A3885C;     /* Dorado Antiguo/Mate para Elegancia */
-            --color-rojo: #C60807;       /* Rojo Intenso de Marca */
-            --color-blanco: #F5F5F5;     /* Texto Limpio */
+            --color-dorado: #A3885C;      /* Dorado Antiguo/Mate para Elegancia */
+            --color-rojo: #C60807;        /* Rojo Intenso de Marca */
+            --color-blanco: #F5F5F5;      /* Texto Limpio */
             --color-gris-claro: #AAAAAA; /* Texto Secundario Suave */
         }
 
         /* === ESTILOS GENERALES Y TIPOGRAFÍA === */
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 80px; 
+            scroll-padding-top: 80px; 
         }
 
         body {
             background-color: var(--color-negro);
             color: var(--color-blanco);
-            font-family: 'Times New Roman', Times, serif; 
+            font-family: 'Times New Roman', Times, serif; 
             margin: 0;
             padding: 0;
-            line-height: 1.7; 
+            line-height: 1.7; 
             min-height: 100vh;
         }
 
@@ -47,7 +43,7 @@
         }
 
         .container {
-            width: 85%; 
+            width: 85%; 
             max-width: 1300px;
             margin: 0 auto;
         }
@@ -55,8 +51,8 @@
         /* === I. ENCABEZADO Y NAVEGACIÓN PRINCIPAL === */
         header {
             background-color: var(--color-negro);
-            border-bottom: 1px solid var(--color-dorado); 
-            padding: 20px 0; 
+            border-bottom: 1px solid var(--color-dorado); 
+            padding: 20px 0; 
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -67,31 +63,26 @@
             justify-content: space-between;
             align-items: center;
         }
-        
-        /* ⚠️ AÑADIR ESPACIO PARA EL LOGO Y BUSCADOR (Si se desea en este header) */
-        /* Ya que la estructura original usa solo nav y logo/links, mantendré el texto por ahora. */
-        /* Si quieres el logo PNG al lado del buscador, la estructura HTML debe cambiar a la de mi respuesta anterior. */
-        /* Si solo quieres el texto del logo: */
+
         .logo a {
-            font-size: 2em; 
-            font-weight: 300; 
+            font-size: 2em; 
+            font-weight: 300; 
             color: var(--color-dorado) !important;
-            letter-spacing: 2px; 
+            letter-spacing: 2px; 
             text-transform: uppercase;
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 35px; 
+            gap: 35px; 
             align-items: center;
             font-weight: 300;
-            transition: transform 0.3s ease-in-out; /* Transición para el menú móvil */
+            transition: transform 0.3s ease-in-out; 
         }
 
-        /* Botón de menú hamburguesa (solo visible en móvil) */
         .menu-toggle {
-            display: none; 
+            display: none; 
             font-size: 1.8em;
             cursor: pointer;
             color: var(--color-dorado);
@@ -103,17 +94,17 @@
 
         /* Botones y CTAs */
         .ofertas a, .area-clientes a {
-            background-color: transparent; 
+            background-color: transparent; 
             padding: 10px 18px;
-            border-radius: 2px; 
+            border-radius: 2px; 
             font-weight: 400;
-            color: var(--color-rojo) !important; 
-            border: 1px solid var(--color-rojo); 
+            color: var(--color-rojo) !important; 
+            border: 1px solid var(--color-rojo); 
             transition: all 0.3s;
         }
         .ofertas a:hover, .area-clientes a:hover {
-            background-color: var(--color-rojo); 
-            color: var(--color-blanco) !important; 
+            background-color: var(--color-rojo); 
+            color: var(--color-blanco) !important; 
             border-color: var(--color-rojo);
         }
 
@@ -127,7 +118,7 @@
             position: absolute;
             background-color: var(--color-gris-oscuro);
             min-width: 160px;
-            box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.8); 
+            box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.8); 
             z-index: 1;
             padding: 5px 0;
             border-top: 3px solid var(--color-dorado);
@@ -148,15 +139,15 @@
         /* === SECCIÓN HERO (BANNER) === */
         #hero {
             text-align: center;
-            padding: 120px 0; 
+            padding: 120px 0; 
             background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), url('https://picsum.photos/1200/600') no-repeat center center/cover;
         }
         #hero h1 {
-            color: var(--color-dorado); 
-            font-size: 3.8em; 
+            color: var(--color-dorado); 
+            font-size: 3.8em; 
             font-weight: 300;
             letter-spacing: 1.5px;
-            text-shadow: none; 
+            text-shadow: none; 
         }
         #hero p {
             font-size: 1.2em;
@@ -166,13 +157,13 @@
         .area-clientes-btn {
             display: inline-block;
             margin-top: 40px;
-            background-color: transparent; 
-            color: var(--color-rojo) !important; 
-            padding: 18px 40px; 
+            background-color: transparent; 
+            color: var(--color-rojo) !important; 
+            padding: 18px 40px; 
             border-radius: 2px;
             font-weight: 400;
             font-size: 1.2em;
-            border: 2px solid var(--color-dorado); 
+            border: 2px solid var(--color-dorado); 
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.3s;
@@ -184,8 +175,8 @@
 
         /* === COMPONENTES UX === */
         section {
-            padding: 80px 0; 
-            border-bottom: none; 
+            padding: 80px 0; 
+            border-bottom: none; 
         }
 
         /* Rutas de Navegación (Breadcrumbs) */
@@ -193,9 +184,8 @@
             padding: 30px 0 0 0;
             background-color: var(--color-negro);
             border: none;
-            margin-top: 5px; 
+            margin-top: 5px; 
         }
-        /* ... estilos breadcrumbs sin cambios ... */
 
         /* Títulos de Sección */
         h2 {
@@ -204,7 +194,7 @@
             font-size: 2.8em;
             font-weight: 300;
             margin-bottom: 50px;
-            border-bottom: 1px solid var(--color-rojo); 
+            border-bottom: 1px solid var(--color-rojo); 
             padding-bottom: 15px;
             letter-spacing: 1px;
             display: block;
@@ -225,43 +215,27 @@
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px; 
+            gap: 40px; 
             margin-top: 20px;
         }
 
         /* Product Category Cards - Clickable */
         .product-card {
             background-color: var(--color-gris-oscuro);
-            padding: 30px; 
+            padding: 30px; 
             border-radius: 2px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.4); 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.4); 
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
             text-align: center;
         }
         .product-card:hover {
-            transform: translateY(-8px); 
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 5px var(--color-dorado); 
-        }
-        /* ... otros estilos de cards sin cambios ... */
-
-        /* III. SECCIÓN DE CALIDAD Y PROVEEDORES */
-        /* Estilos específicos de proveedores, necesarios para la vista */
-        .proveedor-item {
-            background-color: var(--color-gris-oscuro);
-            padding: 20px 30px;
-            margin-bottom: 20px;
-            border-left: 5px solid var(--color-dorado);
-            border-radius: 2px;
+            transform: translateY(-8px); 
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 5px var(--color-dorado); 
         }
 
-        .certificacion-icon {
-            color: var(--color-dorado);
-            font-size: 1.1em;
-            margin-right: 5px;
-        }
+        /* === VISTA DE DETALLE (IMPORTANTE: PRODUCTOS INDIVIDUALES) === */
 
-        /* === VISTA DE DETALLE === */
         .product-item-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -272,81 +246,114 @@
         .product-item {
             background-color: var(--color-gris-oscuro);
             border-radius: 2px;
-            overflow: hidden;
+            overflow: hidden; /* Asegura que la imagen no se salga */
             box-shadow: 0 2px 5px rgba(0,0,0,0.4);
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
+            text-align: center;
         }
-
         .product-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.6), 0 0 5px var(--color-rojo);
         }
 
-        .product-item img {
+        /* Contenedor de la Imagen para forzar la proporción limpia */
+        .product-item-img-wrapper {
             width: 100%;
-            height: 200px; /* Altura fija para uniformidad */
-            object-fit: cover;
-            border-bottom: 1px solid var(--color-negro);
+            height: 250px; /* Altura fija para mantener el diseño limpio */
+            overflow: hidden;
+        }
+
+        .product-item-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Recorta la imagen para llenar el contenedor sin distorsionar la proporción */
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        /* Efecto Zoom al pasar el ratón */
+        .product-item:hover .product-item-img-wrapper img {
+            transform: scale(1.05);
         }
 
         .product-item-content {
-            padding: 15px;
+            padding: 15px 15px 25px;
+            text-align: left;
         }
-
         .product-item-content h4 {
-            color: var(--color-blanco);
-            margin-top: 0;
-            font-size: 1.1em;
-        }
-        
-        .back-link {
-            color: var(--color-rojo);
-            margin-bottom: 30px;
-            display: inline-block;
-        }
-        .back-link:hover {
-            text-decoration: underline;
-        }
-        
-        /* FOOTER STYLES */
-        footer {
-            background-color: var(--color-gris-oscuro);
-            border-top: 1px solid var(--color-dorado);
-            padding: 40px 0 20px 0;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            padding-bottom: 20px;
-        }
-
-        .footer-col h4 {
             color: var(--color-dorado);
-            font-size: 1.4em;
+            margin: 0;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* === III. SECCIÓN DE CALIDAD Y PROVEEDORES */
+        .proveedor-item {
+            background-color: var(--color-gris-oscuro);
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--color-dorado);
+            border-radius: 2px;
+            transition: background-color 0.3s;
+        }
+        .proveedor-item:hover {
+            background-color: #353535;
+        }
+        .proveedor-item h3 {
+            color: var(--color-dorado);
+            border-bottom: 1px dashed var(--color-gris-claro);
+            padding-bottom: 10px;
             margin-bottom: 15px;
         }
-
+        .certificacion-icon {
+            color: var(--color-dorado);
+            font-size: 1.2em;
+            margin-right: 8px;
+        }
+        
+        /* === IV. PIE DE PÁGINA (FOOTER) === */
+        footer {
+            background-color: var(--color-gris-oscuro);
+            color: var(--color-gris-claro);
+            padding: 60px 0 20px 0;
+            border-top: 1px solid var(--color-negro);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        .footer-col h4 {
+            color: var(--color-dorado);
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--color-negro);
+            padding-bottom: 5px;
+        }
         .footer-col ul {
             list-style: none;
             padding: 0;
         }
-
         .footer-col ul li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
-
+        .footer-col a {
+            color: var(--color-gris-claro);
+        }
+        .footer-col a:hover {
+            color: var(--color-dorado);
+        }
         .footer-copy {
             grid-column: 1 / -1;
             text-align: center;
-            border-top: 1px solid var(--color-gris-oscuro);
+            margin-top: 40px;
             padding-top: 20px;
-            margin-top: 20px;
-            font-size: 0.85em;
-            color: var(--color-gris-claro);
+            border-top: 1px solid var(--color-negro);
+            font-size: 0.9em;
         }
+
         
         /* ======================================= */
         /* === MEDIA QUERIES PARA RESPONSIVIDAD === */
@@ -361,18 +368,14 @@
                 font-size: 1.8em;
             }
             .nav-links {
-                gap: 20px; 
+                gap: 20px; 
             }
-            /* Las grillas mantienen 2 o 3 columnas, pero con un minmax más estricto */
             .card-grid, .product-item-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
                 gap: 30px;
             }
-            .footer-grid {
-                 grid-template-columns: repeat(2, 1fr);
-            }
         }
-                
+        
         /* 2. Ajustes para MÓVIL (hasta 768px) */
         @media (max-width: 768px) {
             .container {
@@ -388,11 +391,11 @@
                 letter-spacing: 1px;
             }
             .menu-toggle {
-                display: block; /* Muestra el botón de hamburguesa */
+                display: block; 
             }
             nav {
-                flex-direction: row; /* Mantiene logo e icono en fila */
-                position: relative; /* Para posicionar el menú debajo */
+                flex-direction: row; 
+                position: relative; 
             }
 
             .nav-links {
@@ -400,16 +403,16 @@
                 width: 100%;
                 gap: 0;
                 position: absolute;
-                top: 55px; /* Altura del header ajustada */
+                top: 55px; 
                 left: 0;
                 background-color: var(--color-negro);
                 border-top: 1px solid var(--color-dorado);
                 padding: 10px 0;
-                transform: translateX(-100%); /* Oculto inicialmente */
-                display: flex; /* Siempre en display, oculto con transform */
+                transform: translateX(-100%); 
+                display: flex; 
             }
             .nav-links.active {
-                transform: translateX(0); /* Muestra el menú al activarse */
+                transform: translateX(0); 
             }
 
             .nav-links li {
@@ -421,13 +424,12 @@
             .nav-links li:last-child {
                 border-bottom: none;
             }
-            /* Los elementos del dropdown se apilan */
             .dropdown-content {
-                position: static; 
+                position: static; 
                 width: 100%;
                 box-shadow: none;
                 border-top: none;
-                background-color: #242424; /* Tono ligeramente más claro para el submenú */
+                background-color: #242424; 
             }
             
             /* Hero */
@@ -454,7 +456,7 @@
             
             /* Grillas (Una columna en móvil) */
             .card-grid, .product-item-grid {
-                grid-template-columns: 1fr; 
+                grid-template-columns: 1fr; 
                 gap: 25px;
             }
             
@@ -474,7 +476,7 @@
         <div class="container">
             <nav>
                 <div class="logo"><a href="#">GOURMET IBÉRICO.SL</a></div>
-                <div class="menu-toggle" id="menu-toggle">☰</div> 
+                <div class="menu-toggle" id="menu-toggle">☰</div> 
 
                 <ul class="nav-links" id="nav-links">
                     <li class="dropdown">
@@ -596,7 +598,7 @@
             <div class="container">
                 <a href="#" class="back-link" id="back-to-catalogue">&lt; Volver al Catálogo Principal</a>
                 
-                <h2 id="detail-view-title"></h2> 
+                <h2 id="detail-view-title"></h2> 
                 
                 <div class="product-item-grid" id="product-list-container">
                     </div>
@@ -638,43 +640,43 @@
         // Base de datos de productos y sus imágenes/detalles
         const productData = {
             "CARNES": [
-                { name: "Tomo de cerdo ibérico", image: "https://picsum.photos/400/300?random=1", detail: "Lomo ibérico de alta calidad, ideal para hostelería." },
-                { name: "Chuletas de ternera", image: "https://picsum.photos/400/300?random=2", detail: "Cortes premium de ternera. Suministro Grupo Medina." },
-                { name: "Carne de cordero", image: "https://picsum.photos/400/300?random=3", detail: "Cordero seleccionado para platos gourmet." },
-                { name: "Pollo entero", image: "https://picsum.photos/400/300?random=4", detail: "Pollo fresco." },
-                { name: "Muslos de pollo", image: "https://picsum.photos/400/300?random=5", detail: "Muslos de pollo frescos." }
+                { name: "Tomo de cerdo ibérico", image: "https://picsum.photos/400/250?random=1", detail: "Lomo ibérico de alta calidad, ideal para hostelería." },
+                { name: "Chuletas de ternera", image: "https://picsum.photos/400/250?random=2", detail: "Cortes premium de ternera. Suministro Grupo Medina." },
+                { name: "Carne de cordero", image: "https://picsum.photos/400/250?random=3", detail: "Cordero seleccionado para platos gourmet." },
+                { name: "Pollo entero", image: "https://picsum.photos/400/250?random=4", detail: "Pollo fresco." },
+                { name: "Muslos de pollo", image: "https://picsum.photos/400/250?random=5", detail: "Muslos de pollo frescos." }
             ],
             "PESCADO": [
-                { name: "Gambón grande", image: "https://picsum.photos/400/300?random=6", detail: "Gambón congelado de gran tamaño." },
-                { name: "Bacalao congelado", image: "https://picsum.photos/400/300?random=7", detail: "Lomos de bacalao de primera." },
-                { name: "SALMÓN", image: "https://picsum.photos/400/300?random=8", detail: "Salmón fresco, listo para corte." },
-                { name: "Merluza fresca", image: "https://picsum.photos/400/300?random=9", detail: "Merluza del día, garantizando frescura." }
+                { name: "Gambón grande", image: "https://picsum.photos/400/250?random=6", detail: "Gambón congelado de gran tamaño." },
+                { name: "Bacalao congelado", image: "https://picsum.photos/400/250?random=7", detail: "Lomos de bacalao de primera." },
+                { name: "SALMÓN", image: "https://picsum.photos/400/250?random=8", detail: "Salmón fresco, listo para corte." },
+                { name: "Merluza fresca", image: "https://picsum.photos/400/250?random=9", detail: "Merluza del día, garantizando frescura." }
             ],
             "VERDURAS Y FRUTAS": [
-                { name: "Patatas", image: "https://picsum.photos/400/300?random=10", detail: "Patatas de la Horta Nord. Proveedor García." },
-                { name: "Zanahoria", image: "https://picsum.photos/400/300?random=11", detail: "Zanahorias frescas." },
-                { name: "Tomate", image: "https://picsum.photos/400/300?random=12", detail: "Tomate de temporada, alta calidad." },
-                { name: "Cebolla", image: "https://picsum.photos/400/300?random=13", detail: "Cebolla fresca." },
-                { name: "Naranja", image: "https://picsum.photos/400/300?random=14", detail: "Naranja de Canarias/Valencia." },
-                { name: "Plátano de Canarias", image: "https://picsum.photos/400/300?random=15", detail: "Plátano con Denominación de Origen." },
-                { name: "Uva blanca", image: "https://picsum.photos/400/300?random=16", detail: "Uva de mesa blanca." }
+                { name: "Patatas", image: "https://picsum.photos/400/250?random=10", detail: "Patatas de la Horta Nord. Proveedor García." },
+                { name: "Zanahoria", image: "https://picsum.photos/400/250?random=11", detail: "Zanahorias frescas." },
+                { name: "Tomate", image: "https://picsum.photos/400/250?random=12", detail: "Tomate de temporada, alta calidad." },
+                { name: "Cebolla", image: "https://picsum.photos/400/250?random=13", detail: "Cebolla fresca." },
+                { name: "Naranja", image: "https://picsum.photos/400/250?random=14", detail: "Naranja de Canarias/Valencia." },
+                { name: "Plátano de Canarias", image: "https://picsum.photos/400/250?random=15", detail: "Plátano con Denominación de Origen." },
+                { name: "Uva blanca", image: "https://picsum.photos/400/250?random=16", detail: "Uva de mesa blanca." }
             ],
             "OTROS FRESCOS": [
-                { name: "Huevos M (docena)", image: "https://picsum.photos/400/300?random=17", detail: "Huevos M por docenas." },
-                { name: "Huevos L (docena)", image: "https://picsum.photos/400/300?random=18", detail: "Huevos L por docenas." }
+                { name: "Huevos M (docena)", image: "https://picsum.photos/400/250?random=17", detail: "Huevos M por docenas." },
+                { name: "Huevos L (docena)", image: "https://picsum.photos/400/250?random=18", detail: "Huevos L por docenas." }
             ],
             "ZUMOS Y REFRESCOS": [
-                { name: "COCA-COLA / Coca-Cola", image: "https://picsum.photos/400/300?random=19", detail: "Variedad de Coca-Cola (regular y zero)." },
-                { name: "ZUMO DE NARANJA", image: "https://picsum.photos/400/300?random=20", detail: "Zumo NFC de Zuvamesa." }
+                { name: "COCA-COLA / Coca-Cola", image: "https://picsum.photos/400/250?random=19", detail: "Variedad de Coca-Cola (regular y zero)." },
+                { name: "ZUMO DE NARANJA", image: "https://picsum.photos/400/250?random=20", detail: "Zumo NFC de Zuvamesa." }
             ],
             "AGUAS": [
-                { name: "AGUA MINERAL", image: "https://picsum.photos/400/300?random=21", detail: "Agua mineral natural en formatos de hostelería." }
+                { name: "AGUA MINERAL", image: "https://picsum.photos/400/250?random=21", detail: "Agua mineral natural en formatos de hostelería." }
             ],
             "BEBIDAS ALCOHÓLICAS": [
-                { name: "Ron Zacapa", image: "https://picsum.photos/400/300?random=22", detail: "Ron premium para coctelería." },
-                { name: "Whisky Jack Daniel's", image: "https://picsum.photos/400/300?random=23", detail: "Whisky clásico." },
-                { name: "Jägermeister", image: "https://picsum.photos/400/300?random=24", detail: "Licor de hierbas." },
-                { name: "Havan Club ANEJO 3 AN", image: "https://picsum.photos/400/300?random=25", detail: "Ron añejo." }
+                { name: "Ron Zacapa", image: "https://picsum.photos/400/250?random=22", detail: "Ron premium para coctelería." },
+                { name: "Whisky Jack Daniel's", image: "https://picsum.photos/400/250?random=23", detail: "Whisky clásico." },
+                { name: "Jägermeister", image: "https://picsum.photos/400/250?random=24", detail: "Licor de hierbas." },
+                { name: "Havan Club ANEJO 3 AN", image: "https://picsum.photos/400/250?random=25", detail: "Ron añejo." }
             ]
         };
 
@@ -713,9 +715,12 @@
 
             // 3. Crear HTML para cada producto
             products.forEach((product, index) => {
+                // AQUI está la nueva estructura para la imagen
                 const productHtml = `
                     <div class="product-item" data-product-index="${index}" data-category-name="${categoryName}">
-                        <img src="${product.image}" alt="Imagen de ${product.name}">
+                        <div class="product-item-img-wrapper">
+                            <img src="${product.image}" alt="Imagen de ${product.name}">
+                        </div>
                         <div class="product-item-content">
                             <h4>${product.name}</h4>
                         </div>
@@ -737,7 +742,7 @@
         function handleProductClick(event) {
             const item = event.currentTarget;
             const categoryName = item.dataset.categoryName;
-            const productIndex = parseInt(item.dataset.product-index);
+            const productIndex = parseInt(item.dataset.productIndex);
             const product = productData[categoryName][productIndex];
             
             alert(`Detalles del Producto: ${product.name}\n\nDescripción: ${product.detail}\n\n(En una web real, esto abriría una página de detalle con más información.)`);
@@ -769,10 +774,10 @@
             // 2. Funcionalidad Sticky Header
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
-                    header.style.backgroundColor = 'rgba(26, 26, 26, 0.98)'; 
+                    header.style.backgroundColor = 'rgba(26, 26, 26, 0.98)'; 
                     header.style.boxShadow = '0 1px 10px rgba(0,0,0,0.7)';
                 } else {
-                    header.style.backgroundColor = colorNegro; 
+                    header.style.backgroundColor = colorNegro; 
                     header.style.boxShadow = 'none';
                 }
             });
@@ -810,7 +815,7 @@
                 if (navLinks.classList.contains('active')) {
                     const linkClicked = e.target.closest('.nav-links a');
                     // Cierra a menos que sea el enlace principal de un dropdown
-                    if (linkClicked && !e.target.closest('.dropdown > a')) { 
+                    if (linkClicked && !e.target.closest('.dropdown > a')) { 
                         navLinks.classList.remove('active');
                     }
                 }
