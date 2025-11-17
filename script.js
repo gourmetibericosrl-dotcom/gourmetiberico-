@@ -1,43 +1,44 @@
 // Base de datos de productos y sus imágenes/detalles
 const productData = {
     "CARNES": [
-        { name: "Tomo de cerdo ibérico", image: "https://picsum.photos/400/250?random=1", detail: "Lomo ibérico de alta calidad, ideal para hostelería." },
-        { name: "Chuletas de ternera", image: "https://picsum.photos/400/250?random=2", detail: "Cortes premium de ternera. Suministro Grupo Medina." },
-        { name: "Carne de cordero", image: "https://picsum.photos/400/250?random=3", detail: "Cordero seleccionado para platos gourmet." },
-        { name: "Pollo entero", image: "https://picsum.photos/400/250?random=4", detail: "Pollo fresco." },
-        { name: "Muslos de pollo", image: "https://picsum.photos/400/250?random=5", detail: "Muslos de pollo frescos." }
+        // Rutas restauradas para coincidir con la estructura de archivos local (FOTOS TRABAJO EMPRESA COMIDA/CARNE/...)
+        { name: "Lomo de cerdo ibérico", image: "FOTOS TRABAJO EMPRESA COMIDA/CARNE/lomo_de_cerdo_iberico.jpg", detail: "Lomo ibérico de alta calidad, ideal para hostelería." },
+        { name: "Chuletón de ternera", image: "FOTOS TRABAJO EMPRESA COMIDA/CARNE/chuleton_de_ternera.jpg", detail: "Cortes premium de ternera. Suministro Grupo Medina." },
+        { name: "Carne de cordero", image: "FOTOS TRABAJO EMPRESA COMIDA/CARNE/carne_de_cordero.jpg", detail: "Cordero seleccionado para platos gourmet." },
+        { name: "Pollo entero", image: "FOTOS TRABAJO EMPRESA COMIDA/CARNE/muslos_de_pollo.jpg", detail: "Pollo fresco (usando muslos de pollo como placeholder visual)." }, // Ajustado para usar una imagen existente
+        { name: "Muslos de pollo", image: "FOTOS TRABAJO EMPRESA COMIDA/CARNE/muslos_de_pollo.jpg", detail: "Muslos de pollo frescos." }
     ],
     "PESCADO": [
-        { name: "Gambón grande", image: "https://picsum.photos/400/250?random=6", detail: "Gambón congelado de gran tamaño." },
-        { name: "Bacalao congelado", image: "https://picsum.photos/400/250?random=7", detail: "Lomos de bacalao de primera." },
-        { name: "SALMÓN", image: "https://picsum.photos/400/250?random=8", detail: "Salmón fresco, listo para corte." },
-        { name: "Merluza fresca", image: "https://picsum.photos/400/250?random=9", detail: "Merluza del día, garantizando frescura." }
+        { name: "Gambón grande", image: "FOTOS TRABAJO EMPRESA COMIDA/PESCADO/gambon_grande.jpg", detail: "Gambón congelado de gran tamaño." },
+        { name: "Bacalao congelado", image: "FOTOS TRABAJO EMPRESA COMIDA/PESCADO/bacalao_congelado.jpg", detail: "Lomos de bacalao de primera." },
+        { name: "SALMÓN FRESCO", image: "FOTOS TRABAJO EMPRESA COMIDA/PESCADO/salmon_fresco.jpg", detail: "Salmón fresco, listo para corte." },
+        { name: "Merluza fresca", image: "FOTOS TRABAJO EMPRESA COMIDA/PESCADO/merluza_fresca.jpg", detail: "Merluza del día, garantizando frescura." }
     ],
     "VERDURAS Y FRUTAS": [
-        { name: "Patatas", image: "https://picsum.photos/400/250?random=10", detail: "Patatas de la Horta Nord. Proveedor García." },
-        { name: "Zanahoria", image: "https://picsum.photos/400/250?random=11", detail: "Zanahorias frescas." },
-        { name: "Tomate", image: "https://picsum.photos/400/250?random=12", detail: "Tomate de temporada, alta calidad." },
-        { name: "Cebolla", image: "https://picsum.photos/400/250?random=13", detail: "Cebolla fresca." },
-        { name: "Naranja", image: "https://picsum.photos/400/250?random=14", detail: "Naranja de Canarias/Valencia." },
-        { name: "Plátano de Canarias", image: "https://picsum.photos/400/250?random=15", detail: "Plátano con Denominación de Origen." },
-        { name: "Uva blanca", image: "https://picsum.photos/400/250?random=16", detail: "Uva de mesa blanca." }
+        { name: "Patatas", image: "FOTOS TRABAJO EMPRESA COMIDA/FRUTAS/patatas.jpg", detail: "Patatas de la Horta Nord. Proveedor García." },
+        { name: "Zanahoria", image: "FOTOS TRABAJO EMPRESA COMIDA/FRUTAS/zanahoria.jpg", detail: "Zanahorias frescas." },
+        { name: "Tomate", image: "FOTOS TRABAJO EMPRESA COMIDA/FRUTAS/tomate.jpg", detail: "Tomate de temporada, alta calidad." },
+        { name: "Cebolla", image: "FOTOS TRABAJO EMPRESA COMIDA/FRUTAS/tomate.jpg", detail: "Cebolla fresca (usando tomate como placeholder visual)." }, // Ajustado
+        { name: "Naranja", image: "FOTOS TRABAJO EMPRESA COMIDA/FRUTAS/naranja.jpg", detail: "Naranja de Canarias/Valencia." },
+        { name: "Plátano de Canarias", image: "FOTOS TRABAJO EMPRESA COMIDA/FRUTAS/platano_canarias.jpg", detail: "Plátano con Denominación de Origen." },
+        { name: "Uva blanca", image: "FOTOS TRABAJO EMPRESA COMIDA/FRUTAS/uva_blanca.jpg", detail: "Uva de mesa blanca." }
     ],
     "OTROS FRESCOS": [
-        { name: "Huevos M (docena)", image: "https://picsum.photos/400/250?random=17", detail: "Huevos M por docenas." },
-        { name: "Huevos L (docena)", image: "https://picsum.photos/400/250?random=18", detail: "Huevos L por docenas." }
+        { name: "Huevos M (docena)", image: "FOTOS TRABAJO EMPRESA COMIDA/HUEVOS/huevos_M_docena.jpg", detail: "Huevos M por docenas." },
+        { name: "Queso curado", image: "FOTOS TRABAJO EMPRESA COMIDA/HUEVOS/queso_curado.jpg", detail: "Queso curado premium." } // Usando queso curado como ejemplo
     ],
     "ZUMOS Y REFRESCOS": [
-        { name: "COCA-COLA / Coca-Cola", image: "https://picsum.photos/400/250?random=19", detail: "Variedad de Coca-Cola (regular y zero)." },
-        { name: "ZUMO DE NARANJA", image: "https://picsum.photos/400/250?random=20", detail: "Zumo NFC de Zuvamesa." }
+        { name: "COCA-COLA / Coca-Cola", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDA/coca_cola_1L.webp", detail: "Variedad de Coca-Cola (regular y zero)." },
+        { name: "ZUMO DE NARANJA NFC (1L)", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDA/zumo_naranja_nfc.jpg", detail: "Zumo NFC de Zuvamesa en formato 1L." }
     ],
     "AGUAS": [
-        { name: "AGUA MINERAL", image: "https://picsum.photos/400/250?random=21", detail: "Agua mineral natural en formatos de hostelería." }
+        { name: "AGUA MINERAL (1.5L)", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDA/agua_mineral_1_5L.jpg", detail: "Agua mineral natural en formatos de hostelería 1.5L." }
     ],
     "BEBIDAS ALCOHÓLICAS": [
-        { name: "Ron Zacapa", image: "https://picsum.photos/400/250?random=22", detail: "Ron premium para coctelería." },
-        { name: "Whisky Jack Daniel's", image: "https://picsum.photos/400/250?random=23", detail: "Whisky clásico." },
-        { name: "Jägermeister", image: "https://picsum.photos/400/250?random=24", detail: "Licor de hierbas." },
-        { name: "Havan Club ANEJO 3 AN", image: "https://picsum.photos/400/250?random=25", detail: "Ron añejo." }
+        { name: "Ron Zacapa", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDAS ALCOHÓLICAS/ron_zacapa.jpg", detail: "Ron premium para coctelería." },
+        { name: "Whisky Jack Daniel's", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDAS ALCOHÓLICAS/whisky_jack_daniels.jpg", detail: "Whisky clásico." },
+        { name: "Jägermeister", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDAS ALCOHÓLICAS/jagermeister.jpg", detail: "Licor de hierbas." },
+        { name: "Havan Club ANEJO 3 AN", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDAS ALCOHÓLICAS/havana_club_anejo.jpg", detail: "Ron añejo." }
     ]
 };
 
@@ -46,12 +47,12 @@ const productDetailView = document.getElementById('product-detail-view');
 const detailViewTitle = document.getElementById('detail-view-title');
 const productListContainer = document.getElementById('product-list-container');
 const breadcrumbsPath = document.querySelector('.breadcrumbs-path');
-const homeLink = document.getElementById('home-link');
+// No usamos homeLink en la lógica, pero lo mantenemos para referencia DOM
 const navLinks = document.getElementById('nav-links');
 const menuToggle = document.getElementById('menu-toggle');
 
 
-// Función para cambiar la vista
+// Función para cambiar la vista (Catálogo principal vs. Detalle de productos)
 function switchView(showDetail) {
     if (showDetail) {
         mainCatalogueView.style.display = 'none';
@@ -69,114 +70,4 @@ function renderProductList(categoryName) {
     
     // 1. Actualizar título y breadcrumbs
     detailViewTitle.textContent = categoryName;
-    breadcrumbsPath.innerHTML = `<a href="#hero" id="home-link-dynamic">Inicio</a> > <a href="#" id="category-link">${categoryName}</a>`;
-    
-    // 2. Limpiar contenedor
-    productListContainer.innerHTML = '';
-
-    // 3. Crear HTML para cada producto
-    products.forEach((product, index) => {
-        // AQUI está la nueva estructura para la imagen
-        const productHtml = `
-            <div class="product-item" data-product-index="${index}" data-category-name="${categoryName}">
-                <div class="product-item-img-wrapper">
-                    <img src="${product.image}" alt="Imagen de ${product.name}">
-                </div>
-                <div class="product-item-content">
-                    <h4>${product.name}</h4>
-                </div>
-            </div>
-        `;
-        productListContainer.insertAdjacentHTML('beforeend', productHtml);
-    });
-
-    // 4. Añadir listeners de click a los productos individuales
-    document.querySelectorAll('.product-item').forEach(item => {
-        item.addEventListener('click', handleProductClick);
-    });
-
-    // 5. Mostrar la vista de detalle
-    switchView(true);
-}
-
-// Manejar el click en un producto individual (Muestra un alert con los detalles simulados)
-function handleProductClick(event) {
-    const item = event.currentTarget;
-    const categoryName = item.dataset.categoryName;
-    const productIndex = parseInt(item.dataset.productIndex);
-    const product = productData[categoryName][productIndex];
-    
-    alert(`Detalles del Producto: ${product.name}\n\nDescripción: ${product.detail}\n\n(En una web real, esto abriría una página de detalle con más información.)`);
-}
-
-// Lógica de inicialización
-document.addEventListener('DOMContentLoaded', () => {
-    // Obtener color base para el sticky header
-    const rootStyle = getComputedStyle(document.documentElement);
-    const colorNegro = rootStyle.getPropertyValue('--color-negro').trim() || '#1A1A1A';
-    const header = document.querySelector('header');
-    
-    // 0. Lógica de Menú Móvil
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    }
-
-    // 1. Manejo de los botones CTA (Simulación)
-    document.querySelectorAll('.area-clientes a, .ofertas a, .area-clientes-btn').forEach(button => {
-        button.addEventListener('click', (e) => {
-            if (button.getAttribute('href') === '#') {
-                e.preventDefault();
-                setTimeout(() => { alert('Accediendo a la plataforma profesional...'); }, 300);
-            }
-        });
-    });
-
-    // 2. Funcionalidad Sticky Header (Opacidad al hacer scroll)
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.style.backgroundColor = 'rgba(26, 26, 26, 0.98)'; // Oscurece el header al bajar
-            header.style.boxShadow = '0 1px 10px rgba(0,0,0,0.7)';
-        } else {
-            header.style.backgroundColor = colorNegro; // Vuelve al color base
-            header.style.boxShadow = 'none';
-        }
-    });
-
-    // 3. Manejo de clicks en las tarjetas de Categoría (Dispara la vista de detalle)
-    document.querySelectorAll('.product-card').forEach(card => {
-        card.addEventListener('click', (e) => {
-            const category = card.dataset.category;
-            if (category) {
-                renderProductList(category);
-                // Cerrar menú móvil si está abierto al cambiar de vista
-                navLinks.classList.remove('active');
-            }
-        });
-    });
-
-    // 4. Manejo del botón de "Volver"
-    document.getElementById('back-to-catalogue').addEventListener('click', (e) => {
-        e.preventDefault();
-        switchView(false); // Volver a la vista principal
-        breadcrumbsPath.innerHTML = `<a href="#hero" id="home-link">Inicio</a>`;
-    });
-    
-    // 5. Manejo de enlaces dinámicos (breadcrumbs y menú)
-    document.addEventListener('click', (e) => {
-        // Manejar clicks en los breadcrumbs dinámicos
-        if (e.target.id === 'home-link-dynamic' || e.target.id === 'category-link') {
-            e.preventDefault();
-            if(e.target.id !== 'category-link') {
-                switchView(false); // Vuelve al inicio si se pulsa "Inicio" en los breadcrumbs
-                breadcrumbsPath.innerHTML = `<a href="#hero" id="home-link">Inicio</a>`;
-            }
-        }
-        
-        // Cierre automático del menú móvil después de hacer clic en un enlace de navegación
-        if (navLinks && window.innerWidth <= 768 && e.target.tagName === 'A') {
-             navLinks.classList.remove('active');
-        }
-    });
-});
+    // Se corrige la ruta del breadcrumb para incluir
