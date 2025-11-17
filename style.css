@@ -1,13 +1,19 @@
 /* === PALETA DE COLORES === */
 :root {
     --color-negro: #121212;      /* Fondo, Dominante */
-    --color-gris-oscuro: #555555; /* Textos Secundarios (más claro para mejor contraste) */
+    --color-gris-oscuro: #555555; /* Más claro que el anterior, mejor contraste con negro */
     --color-dorado: #D4AF37;     /* Branding, Calidad, Premium */
     --color-rojo: #C82333;       /* CTAs, Ofertas, Alertas */
     --color-blanco: #E0E0E0;     /* Texto Principal */
 }
 
-/* === ESTILOS GENERALES Y FUENTES === */
+/* === ESTILOS GENERALES Y FIX DE SCROLL === */
+/* FIX: Esta propiedad es CRÍTICA para que el header fijo no oculte el contenido al hacer click en anclajes (#) */
+html {
+    scroll-behavior: smooth; /* Permite el smooth scroll nativo (backup para el JS) */
+    scroll-padding-top: 80px; /* Ajusta el scroll para dejar espacio al header fijo */
+}
+
 body {
     font-family: 'Georgia', serif; 
     background-color: var(--color-negro);
@@ -38,17 +44,16 @@ header {
     background-color: var(--color-negro);
     border-bottom: 2px solid var(--color-dorado);
     padding: 15px 0;
-    position: sticky; /* Fija el encabezado */
+    position: sticky;
     top: 0;
     z-index: 1000;
 }
-
+/* Estilos de navegación, logo, dropdown, y CTAs (sin cambios) */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 .logo a {
     font-size: 1.8em;
     font-weight: bold;
@@ -56,15 +61,12 @@ nav {
     letter-spacing: 1px;
     text-transform: uppercase;
 }
-
 .nav-links {
     list-style: none;
     display: flex;
     gap: 25px;
     align-items: center;
 }
-
-/* Botones y CTAs */
 .ofertas a {
     background-color: var(--color-rojo);
     padding: 8px 15px;
@@ -89,8 +91,6 @@ nav {
     background-color: var(--color-dorado);
     color: var(--color-negro) !important;
 }
-
-/* Dropdown Catálogo */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -158,9 +158,11 @@ section {
 
 /* Rutas de Navegación (Breadcrumbs) */
 #breadcrumbs {
-    padding: 20px 0 0 0; /* Ajustado para que no haya padding superior */
+    padding: 20px 0 0 0;
     background-color: var(--color-negro);
     border: none;
+    /* FIX: Ajuste de margen superior para separarse visualmente del header sin solapamiento */
+    margin-top: 5px; 
 }
 .breadcrumbs-path {
     font-size: 0.9em;
@@ -179,7 +181,6 @@ section {
     margin: 0 5px;
     color: var(--color-gris-oscuro);
 }
-/* Estilo del último elemento de breadcrumb */
 .breadcrumbs-path a:last-child::after {
     content: "";
 }
@@ -273,9 +274,6 @@ h3 {
     margin-bottom: 30px;
     border-left: 5px solid var(--color-dorado);
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    /* Asegurar que el ancla (id) tenga un poco de margen para el smooth scroll */
-    padding-top: 60px; 
-    margin-top: -60px; /* Compensa el padding superior para el diseño */
 }
 .proveedor-item h3 {
     color: var(--color-dorado);
@@ -342,7 +340,7 @@ footer {
 /* Media Query para móvil */
 @media (max-width: 768px) {
     .nav-links {
-        display: none; /* Ocultar el menú de navegación completo por simplicidad en móvil */
+        display: none;
     }
     nav {
         justify-content: center;
@@ -356,8 +354,5 @@ footer {
     .footer-grid {
         grid-template-columns: 1fr;
         text-align: center;
-    }
-    .proveedor-item {
-        padding: 20px;
     }
 }
