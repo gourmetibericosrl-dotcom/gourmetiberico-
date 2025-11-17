@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GOURMET IBÉRICO.SL - Suministro Premium para Hostelería</title>
     <link rel="stylesheet" href="style.css">
-    </head>
+</head>
 <body>
 
     <header>
@@ -20,28 +20,34 @@
                             <a href="#bebidas">BEBIDAS</a>
                         </div>
                     </li>
-                    <li><a href="#calidad">NUESTRA CALIDAD</a></li>
+                    <li><a href="#calidad">NUESTRA CALIDAD / TRAZABILIDAD</a></li>
                     <li class="ofertas"><a href="#">OFERTAS Y FOLLETOS</a></li>
                     <li><a href="#">TRABAJA CON NOSOTROS</a></li>
                     <li class="area-clientes"><a href="#">ÁREA CLIENTES</a></li>
-                    <li><a href="#">CONTACTO</a></li>
+                    <li><a href="/contacto.html">CONTACTO</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
+        <section id="breadcrumbs" class="container">
+            <p class="breadcrumbs-path"><a href="/">Inicio</a></p>
+        </section>
+
         <section id="hero">
             <div class="container">
                 <h1>El Suministro Premium que su Hostelería Merece</h1>
                 <p>Calidad, Trazabilidad y Servicio Exclusivo para Profesionales.</p>
-                <a href="#" class="area-clientes-btn">Acceda al Área Clientes Ahora</a>
+                <a href="/area-clientes.html" class="area-clientes-btn">Acceda al Área Clientes Ahora</a>
             </div>
         </section>
 
         <section id="frescos" class="catalogo-section">
             <div class="container">
                 <h2>Catálogo FRESCOS</h2>
+                <p class="breadcrumbs-path"><a href="/">Inicio</a> > <a href="#frescos">Frescos</a></p>
+
                 <div class="card-grid">
 
                     <div class="product-card">
@@ -52,7 +58,7 @@
                             <li>Chuletas de ternera</li>
                             <li>Muslos de pollo, Pollo entero</li>
                         </ul>
-                        <span class="calidad-tag">🥩 Suministro de Vacuno por **Grupo Medina**, EMPRESA LÍDER EN ESPAÑA.</span>
+                        <span class="calidad-tag">🥩 Suministro de Vacuno por <a href="#medina">**Grupo Medina**</a>, EMPRESA LÍDER EN ESPAÑA.</span>
                         <span class="calidad-tag">45 AÑOS PRODUCIENDO LA MEJOR CARNE DE VACUNO.</span>
                     </div>
 
@@ -73,7 +79,7 @@
                             <li>Patatas, Tomate, Zanahoria, Cebolla</li>
                             <li>Naranja, Plátano de Canarias, Uva blanca</li>
                         </ul>
-                        <span class="calidad-tag">Proveedores de Confianza: **Frutas y Verduras García**, Cultivando Frescura y Calidad desde 2005.</span>
+                        <span class="calidad-tag">Proveedores de Confianza: <a href="#garcia">**Frutas y Verduras García**</a>, Cultivando Frescura y Calidad desde 2005.</span>
                         <span class="calidad-tag">🌱 Innovación: Uso de **SOFTWARE PARA LA AUTOMATIZACIÓN**.</span>
                     </div>
 
@@ -93,6 +99,7 @@
         <section id="bebidas" class="catalogo-section">
             <div class="container">
                 <h2>Catálogo BEBIDAS</h2>
+                <p class="breadcrumbs-path"><a href="/">Inicio</a> > <a href="#bebidas">Bebidas</a></p>
                 <div class="card-grid">
 
                     <div class="product-card">
@@ -101,7 +108,7 @@
                             <li>COCA-COLA</li>
                             <li>ZUMO DE NARANJA</li>
                         </ul>
-                        <span class="destacado">🍊 **ZUMO DE NARANJA** de Zuvamesa: **Zumos NFC**.</span>
+                        <span class="destacado">🍊 **ZUMO DE NARANJA** de <a href="#zuvamesa">Zuvamesa</a>: **Zumos NFC**.</span>
                         <span class="destacado">Compromiso con la **Sostenibilidad** (fábrica de residuo cero).</span>
                     </div>
 
@@ -130,20 +137,21 @@
         <section id="calidad">
             <div class="container">
                 <h2>Nuestra Calidad y Proveedores Exclusivos</h2>
-                
-                <div class="proveedor-item">
+                <p class="breadcrumbs-path"><a href="/">Inicio</a> > <a href="#calidad">Nuestra Calidad / Trazabilidad</a></p>
+
+                <div class="proveedor-item" id="medina">
                     <h3>GRUPO MEDINA (VACUNO)</h3>
                     <p><span class="certificacion-icon">✨</span> **Nuestro Compromiso con la Calidad Cárnica** (Dorado)</p>
-                    <p>Aplicamos un Modelo de Calidad Total con **ÚLTIMA TECNOLOGÍA**. Destacamos la Sostenibilidad, con Mejoras Energéticas en sus plantas.</p>
+                    <p>Aplicamos un Modelo de Calidad Total con **ÚLTIMA TECNOLOGÍA**. Destacamos la Sostenibilidad, con **Mejoras Energéticas** en sus plantas de Buñol, Leganés y Montellos.</p>
                 </div>
 
-                <div class="proveedor-item">
+                <div class="proveedor-item" id="zuvamesa">
                     <h3>ZUMOS VALENCIANOS DEL MEDITERRÁNEO (ZUVAMESA)</h3>
                     <p><span class="certificacion-icon">🍊</span> **Innovación y Sostenibilidad en Cada Gota** (Dorado)</p>
                     <p>Fabricación de productos de calidad excepcional con materia prima de más alta calidad, destacando el uso de **Zumos NFC**. Excelente equipo de innovación.</p>
                 </div>
 
-                <div class="proveedor-item">
+                <div class="proveedor-item" id="garcia">
                     <h3>FRUTAS Y VERDURAS GARCÍA</h3>
                     <p><span class="certificacion-icon">🍏</span> **De la Horta a su Mesa: Frescura Digitalizada** (Dorado)</p>
                     <p>Trayectoria Desde **2005**, cultivando parte de los productos en la Horta Nord. Uso de **SOFTWARE PARA LA AUTOMATIZACIÓN** como ejemplo de tecnología.</p>
@@ -155,8 +163,31 @@
     </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2025 GOURMET IBÉRICO.SL - Suministro para Hostelería. Todos los derechos reservados.</p>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>Enlaces de Utilidad</h4>
+                <ul>
+                    <li><a href="/contacto.html">Contacto y Formulario</a></li>
+                    <li><a href="/trabaja-con-nosotros.html">Trabaja con Nosotros</a></li>
+                    <li><a href="/faqs.html">Preguntas Frecuentes (FAQs)</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Información Legal</h4>
+                <ul>
+                    <li><a href="/politica-privacidad.html">Política de Privacidad</a></li>
+                    <li><a href="/aviso-legal.html">Aviso Legal</a></li>
+                    <li><a href="/politica-cookies.html">Política de Cookies</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Distribución y Sedes</h4>
+                <p>Centro Principal: Madrid</p>
+                <p>Distribuciones Regionales: Barcelona, Valencia</p>
+                </div>
+            <div class="footer-copy">
+                <p>&copy; 2025 GOURMET IBÉRICO.SL - Suministro Premium para Hostelería.</p>
+            </div>
         </div>
     </footer>
 
