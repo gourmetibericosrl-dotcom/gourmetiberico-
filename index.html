@@ -5,30 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GOURMET IBÉRICO.SL - Catálogo Premium</title>
     
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <link rel="icon" type="image/png" href="URL_DEL_LOGO_GOURMET_IBERICO.png">
+    
     <style>
         /* === PALETA DE COLORES ELEGANTES === */
         :root {
-            --color-negro: #1A1A1A;      /* Fondo Oscuro Refinado */
+            --color-negro: #1A1A1A;      /* Fondo Oscuro Refinado */
             --color-gris-oscuro: #2C2C2C; /* Fondo de Cards Sobrio */
-            --color-dorado: #A3885C;     /* Dorado Antiguo/Mate para Elegancia */
-            --color-rojo: #C60807;       /* Rojo Intenso de Marca */
-            --color-blanco: #F5F5F5;     /* Texto Limpio */
+            --color-dorado: #A3885C;     /* Dorado Antiguo/Mate para Elegancia */
+            --color-rojo: #C60807;       /* Rojo Intenso de Marca */
+            --color-blanco: #F5F5F5;     /* Texto Limpio */
             --color-gris-claro: #AAAAAA; /* Texto Secundario Suave */
         }
 
         /* === ESTILOS GENERALES Y TIPOGRAFÍA === */
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 80px; 
+            scroll-padding-top: 80px; 
         }
 
         body {
             background-color: var(--color-negro);
             color: var(--color-blanco);
-            font-family: 'Times New Roman', Times, serif; 
+            font-family: 'Times New Roman', Times, serif; 
             margin: 0;
             padding: 0;
-            line-height: 1.7; 
+            line-height: 1.7; 
             min-height: 100vh;
         }
 
@@ -43,7 +47,7 @@
         }
 
         .container {
-            width: 85%; 
+            width: 85%; 
             max-width: 1300px;
             margin: 0 auto;
         }
@@ -51,8 +55,8 @@
         /* === I. ENCABEZADO Y NAVEGACIÓN PRINCIPAL === */
         header {
             background-color: var(--color-negro);
-            border-bottom: 1px solid var(--color-dorado); 
-            padding: 20px 0; 
+            border-bottom: 1px solid var(--color-dorado); 
+            padding: 20px 0; 
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -63,19 +67,23 @@
             justify-content: space-between;
             align-items: center;
         }
-
+        
+        /* ⚠️ AÑADIR ESPACIO PARA EL LOGO Y BUSCADOR (Si se desea en este header) */
+        /* Ya que la estructura original usa solo nav y logo/links, mantendré el texto por ahora. */
+        /* Si quieres el logo PNG al lado del buscador, la estructura HTML debe cambiar a la de mi respuesta anterior. */
+        /* Si solo quieres el texto del logo: */
         .logo a {
-            font-size: 2em; 
-            font-weight: 300; 
+            font-size: 2em; 
+            font-weight: 300; 
             color: var(--color-dorado) !important;
-            letter-spacing: 2px; 
+            letter-spacing: 2px; 
             text-transform: uppercase;
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 35px; 
+            gap: 35px; 
             align-items: center;
             font-weight: 300;
             transition: transform 0.3s ease-in-out; /* Transición para el menú móvil */
@@ -83,7 +91,7 @@
 
         /* Botón de menú hamburguesa (solo visible en móvil) */
         .menu-toggle {
-            display: none; 
+            display: none; 
             font-size: 1.8em;
             cursor: pointer;
             color: var(--color-dorado);
@@ -95,17 +103,17 @@
 
         /* Botones y CTAs */
         .ofertas a, .area-clientes a {
-            background-color: transparent; 
+            background-color: transparent; 
             padding: 10px 18px;
-            border-radius: 2px; 
+            border-radius: 2px; 
             font-weight: 400;
-            color: var(--color-rojo) !important; 
-            border: 1px solid var(--color-rojo); 
+            color: var(--color-rojo) !important; 
+            border: 1px solid var(--color-rojo); 
             transition: all 0.3s;
         }
         .ofertas a:hover, .area-clientes a:hover {
-            background-color: var(--color-rojo); 
-            color: var(--color-blanco) !important; 
+            background-color: var(--color-rojo); 
+            color: var(--color-blanco) !important; 
             border-color: var(--color-rojo);
         }
 
@@ -119,7 +127,7 @@
             position: absolute;
             background-color: var(--color-gris-oscuro);
             min-width: 160px;
-            box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.8); 
+            box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.8); 
             z-index: 1;
             padding: 5px 0;
             border-top: 3px solid var(--color-dorado);
@@ -140,15 +148,15 @@
         /* === SECCIÓN HERO (BANNER) === */
         #hero {
             text-align: center;
-            padding: 120px 0; 
+            padding: 120px 0; 
             background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), url('https://picsum.photos/1200/600') no-repeat center center/cover;
         }
         #hero h1 {
-            color: var(--color-dorado); 
-            font-size: 3.8em; 
+            color: var(--color-dorado); 
+            font-size: 3.8em; 
             font-weight: 300;
             letter-spacing: 1.5px;
-            text-shadow: none; 
+            text-shadow: none; 
         }
         #hero p {
             font-size: 1.2em;
@@ -158,13 +166,13 @@
         .area-clientes-btn {
             display: inline-block;
             margin-top: 40px;
-            background-color: transparent; 
-            color: var(--color-rojo) !important; 
-            padding: 18px 40px; 
+            background-color: transparent; 
+            color: var(--color-rojo) !important; 
+            padding: 18px 40px; 
             border-radius: 2px;
             font-weight: 400;
             font-size: 1.2em;
-            border: 2px solid var(--color-dorado); 
+            border: 2px solid var(--color-dorado); 
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.3s;
@@ -176,8 +184,8 @@
 
         /* === COMPONENTES UX === */
         section {
-            padding: 80px 0; 
-            border-bottom: none; 
+            padding: 80px 0; 
+            border-bottom: none; 
         }
 
         /* Rutas de Navegación (Breadcrumbs) */
@@ -185,7 +193,7 @@
             padding: 30px 0 0 0;
             background-color: var(--color-negro);
             border: none;
-            margin-top: 5px; 
+            margin-top: 5px; 
         }
         /* ... estilos breadcrumbs sin cambios ... */
 
@@ -196,7 +204,7 @@
             font-size: 2.8em;
             font-weight: 300;
             margin-bottom: 50px;
-            border-bottom: 1px solid var(--color-rojo); 
+            border-bottom: 1px solid var(--color-rojo); 
             padding-bottom: 15px;
             letter-spacing: 1px;
             display: block;
@@ -217,28 +225,41 @@
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px; 
+            gap: 40px; 
             margin-top: 20px;
         }
 
         /* Product Category Cards - Clickable */
         .product-card {
             background-color: var(--color-gris-oscuro);
-            padding: 30px; 
+            padding: 30px; 
             border-radius: 2px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.4); 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.4); 
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
             text-align: center;
         }
         .product-card:hover {
-            transform: translateY(-8px); 
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 5px var(--color-dorado); 
+            transform: translateY(-8px); 
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 5px var(--color-dorado); 
         }
         /* ... otros estilos de cards sin cambios ... */
 
         /* III. SECCIÓN DE CALIDAD Y PROVEEDORES */
-        /* ... estilos de proveedores sin cambios ... */
+        /* Estilos específicos de proveedores, necesarios para la vista */
+        .proveedor-item {
+            background-color: var(--color-gris-oscuro);
+            padding: 20px 30px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--color-dorado);
+            border-radius: 2px;
+        }
+
+        .certificacion-icon {
+            color: var(--color-dorado);
+            font-size: 1.1em;
+            margin-right: 5px;
+        }
 
         /* === VISTA DE DETALLE === */
         .product-item-grid {
@@ -247,11 +268,85 @@
             gap: 40px;
             margin-top: 40px;
         }
-        /* ... otros estilos de detalle sin cambios ... */
-        
-        /* === IV. PIE DE PÁGINA (FOOTER) === */
-        /* ... estilos del footer sin cambios ... */
 
+        .product-item {
+            background-color: var(--color-gris-oscuro);
+            border-radius: 2px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .product-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .product-item img {
+            width: 100%;
+            height: 200px; /* Altura fija para uniformidad */
+            object-fit: cover;
+            border-bottom: 1px solid var(--color-negro);
+        }
+
+        .product-item-content {
+            padding: 15px;
+        }
+
+        .product-item-content h4 {
+            color: var(--color-blanco);
+            margin-top: 0;
+            font-size: 1.1em;
+        }
+        
+        .back-link {
+            color: var(--color-rojo);
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        
+        /* FOOTER STYLES */
+        footer {
+            background-color: var(--color-gris-oscuro);
+            border-top: 1px solid var(--color-dorado);
+            padding: 40px 0 20px 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            padding-bottom: 20px;
+        }
+
+        .footer-col h4 {
+            color: var(--color-dorado);
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-copy {
+            grid-column: 1 / -1;
+            text-align: center;
+            border-top: 1px solid var(--color-gris-oscuro);
+            padding-top: 20px;
+            margin-top: 20px;
+            font-size: 0.85em;
+            color: var(--color-gris-claro);
+        }
         
         /* ======================================= */
         /* === MEDIA QUERIES PARA RESPONSIVIDAD === */
@@ -266,15 +361,18 @@
                 font-size: 1.8em;
             }
             .nav-links {
-                gap: 20px; 
+                gap: 20px; 
             }
             /* Las grillas mantienen 2 o 3 columnas, pero con un minmax más estricto */
             .card-grid, .product-item-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
                 gap: 30px;
             }
+            .footer-grid {
+                 grid-template-columns: repeat(2, 1fr);
+            }
         }
-        
+                
         /* 2. Ajustes para MÓVIL (hasta 768px) */
         @media (max-width: 768px) {
             .container {
@@ -325,7 +423,7 @@
             }
             /* Los elementos del dropdown se apilan */
             .dropdown-content {
-                position: static; 
+                position: static; 
                 width: 100%;
                 box-shadow: none;
                 border-top: none;
@@ -356,7 +454,7 @@
             
             /* Grillas (Una columna en móvil) */
             .card-grid, .product-item-grid {
-                grid-template-columns: 1fr; 
+                grid-template-columns: 1fr; 
                 gap: 25px;
             }
             
@@ -376,7 +474,7 @@
         <div class="container">
             <nav>
                 <div class="logo"><a href="#">GOURMET IBÉRICO.SL</a></div>
-                <div class="menu-toggle" id="menu-toggle">☰</div> 
+                <div class="menu-toggle" id="menu-toggle">☰</div> 
 
                 <ul class="nav-links" id="nav-links">
                     <li class="dropdown">
@@ -498,7 +596,7 @@
             <div class="container">
                 <a href="#" class="back-link" id="back-to-catalogue">&lt; Volver al Catálogo Principal</a>
                 
-                <h2 id="detail-view-title"></h2> 
+                <h2 id="detail-view-title"></h2> 
                 
                 <div class="product-item-grid" id="product-list-container">
                     </div>
@@ -639,7 +737,7 @@
         function handleProductClick(event) {
             const item = event.currentTarget;
             const categoryName = item.dataset.categoryName;
-            const productIndex = parseInt(item.dataset.productIndex);
+            const productIndex = parseInt(item.dataset.product-index);
             const product = productData[categoryName][productIndex];
             
             alert(`Detalles del Producto: ${product.name}\n\nDescripción: ${product.detail}\n\n(En una web real, esto abriría una página de detalle con más información.)`);
@@ -671,10 +769,10 @@
             // 2. Funcionalidad Sticky Header
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
-                    header.style.backgroundColor = 'rgba(26, 26, 26, 0.98)'; 
+                    header.style.backgroundColor = 'rgba(26, 26, 26, 0.98)'; 
                     header.style.boxShadow = '0 1px 10px rgba(0,0,0,0.7)';
                 } else {
-                    header.style.backgroundColor = colorNegro; 
+                    header.style.backgroundColor = colorNegro; 
                     header.style.boxShadow = 'none';
                 }
             });
@@ -712,7 +810,7 @@
                 if (navLinks.classList.contains('active')) {
                     const linkClicked = e.target.closest('.nav-links a');
                     // Cierra a menos que sea el enlace principal de un dropdown
-                    if (linkClicked && !e.target.closest('.dropdown > a')) { 
+                    if (linkClicked && !e.target.closest('.dropdown > a')) { 
                         navLinks.classList.remove('active');
                     }
                 }
