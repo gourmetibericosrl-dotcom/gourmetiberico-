@@ -8,16 +8,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     ctaButtons.forEach(button => {
         button.addEventListener('click', (e) => {
-            // Comprueba si el enlace es un placeholder genérico (#)
+            // Simulación de acción para enlaces '#'
             if (button.getAttribute('href') === '#') {
                 e.preventDefault();
                 console.log(`Acceso a ${button.textContent.trim()} solicitado.`);
                 
-                // Simulación de respuesta para CTAs genéricos (ROJO)
                 setTimeout(() => {
                     alert('Accediendo a la plataforma profesional...');
                 }, 300);
             }
+            // Los enlaces a URLs reales (ej. /area-clientes.html) navegarán normalmente.
         });
     });
 
