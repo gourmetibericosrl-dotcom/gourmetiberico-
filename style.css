@@ -1,7 +1,7 @@
 /* === PALETA DE COLORES === */
 :root {
     --color-negro: #121212;      /* Fondo, Dominante */
-    --color-gris-oscuro: #333333; /* Textos Secundarios */
+    --color-gris-oscuro: #555555; /* Textos Secundarios (más claro para mejor contraste) */
     --color-dorado: #D4AF37;     /* Branding, Calidad, Premium */
     --color-rojo: #C82333;       /* CTAs, Ofertas, Alertas */
     --color-blanco: #E0E0E0;     /* Texto Principal */
@@ -64,7 +64,7 @@ nav {
     align-items: center;
 }
 
-/* Botón Ofertas */
+/* Botones y CTAs */
 .ofertas a {
     background-color: var(--color-rojo);
     padding: 8px 15px;
@@ -73,12 +73,9 @@ nav {
     color: var(--color-blanco) !important;
     transition: background-color 0.3s;
 }
-
 .ofertas a:hover {
     background-color: #A01C29;
 }
-
-/* Botón Área Clientes en el Header */
 .area-clientes a {
     background-color: var(--color-rojo);
     color: var(--color-dorado) !important;
@@ -88,7 +85,6 @@ nav {
     border: 1px solid var(--color-dorado);
     transition: background-color 0.3s;
 }
-
 .area-clientes a:hover {
     background-color: var(--color-dorado);
     color: var(--color-negro) !important;
@@ -99,7 +95,6 @@ nav {
     position: relative;
     display: inline-block;
 }
-
 .dropdown-content {
     display: none;
     position: absolute;
@@ -110,18 +105,15 @@ nav {
     padding: 5px 0;
     border-top: 3px solid var(--color-dorado);
 }
-
 .dropdown-content a {
     color: var(--color-blanco);
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
-
 .dropdown-content a:hover {
     background-color: var(--color-negro);
 }
-
 .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -130,22 +122,17 @@ nav {
 #hero {
     text-align: center;
     padding: 100px 0;
-    /* Usar un fondo de imagen real aquí para un impacto premium */
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://picsum.photos/1200/600') no-repeat center center/cover;
 }
-
 #hero h1 {
     color: var(--color-dorado); 
     font-size: 3.5em; 
     text-shadow: 2px 2px 4px #000;
 }
-
 #hero p {
     font-size: 1.5em; 
     margin-top: 20px;
 }
-
-/* Botón del Banner */
 .area-clientes-btn {
     display: inline-block;
     margin-top: 30px;
@@ -163,12 +150,41 @@ nav {
     color: var(--color-negro) !important;
 }
 
-/* === SECCIONES PRINCIPALES === */
+/* === COMPONENTES UX === */
 section {
     padding: 60px 0;
     border-bottom: 1px solid var(--color-gris-oscuro);
 }
 
+/* Rutas de Navegación (Breadcrumbs) */
+#breadcrumbs {
+    padding: 20px 0 0 0; /* Ajustado para que no haya padding superior */
+    background-color: var(--color-negro);
+    border: none;
+}
+.breadcrumbs-path {
+    font-size: 0.9em;
+    color: var(--color-gris-oscuro);
+    margin: 0;
+}
+.breadcrumbs-path a {
+    color: var(--color-gris-oscuro);
+    text-decoration: none;
+}
+.breadcrumbs-path a:hover {
+    color: var(--color-dorado);
+}
+.breadcrumbs-path a:after {
+    content: " > ";
+    margin: 0 5px;
+    color: var(--color-gris-oscuro);
+}
+/* Estilo del último elemento de breadcrumb */
+.breadcrumbs-path a:last-child::after {
+    content: "";
+}
+
+/* Títulos de Sección */
 h2 {
     color: var(--color-dorado);
     text-align: center;
@@ -184,7 +200,7 @@ h2 {
 }
 
 h3 {
-    color: var(--color-blanco); /* Subcategoría en blanco para contraste */
+    color: var(--color-blanco);
     font-size: 1.5em;
     margin-top: 0;
     border-bottom: 1px solid var(--color-dorado);
@@ -192,13 +208,13 @@ h3 {
     margin-bottom: 15px;
 }
 
+/* Grid y Cards */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 20px;
 }
-
 .product-card {
     background-color: var(--color-gris-oscuro);
     padding: 20px;
@@ -206,12 +222,10 @@ h3 {
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     transition: transform 0.3s;
 }
-
 .product-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(212, 175, 55, 0.3); /* Sombra dorada al pasar el ratón */
+    box-shadow: 0 6px 15px rgba(212, 175, 55, 0.3);
 }
-
 .product-card ul {
     list-style: none;
     padding: 0;
@@ -221,7 +235,7 @@ h3 {
     border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
 }
 
-/* Contenido de Atractivo */
+/* Contenido de Atractivo (Dorado/Rojo) */
 .destacado {
     color: var(--color-rojo);
     font-weight: bold;
@@ -229,7 +243,6 @@ h3 {
     margin-top: 10px;
     font-size: 0.9em;
 }
-
 .calidad-tag {
     color: var(--color-dorado);
     font-weight: bold;
@@ -239,7 +252,20 @@ h3 {
     font-size: 0.9em;
 }
 
-/* === III. SECCIÓN DE CALIDAD Y PROVEEDORES === */
+/* Enlaces Contextuales dentro de Cards */
+.calidad-tag a, .destacado a {
+    color: var(--color-blanco);
+    text-decoration: underline;
+    text-decoration-color: var(--color-rojo);
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.calidad-tag a:hover, .destacado a:hover {
+    color: var(--color-dorado);
+    text-decoration-color: var(--color-dorado);
+}
+
+/* III. SECCIÓN DE CALIDAD Y PROVEEDORES */
 .proveedor-item {
     background-color: var(--color-gris-oscuro);
     padding: 30px;
@@ -247,8 +273,10 @@ h3 {
     margin-bottom: 30px;
     border-left: 5px solid var(--color-dorado);
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    /* Asegurar que el ancla (id) tenga un poco de margen para el smooth scroll */
+    padding-top: 60px; 
+    margin-top: -60px; /* Compensa el padding superior para el diseño */
 }
-
 .proveedor-item h3 {
     color: var(--color-dorado);
     border-bottom: 2px solid var(--color-rojo);
@@ -256,18 +284,80 @@ h3 {
     margin-top: 0;
     display: inline-block;
 }
-
 .certificacion-icon {
     color: var(--color-dorado);
     font-size: 1.5em;
     margin-right: 10px;
 }
 
-/* Footer */
+/* === IV. PIE DE PÁGINA (FOOTER) AVANZADO === */
 footer {
+    background-color: var(--color-negro);
+    padding: 40px 0 20px 0;
+    border-top: 3px solid var(--color-dorado);
+    text-align: left;
+}
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    padding-bottom: 30px;
+}
+.footer-col h4 {
+    color: var(--color-dorado);
+    font-size: 1.1em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-col li {
+    margin-bottom: 8px;
+}
+.footer-col a {
+    color: var(--color-gris-oscuro);
+    font-size: 0.95em;
+}
+.footer-col a:hover {
+    color: var(--color-blanco);
+}
+.footer-col p {
+    color: var(--color-gris-oscuro);
+    font-size: 0.95em;
+    margin: 5px 0;
+}
+.footer-copy {
+    grid-column: 1 / -1; 
     text-align: center;
-    padding: 20px 0;
-    border-top: 1px solid var(--color-gris-oscuro);
+    border-top: 1px dashed var(--color-gris-oscuro);
+    padding-top: 20px;
+    margin-top: 10px;
     color: var(--color-gris-oscuro);
     font-size: 0.9em;
+}
+
+/* Media Query para móvil */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Ocultar el menú de navegación completo por simplicidad en móvil */
+    }
+    nav {
+        justify-content: center;
+    }
+    .logo a {
+        font-size: 1.5em;
+    }
+    #hero h1 {
+        font-size: 2.5em;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .proveedor-item {
+        padding: 20px;
+    }
 }
