@@ -1,106 +1,103 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // 1. FUNCIONALIDAD DEL MENÚ HAMBURGUESA (Móvil)
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
+// 1. Array de datos de ejemplo (simulando una respuesta de API)
+const products = [
+    {
+        id: 1,
+        name: "Jamón Ibérico de Cebo",
+        description: "Curación de 36 meses. Sabor intenso y textura jugosa.",
+        price: "159.99 €",
+        image: "https://via.placeholder.com/350x250?text=Jamón+Ibérico"
+    },
+    {
+        id: 2,
+        name: "Lomo de Cerdo Ibérico",
+        description: "Pieza entera, ideal para asar o filetear. Calidad Premium.",
+        price: "45.50 €",
+        image: "https://via.placeholder.com/350x250?text=Lomo+Ibérico"
+    },
+    {
+        id: 3,
+        name: "Queso Curado de Oveja",
+        description: "Elaborado con leche cruda de oveja. 12 meses de curación.",
+        price: "29.95 €",
+        image: "https://via.placeholder.com/350x250?text=Queso+Curado"
+    },
+    {
+        id: 4,
+        name: "Aceite de Oliva Virgen Extra (5L)",
+        description: "Cosecha temprana, primera presión en frío. Sabor frutado.",
+        price: "55.00 €",
+        image: "https://via.placeholder.com/350x250?text=AOVE+5L"
+    }
+    // Puedes añadir más productos aquí
+];
 
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
+// 2. Función para generar el HTML de una tarjeta de producto
+function createProductCard(product) {
+    return `
+        <a href="#" class="product-item" data-product-id="${product.id}">
+            <div class="product-item-img-wrapper">
+                <img src="${product.image}" alt="${product.name}">
+            </div>
+            <div class="product-item-content">
+                <div>
+                    <h2>${product.name}</h2>
+                    <p>${product.description}</p>
+                </div>
+                <div>
+                    <div class="product-item-price">${product.price}</div>
+                    <button class="btn-primary add-to-cart-btn" data-id="${product.id}">
+                        Añadir al carrito
+                    </button>
+                </div>
+            </div>
+        </a>
+    `;
+}
 
-        // Ocultar el menú al hacer clic en un enlace (solo en móvil)
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.innerWidth <= 768) {
-                    navLinks.classList.remove('active');
-                }
-            });
-        });
+// 3. Función principal para renderizar todos los productos
+function renderProducts() {
+    const gridContainer = document.querySelector('.product-item-grid');
+    
+    // Si no encuentra el contenedor, sale de la función
+    if (!gridContainer) {
+        console.error("Contenedor .product-item-grid no encontrado.");
+        return;
     }
 
-
-    // 2. FUNCIONALIDAD DE CAMBIO DE VISTA (Catálogo General vs. Detalle de Categoría)
-    const mainSection = document.getElementById('main-catalog');
-    const detailSection = document.getElementById('category-detail');
-    const breadcrumbs = document.getElementById('breadcrumbs');
-    const detailTitle = document.getElementById('detail-title');
-    const productGrid = document.getElementById('product-grid');
-    const categoryCards = document.querySelectorAll('.product-card');
-    const backLink = document.getElementById('back-to-catalog');
-
-    // Muestra la vista de catálogo principal por defecto
-    const showMainCatalog = () => {
-        mainSection.style.display = 'block';
-        detailSection.style.display = 'none';
-        breadcrumbs.style.display = 'none';
-        window.scrollTo(0, 0);
-    };
-
-    // Muestra la vista de detalle de categoría
-    const showCategoryDetail = (categoryName, products) => {
-        mainSection.style.display = 'none';
-        detailSection.style.display = 'block';
-        breadcrumbs.style.display = 'block';
-
-        // Actualiza el título y la ruta de navegación
-        detailTitle.textContent = categoryName;
-        // Opcional: actualizar el breadcrumb de forma dinámica
-        const currentBreadcrumb = document.getElementById('current-category');
-        if (currentBreadcrumb) {
-            currentBreadcrumb.textContent = categoryName;
-        }
-
-        // Genera el contenido de la cuadrícula de productos
-        productGrid.innerHTML = '';
-        products.forEach(product => {
-            const productItem = document.createElement('div');
-            productItem.className = 'product-item';
-            
-            // Nota: Las imágenes son placeholders genéricos
-            productItem.innerHTML = `
-                <img src="https://picsum.photos/300/200?random=${Math.random()}" alt="Imagen de ${product}">
-                <div class="product-item-content">
-                    <h4>${product}</h4>
-                    <p class="price-tag">Consultar precio</p>
-                    <p class="item-description">Un producto de alta calidad y sabor ibérico.</p>
-                </div>
-            `;
-            productGrid.appendChild(productItem);
-        });
-
-        window.scrollTo(0, 0); // Vuelve al inicio de la página
-    };
-
-    // Diccionario de categorías y productos (Simulación de datos)
-    const mockData = {
-        'Carnes Ibéricas': ['Tomo de cerdo ibérico', 'Chuletas de ternera', 'Carne de cordero', 'Presa Ibérica', 'Solomillo de Vaca'],
-        'Pescados y Mariscos': ['Gambón grande', 'Merluza fresca', 'Salmón', 'Bacalao congelado', 'Langostinos'],
-        'Aves y Huevos': ['Pollo entero', 'Muslos de pollo', 'Huevos M (docena)', 'Huevos L (docena)', 'Pavo'],
-        'Verduras y Hortalizas': ['Patatas', 'Zanahoria', 'Tomate', 'Cebolla', 'Pimiento Rojo'],
-        'Frutas': ['Plátano de Canarias', 'Naranja', 'Uva blanca', 'Manzana', 'Pera'],
-        'Bebidas y Licores': ['Agua mineral', 'Coca-Cola', 'Zumo de Naranja', 'Ron Zacapa', 'Whisky Jack Daniel\'s', 'Jägermeister']
-    };
-
-    // Asigna el evento de clic a las tarjetas de categoría
-    categoryCards.forEach(card => {
-        card.addEventListener('click', (e) => {
-            // Usa el atributo data-category si existe, sino usa el texto del h3
-            const categoryName = card.getAttribute('data-category') || card.querySelector('h3').textContent;
-            
-            const products = mockData[categoryName] || ['Producto 1', 'Producto 2', 'Producto 3']; // Fallback
-            
-            showCategoryDetail(categoryName, products);
-        });
+    let htmlContent = '';
+    
+    // Genera el HTML para cada producto
+    products.forEach(product => {
+        htmlContent += createProductCard(product);
     });
 
-    // Asigna el evento de clic al enlace "Volver"
-    if (backLink) {
-        backLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            showMainCatalog();
-        });
-    }
+    // Inserta todo el HTML generado de una sola vez para mejor rendimiento
+    gridContainer.innerHTML = htmlContent;
+    
+    // Llama a la función para añadir los listeners después de renderizar
+    addCartButtonListeners();
+}
 
-    // Inicialización: Asegura que se vea el catálogo principal al cargar
-    showMainCatalog();
-});
+// 4. Función para manejar la interactividad (simular la adición al carrito)
+function addCartButtonListeners() {
+    const buttons = document.querySelectorAll('.add-to-cart-btn');
+    
+    buttons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            // Previene que el enlace de la tarjeta principal se active
+            event.preventDefault(); 
+            event.stopPropagation(); // Detiene la propagación del evento al contenedor
+
+            const productId = event.target.dataset.id;
+            const productName = products.find(p => p.id == productId).name;
+
+            // Feedback simple al usuario
+            alert(`✅ Producto "${productName}" (ID: ${productId}) añadido al carrito!`);
+            
+            // Aquí iría la lógica real para añadir el producto a un estado o API (e.g., fetch('/api/cart/add', ...))
+        });
+    });
+}
+
+// 5. Iniciar la renderización cuando el documento esté completamente cargado
+document.addEventListener('DOMContentLoaded', renderProducts);
