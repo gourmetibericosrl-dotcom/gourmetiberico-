@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Definición de la variable CSS para el color principal (Asumiendo que está en style.css)
-    const colorNegro = getComputedStyle(document.documentElement).getPropertyValue('--color-negro').trim() || '#121212';
+    // Intenta obtener el valor de la variable CSS para el color de fondo base
+    const rootStyle = getComputedStyle(document.documentElement);
+    const colorNegro = rootStyle.getPropertyValue('--color-negro').trim() || '#121212';
 
     // 1. Manejo del click en los CTAs (Área Clientes, Ofertas)
     const ctaButtons = document.querySelectorAll('.area-clientes a, .ofertas a, .area-clientes-btn');
@@ -10,27 +11,27 @@ document.addEventListener('DOMContentLoaded', () => {
             // Comprueba si el enlace es un placeholder genérico (#)
             if (button.getAttribute('href') === '#') {
                 e.preventDefault();
-                
                 console.log(`Acceso a ${button.textContent.trim()} solicitado.`);
                 
                 // Simulación de respuesta para CTAs genéricos (ROJO)
                 setTimeout(() => {
-                    alert('Redirigiendo al portal de clientes o descargando folleto de ofertas...');
+                    alert('Accediendo a la plataforma profesional...');
                 }, 300);
             }
-            // Los enlaces a URLs reales (ej. /area-clientes.html) navegarán normalmente.
         });
     });
 
     // 2. Funcionalidad UX: Smooth Scroll para Anclajes (Mejora la navegación a proveedores)
-    // Selecciona todos los enlaces que contienen un hash (#) en su href
+    // Se aplica a todos los enlaces que contienen un hash (#) en su href, excepto para el menú desplegable.
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            // El scroll suave solo debe aplicarse a anclajes internos de la página (no a la barra de menú con '#').
-            if (this.getAttribute('href').length > 1) {
+            const targetId = this.getAttribute('href');
+            
+            // Solo aplica scroll si el ID no es solo '#' (evita el click en el menú principal)
+            if (targetId.length > 1) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href');
                 
+                // Hace scroll suave al elemento de destino
                 document.querySelector(targetId).scrollIntoView({
                     behavior: 'smooth'
                 });
@@ -38,16 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 3. Funcionalidad visual: Destacar el encabezado al hacer scroll (Con consistencia de color)
+    // 3. Funcionalidad visual: Destacar el encabezado al hacer scroll
     const header = document.querySelector('header');
     
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            // Fondo semitransparente para efecto 'sticky' premium
+            // Fondo semitransparente para efecto 'sticky' premium y evitar que el contenido "pase por encima" de forma brusca
             header.style.backgroundColor = 'rgba(18, 18, 18, 0.95)';
             header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.5)';
         } else {
-            // Vuelve al color base definido en el CSS (asegurando consistencia)
+            // Vuelve al color base sin transparencia ni sombra
             header.style.backgroundColor = colorNegro; 
             header.style.boxShadow = 'none';
         }
