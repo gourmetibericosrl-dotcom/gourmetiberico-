@@ -21,30 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 2. Funcionalidad UX: Smooth Scroll para Anclajes (Mejora la navegación a proveedores)
-    // Se aplica a todos los enlaces que contienen un hash (#) en su href, excepto para el menú desplegable.
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const targetId = this.getAttribute('href');
-            
-            // Solo aplica scroll si el ID no es solo '#' (evita el click en el menú principal)
-            if (targetId.length > 1) {
-                e.preventDefault();
-                
-                // Hace scroll suave al elemento de destino
-                document.querySelector(targetId).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    // 3. Funcionalidad visual: Destacar el encabezado al hacer scroll
+    // 2. Funcionalidad visual: Destacar el encabezado al hacer scroll
     const header = document.querySelector('header');
     
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
-            // Fondo semitransparente para efecto 'sticky' premium y evitar que el contenido "pase por encima" de forma brusca
+            // Fondo semitransparente para efecto 'sticky' premium 
             header.style.backgroundColor = 'rgba(18, 18, 18, 0.95)';
             header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.5)';
         } else {
