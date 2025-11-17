@@ -1,14 +1,14 @@
-/* === PALETA DE COLORES === */
+/* === PALETA DE COLORES ELEGANTES === */
 :root {
-    --color-negro: #121212;      /* Fondo, Dominante */
-    --color-gris-oscuro: #555555; /* Fondo de Cards y Dropdown */
-    --color-dorado: #D4AF37;     /* Branding, Calidad, Premium */
-    --color-rojo: #C82333;       /* CTAs, Ofertas, Alertas */
-    --color-blanco: #E0E0E0;     /* Texto Principal */
+    --color-negro: #1A1A1A;      /* Fondo Oscuro Refinado */
+    --color-gris-oscuro: #2C2C2C; /* Fondo de Cards Sobrio */
+    --color-dorado: #A3885C;     /* Dorado Antiguo/Mate para Elegancia */
+    --color-rojo: #C60807;       /* Rojo Intenso de Marca */
+    --color-blanco: #F5F5F5;     /* Texto Limpio */
+    --color-gris-claro: #AAAAAA; /* Texto Secundario Suave */
 }
 
-/* === ESTILOS GENERALES Y FIX DE SCROLL === */
-/* FIX CRÍTICO: Para que el anclaje a las secciones funcione correctamente con el header fijo */
+/* === ESTILOS GENERALES Y TIPOGRAFÍA === */
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px; 
@@ -17,10 +17,10 @@ html {
 body {
     background-color: var(--color-negro);
     color: var(--color-blanco);
-    font-family: 'Georgia', serif; 
+    font-family: 'Times New Roman', Times, serif; /* Tipografía más clásica y elegante */
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    line-height: 1.7; /* Mayor interlineado para mejor lectura */
     min-height: 100vh;
 }
 
@@ -35,16 +35,16 @@ a:hover {
 }
 
 .container {
-    width: 90%;
-    max-width: 1200px;
+    width: 85%; /* Menos ancho para un look más formal */
+    max-width: 1300px;
     margin: 0 auto;
 }
 
 /* === I. ENCABEZADO Y NAVEGACIÓN PRINCIPAL === */
 header {
     background-color: var(--color-negro);
-    border-bottom: 2px solid var(--color-dorado);
-    padding: 15px 0;
+    border-bottom: 1px solid var(--color-dorado); /* Borde más sutil */
+    padding: 20px 0; /* Mayor altura */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -57,96 +57,77 @@ nav {
 }
 
 .logo a {
-    font-size: 1.8em;
-    font-weight: bold;
+    font-size: 2em; /* Logo más prominente */
+    font-weight: 300; /* Fuente menos pesada */
     color: var(--color-dorado) !important;
-    letter-spacing: 1px;
+    letter-spacing: 2px; /* Mayor espaciado para elegancia */
     text-transform: uppercase;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 25px;
+    gap: 35px; /* Mayor separación entre enlaces */
     align-items: center;
+    font-weight: 300;
 }
 
-/* Botones y CTAs */
-.ofertas a {
-    background-color: var(--color-rojo);
-    padding: 8px 15px;
-    border-radius: 4px;
-    font-weight: bold;
-    color: var(--color-blanco) !important;
-    transition: background-color 0.3s;
+/* Botones y CTAs (Ahora son enlaces elegantes con borde) */
+.ofertas a, .area-clientes a {
+    background-color: transparent; 
+    padding: 10px 18px;
+    border-radius: 2px; /* Bordes más rectos */
+    font-weight: 400;
+    color: var(--color-rojo) !important; 
+    border: 1px solid var(--color-rojo); 
+    transition: all 0.3s;
 }
-.ofertas a:hover {
-    background-color: #A01C29;
-}
-.area-clientes a {
-    background-color: var(--color-rojo);
-    color: var(--color-dorado) !important;
-    padding: 10px 20px;
-    border-radius: 4px;
-    font-weight: bold;
-    border: 1px solid var(--color-dorado);
-    transition: background-color 0.3s;
-}
-.area-clientes a:hover {
-    background-color: var(--color-dorado);
-    color: var(--color-negro) !important;
+.ofertas a:hover, .area-clientes a:hover {
+    background-color: var(--color-rojo); 
+    color: var(--color-blanco) !important; 
+    border-color: var(--color-rojo);
 }
 
 /* Dropdown Catálogo */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
 .dropdown-content {
-    display: none;
-    position: absolute;
     background-color: var(--color-gris-oscuro);
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
-    z-index: 1;
-    padding: 5px 0;
+    box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.8); /* Sombra más suave */
     border-top: 3px solid var(--color-dorado);
-}
-.dropdown-content a {
-    color: var(--color-blanco);
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
 }
 .dropdown-content a:hover {
     background-color: var(--color-negro);
-}
-.dropdown:hover .dropdown-content {
-    display: block;
 }
 
 /* === SECCIÓN HERO (BANNER) === */
 #hero {
     text-align: center;
-    padding: 100px 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://picsum.photos/1200/600') no-repeat center center/cover;
+    padding: 120px 0; /* Más padding vertical */
+    background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), url('https://picsum.photos/1200/600') no-repeat center center/cover;
 }
 #hero h1 {
     color: var(--color-dorado); 
-    font-size: 3.5em; 
-    text-shadow: 2px 2px 4px #000;
+    font-size: 3.8em; 
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    text-shadow: none; /* Eliminar text-shadow */
 }
+#hero p {
+    font-size: 1.2em;
+    color: var(--color-gris-claro);
+}
+
 .area-clientes-btn {
     display: inline-block;
-    margin-top: 30px;
-    background-color: var(--color-rojo);
-    color: var(--color-dorado) !important;
-    padding: 15px 30px;
-    border-radius: 4px;
-    font-weight: bold;
-    font-size: 1.1em;
-    border: 2px solid var(--color-dorado);
+    margin-top: 40px;
+    background-color: transparent; 
+    color: var(--color-rojo) !important; 
+    padding: 18px 40px; /* Botón más grande */
+    border-radius: 2px;
+    font-weight: 400;
+    font-size: 1.2em;
+    border: 2px solid var(--color-dorado); /* Borde dorado para el CTA principal */
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 .area-clientes-btn:hover {
     background-color: var(--color-dorado);
@@ -155,155 +136,147 @@ nav {
 
 /* === COMPONENTES UX === */
 section {
-    padding: 60px 0;
-    border-bottom: 1px solid var(--color-gris-oscuro);
+    padding: 80px 0; /* Mayor espaciado entre secciones */
+    border-bottom: none; /* Eliminar bordes de sección para limpiar la vista */
 }
 
 /* Rutas de Navegación (Breadcrumbs) */
 #breadcrumbs {
-    padding: 20px 0 0 0;
-    background-color: var(--color-negro);
-    border: none;
-    margin-top: 5px; 
-}
-.breadcrumbs-path {
-    font-size: 0.9em;
-    color: var(--color-gris-oscuro);
-    margin: 0;
+    padding: 30px 0 0 0;
 }
 .breadcrumbs-path a {
-    color: var(--color-gris-oscuro);
+    color: var(--color-gris-claro);
+}
+.breadcrumbs-path a:after {
+    color: var(--color-gris-claro);
 }
 .breadcrumbs-path a:hover {
     color: var(--color-dorado);
 }
-.breadcrumbs-path a:after {
-    content: " > ";
-    margin: 0 5px;
-    color: var(--color-gris-oscuro);
-}
-.breadcrumbs-path a:last-child::after {
-    content: "";
-}
+
 
 /* Títulos de Sección */
 h2 {
     color: var(--color-dorado);
     text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 40px;
-    border-bottom: 2px solid var(--color-rojo);
-    display: inline-block;
-    padding-bottom: 10px;
-    width: auto;
-    margin-left: auto;
-    margin-right: auto;
-    display: block;
+    font-size: 2.8em;
+    font-weight: 300;
+    margin-bottom: 50px;
+    border-bottom: 1px solid var(--color-rojo); /* Línea más fina */
+    padding-bottom: 15px;
+    letter-spacing: 1px;
 }
 
 h3 {
     color: var(--color-blanco);
-    font-size: 1.5em;
-    margin-top: 0;
-    border-bottom: 1px solid var(--color-dorado);
-    padding-bottom: 5px;
-    margin-bottom: 15px;
+    font-size: 1.6em;
+    font-weight: 400;
+    border-bottom: none; /* Eliminar la línea de los h3 */
+    padding-bottom: 0;
+    margin-bottom: 10px;
 }
 
-/* Grid y Cards */
+/* Grid y Cards - General */
 .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 20px;
+    gap: 40px; /* Mayor separación */
 }
+
+/* Product Category Cards - Clickable */
 .product-card {
     background-color: var(--color-gris-oscuro);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    transition: transform 0.3s;
+    padding: 30px; /* Más padding interno */
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4); /* Sombra más sutil */
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 .product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(212, 175, 55, 0.3);
+    transform: translateY(-8px); /* Efecto más pronunciado de elevación */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 5px var(--color-dorado); /* Sombra elegante */
+}
+.product-card p {
+    color: var(--color-gris-claro);
+    font-style: italic;
 }
 
 /* Contenido de Atractivo (Dorado/Rojo) */
-.destacado {
-    color: var(--color-rojo);
-    font-weight: bold;
-    display: block;
-    margin-top: 10px;
-    font-size: 0.9em;
-}
-.calidad-tag {
+.destacado, .calidad-tag {
     color: var(--color-dorado);
-    font-weight: bold;
-    font-style: italic;
-    margin-top: 10px;
+    font-weight: 400;
+    font-style: normal;
+    margin-top: 15px;
     display: block;
-    font-size: 0.9em;
-}
-
-/* Enlaces Contextuales dentro de Cards */
-.calidad-tag a, .destacado a {
-    color: var(--color-blanco);
-    text-decoration: underline;
-    text-decoration-color: var(--color-rojo);
-    font-weight: bold;
-    transition: color 0.3s;
-}
-.calidad-tag a:hover, .destacado a:hover {
-    color: var(--color-dorado);
-    text-decoration-color: var(--color-dorado);
+    font-size: 1em;
 }
 
 /* III. SECCIÓN DE CALIDAD Y PROVEEDORES */
 .proveedor-item {
     background-color: var(--color-gris-oscuro);
-    padding: 30px;
-    border-radius: 8px;
-    margin-bottom: 30px;
-    border-left: 5px solid var(--color-dorado);
+    padding: 40px;
+    border-radius: 2px;
+    margin-bottom: 40px;
+    border-left: 3px solid var(--color-dorado); /* Borde más fino */
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
+.proveedor-item p {
+    color: var(--color-gris-claro);
+}
+.proveedor-item h3 {
+    color: var(--color-dorado);
+}
 
-/* === IV. PIE DE PÁGINA (FOOTER) AVANZADO === */
+/* === VISTA DE DETALLE === */
+#product-detail-view {
+    padding: 80px 0;
+}
+.product-item-grid {
+    gap: 40px;
+}
+.product-item {
+    background-color: var(--color-gris-oscuro);
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+.product-item:hover {
+    transform: scale(1.02); /* Escala más sutil */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5), 0 0 3px var(--color-rojo);
+}
+.product-item img {
+    height: 250px; /* Imágenes más grandes */
+    border-bottom: 1px solid var(--color-rojo); /* Línea más fina */
+}
+.product-item-content {
+    padding: 20px;
+}
+.product-item-content h4 {
+    color: var(--color-dorado);
+    font-size: 1.4em;
+    font-weight: 400;
+}
+.back-link {
+    color: var(--color-rojo);
+}
+.back-link:hover {
+    color: var(--color-dorado);
+}
+
+/* === IV. PIE DE PÁGINA (FOOTER) === */
 footer {
     background-color: var(--color-negro);
-    padding: 40px 0 20px 0;
-    border-top: 3px solid var(--color-dorado);
+    padding: 50px 0 30px 0;
+    border-top: 1px solid var(--color-dorado); /* Borde más sutil */
     text-align: left;
-}
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    padding-bottom: 30px;
 }
 .footer-col h4 {
     color: var(--color-dorado);
-    font-size: 1.1em;
-    margin-top: 0;
-    margin-bottom: 15px;
-    text-transform: uppercase;
+    font-weight: 400;
+    letter-spacing: 1px;
 }
-.footer-col a {
-    color: var(--color-gris-oscuro);
-    font-size: 0.95em;
-}
-.footer-col a:hover {
-    color: var(--color-blanco);
+.footer-col a, .footer-copy {
+    color: var(--color-gris-claro); /* Texto más suave */
+    font-size: 0.9em;
 }
 .footer-copy {
-    grid-column: 1 / -1; 
-    text-align: center;
-    border-top: 1px dashed var(--color-gris-oscuro);
-    padding-top: 20px;
-    margin-top: 10px;
-    color: var(--color-gris-oscuro);
-    font-size: 0.9em;
+    border-top: 1px solid var(--color-gris-oscuro);
 }
 
 /* Media Query para móvil */
@@ -317,5 +290,8 @@ footer {
     .footer-grid {
         grid-template-columns: 1fr;
         text-align: center;
+    }
+    #hero h1 {
+        font-size: 2.5em;
     }
 }
