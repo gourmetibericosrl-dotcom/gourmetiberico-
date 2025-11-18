@@ -1,47 +1,54 @@
 // Base de datos de productos y sus imágenes/detalles
 const productData = {
     "CARNES": [
-        // Rutas restauradas para coincidir con la estructura de archivos local (FOTOS TRABAJO EMPRESA COMIDA/CARNE/...)
-        { name: "Lomo de cerdo ibérico", image: "FOTOS TRABAJO EMPRESA COMIDA/CARNE/lomo_de_cerdo_iberico.jpg", detail: "Lomo ibérico de alta calidad, ideal para hostelería." },
-        { name: "Chuletón de ternera", image: "FOTOS TRABAJO EMPRESA COMIDA/CARNE/chuleton_de_ternera.jpg", detail: "Cortes premium de ternera. Suministro Grupo Medina." },
-        { name: "Carne de cordero", image: "FOTOS TRABAJO EMPRESA COMIDA/CARNE/carne_de_cordero.jpg", detail: "Cordero seleccionado para platos gourmet." },
-        { name: "Pollo entero", image: "FOTOS TRABAJO EMPRESA COMIDA/CARNE/muslos_de_pollo.jpg", detail: "Pollo fresco (usando muslos de pollo como placeholder visual)." }, // Ajustado para usar una imagen existente
-        { name: "Muslos de pollo", image: "FOTOS TRABAJO EMPRESA COMIDA/CARNE/muslos_de_pollo.jpg", detail: "Muslos de pollo frescos." }
+        // CORREGIDO: Reemplazar guiones bajos por ESPACIOS
+        { name: "Lomo de cerdo ibérico", image: "FOTOS TRABAJO EMPRESA COMIDA/CARNE/lomo de cerdo iberico.jpg", detail: "Lomo ibérico de alta calidad, ideal para hostelería." },
+        { name: "Chuletón de ternera", image: "FOTOS TRABAJO EMPRESA COMIDA/CARNE/chuleton de ternera.jpg", detail: "Cortes premium de ternera. Suministro Grupo Medina." },
+        { name: "Carne de cordero", image: "FOTOS TRABAJO EMPRESA COMIDA/CARNE/carne de cordero.png", detail: "Cordero seleccionado para platos gourmet." },
+        { name: "Pollo entero", image: "FOTOS TRABAJO EMPRESA COMIDA/CARNE/muslos de pollo.jpg", detail: "Pollo fresco (usando muslos de pollo como placeholder visual)." }, 
+        { name: "Muslos de pollo", image: "FOTOS TRABAJO EMPRESA COMIDA/CARNE/muslos de pollo.jpg", detail: "Muslos de pollo frescos." }
     ],
     "PESCADO": [
-        { name: "Gambón grande", image: "FOTOS TRABAJO EMPRESA COMIDA/PESCADO/gambon_grande.jpg", detail: "Gambón congelado de gran tamaño." },
-        { name: "Bacalao congelado", image: "FOTOS TRABAJO EMPRESA COMIDA/PESCADO/bacalao_congelado.jpg", detail: "Lomos de bacalao de primera." },
-        { name: "SALMÓN FRESCO", image: "FOTOS TRABAJO EMPRESA COMIDA/PESCADO/salmon_fresco.jpg", detail: "Salmón fresco, listo para corte." },
-        { name: "Merluza fresca", image: "FOTOS TRABAJO EMPRESA COMIDA/PESCADO/merluza_fresca.jpg", detail: "Merluza del día, garantizando frescura." }
+        // CORREGIDO: Reemplazar guiones bajos por ESPACIOS (ajustar si tus archivos NO usan guiones bajos)
+        { name: "Gambón grande", image: "FOTOS TRABAJO EMPRESA COMIDA/PESCADO/gambon grande.jpg", detail: "Gambón congelado de gran tamaño." },
+        { name: "Bacalao congelado", image: "FOTOS TRABAJO EMPRESA COMIDA/PESCADO/bacalao congelado.jpg", detail: "Lomos de bacalao de primera." },
+        { name: "SALMÓN FRESCO", image: "FOTOS TRABAJO EMPRESA COMIDA/PESCADO/salmon fresco.jpg", detail: "Salmón fresco, listo para corte." },
+        { name: "Merluza fresca", image: "FOTOS TRABAJO EMPRESA COMIDA/PESCADO/merluza fresca.jpg", detail: "Merluza del día, garantizando frescura." }
     ],
     "VERDURAS Y FRUTAS": [
+        // CORREGIDO: Reemplazar guiones bajos por ESPACIOS (ajustar si tus archivos NO usan guiones bajos)
         { name: "Patatas", image: "FOTOS TRABAJO EMPRESA COMIDA/FRUTAS/patatas.jpg", detail: "Patatas de la Horta Nord. Proveedor García." },
         { name: "Zanahoria", image: "FOTOS TRABAJO EMPRESA COMIDA/FRUTAS/zanahoria.jpg", detail: "Zanahorias frescas." },
         { name: "Tomate", image: "FOTOS TRABAJO EMPRESA COMIDA/FRUTAS/tomate.jpg", detail: "Tomate de temporada, alta calidad." },
         { name: "Cebolla", image: "FOTOS TRABAJO EMPRESA COMIDA/FRUTAS/tomate.jpg", detail: "Cebolla fresca (usando tomate como placeholder visual)." }, // Ajustado
         { name: "Naranja", image: "FOTOS TRABAJO EMPRESA COMIDA/FRUTAS/naranja.jpg", detail: "Naranja de Canarias/Valencia." },
-        { name: "Plátano de Canarias", image: "FOTOS TRABAJO EMPRESA COMIDA/FRUTAS/platano_canarias.jpg", detail: "Plátano con Denominación de Origen." },
-        { name: "Uva blanca", image: "FOTOS TRABAJO EMPRESA COMIDA/FRUTAS/uva_blanca.jpg", detail: "Uva de mesa blanca." }
+        { name: "Plátano de Canarias", image: "FOTOS TRABAJO EMPRESA COMIDA/FRUTAS/platano canarias.jpg", detail: "Plátano con Denominación de Origen." },
+        { name: "Uva blanca", image: "FOTOS TRABAJO EMPRESA COMIDA/FRUTAS/uva blanca.jpg", detail: "Uva de mesa blanca." }
     ],
     "OTROS FRESCOS": [
-        { name: "Huevos M (docena)", image: "FOTOS TRABAJO EMPRESA COMIDA/HUEVOS/huevos_M_docena.jpg", detail: "Huevos M por docenas." },
-        { name: "Queso curado", image: "FOTOS TRABAJO EMPRESA COMIDA/HUEVOS/queso_curado.jpg", detail: "Queso curado premium." } // Usando queso curado como ejemplo
+        // CORREGIDO: Reemplazar guiones bajos por ESPACIOS (ajustar si tus archivos NO usan guiones bajos)
+        { name: "Huevos M (docena)", image: "FOTOS TRABAJO EMPRESA COMIDA/HUEVOS/huevos M docena.jpg", detail: "Huevos M por docenas." },
+        { name: "Queso curado", image: "FOTOS TRABAJO EMPRESA COMIDA/HUEVOS/queso curado.jpg", detail: "Queso curado premium." } // Usando queso curado como ejemplo
     ],
     "ZUMOS Y REFRESCOS": [
-        { name: "COCA-COLA / Coca-Cola", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDA/coca_cola_1L.webp", detail: "Variedad de Coca-Cola (regular y zero)." },
-        { name: "ZUMO DE NARANJA NFC (1L)", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDA/zumo_naranja_nfc.jpg", detail: "Zumo NFC de Zuvamesa en formato 1L." }
+        // CORREGIDO: Espacios y extensión .webp
+        { name: "COCA-COLA / Coca-Cola", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDA/coca cola 1L.webp", detail: "Variedad de Coca-Cola (regular y zero)." },
+        // CORREGIDO: Espacios y extensión .jpeg (asumiendo que corregiste la extensión del zumo)
+        { name: "ZUMO DE NARANJA NFC (1L)", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDA/zumo de naranjaj 1L don simon.jpeg", detail: "Zumo NFC de Zuvamesa en formato 1L." }
     ],
     "AGUAS": [
-        { name: "AGUA MINERAL (1.5L)", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDA/agua_mineral_1_5L.jpg", detail: "Agua mineral natural en formatos de hostelería 1.5L." }
+        // CORREGIDO: Espacios y extensión .png
+        { name: "AGUA MINERAL (1.5L)", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDA/agua mineral garrafa nestle.png", detail: "Agua mineral natural en formatos de hostelería 1.5L." }
     ],
     "BEBIDAS ALCOHÓLICAS": [
-        { name: "Ron Zacapa", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDAS ALCOHÓLICAS/ron_zacapa.jpg", detail: "Ron premium para coctelería." },
-        { name: "Whisky Jack Daniel's", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDAS ALCOHÓLICAS/whisky_jack_daniels.jpg", detail: "Whisky clásico." },
-        { name: "Jägermeister", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDAS ALCOHÓLICAS/jagermeister.jpg", detail: "Licor de hierbas." },
-        { name: "Havan Club ANEJO 3 AN", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDAS ALCOHÓLICAS/havana_club_anejo.jpg", detail: "Ron añejo." }
+        // CORREGIDO: La carpeta se llama BEBIDAS ALC**A**HÓLICAS y se usan ESPACIOS en los nombres de archivo.
+        { name: "Ron Zacapa", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDAS ALCAHÓLICAS/ron zacapa.jpg", detail: "Ron premium para coctelería." },
+        { name: "Whisky Jack Daniel's", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDAS ALCAHÓLICAS/whisky jack daniel's.jpg", detail: "Whisky clásico." },
+        { name: "Jägermeister", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDAS ALCAHÓLICAS/jagermeister.jpg", detail: "Licor de hierbas." },
+        { name: "Havan Club ANEJO 3 AN", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDAS ALCAHÓLICAS/havana club anejo.jpg", detail: "Ron añejo." }
     ]
 };
-
+// ... el resto de tu código JavaScript
 const mainCatalogueView = document.getElementById('main-catalogue-view');
 const productDetailView = document.getElementById('product-detail-view');
 const detailViewTitle = document.getElementById('detail-view-title');
