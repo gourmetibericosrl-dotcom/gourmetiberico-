@@ -8,27 +8,27 @@
     <style>
         /* === PALETA DE COLORES ELEGANTES === */
         :root {
-            --color-negro: #1A1A1A;      /* Fondo Oscuro Refinado */
+            --color-negro: #1A1A1A;      /* Fondo Oscuro Refinado */
             --color-gris-oscuro: #2C2C2C; /* Fondo de Cards Sobrio */
-            --color-dorado: #A3885C;     /* Dorado Antiguo/Mate para Elegancia */
-            --color-rojo: #C60807;       /* Rojo Intenso de Marca */
-            --color-blanco: #F5F5F5;     /* Texto Limpio */
+            --color-dorado: #A3885C;     /* Dorado Antiguo/Mate para Elegancia */
+            --color-rojo: #C60807;       /* Rojo Intenso de Marca */
+            --color-blanco: #F5F5F5;     /* Texto Limpio */
             --color-gris-claro: #AAAAAA; /* Texto Secundario Suave */
         }
 
         /* === ESTILOS GENERALES Y TIPOGRAFÍA === */
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 80px; 
+            scroll-padding-top: 80px; 
         }
 
         body {
             background-color: var(--color-negro);
             color: var(--color-blanco);
-            font-family: 'Times New Roman', Times, serif; 
+            font-family: 'Times New Roman', Times, serif; 
             margin: 0;
             padding: 0;
-            line-height: 1.7; 
+            line-height: 1.7; 
             min-height: 100vh;
         }
 
@@ -43,7 +43,7 @@
         }
 
         .container {
-            width: 85%; 
+            width: 85%; 
             max-width: 1300px;
             margin: 0 auto;
         }
@@ -51,8 +51,8 @@
         /* === I. ENCABEZADO Y NAVEGACIÓN PRINCIPAL === */
         header {
             background-color: var(--color-negro);
-            border-bottom: 1px solid var(--color-dorado); 
-            padding: 20px 0; 
+            border-bottom: 1px solid var(--color-dorado); 
+            padding: 20px 0; 
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -65,24 +65,24 @@
         }
 
         .logo a {
-            font-size: 2em; 
-            font-weight: 300; 
+            font-size: 2em; 
+            font-weight: 300; 
             color: var(--color-dorado) !important;
-            letter-spacing: 2px; 
+            letter-spacing: 2px; 
             text-transform: uppercase;
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 35px; 
+            gap: 35px; 
             align-items: center;
             font-weight: 300;
-            transition: transform 0.3s ease-in-out; 
+            transition: transform 0.3s ease-in-out; 
         }
 
         .menu-toggle {
-            display: none; 
+            display: none; 
             font-size: 1.8em;
             cursor: pointer;
             color: var(--color-dorado);
@@ -94,17 +94,17 @@
 
         /* Botones y CTAs */
         .ofertas a, .area-clientes a {
-            background-color: transparent; 
+            background-color: transparent; 
             padding: 10px 18px;
-            border-radius: 2px; 
+            border-radius: 2px; 
             font-weight: 400;
-            color: var(--color-rojo) !important; 
-            border: 1px solid var(--color-rojo); 
+            color: var(--color-rojo) !important; 
+            border: 1px solid var(--color-rojo); 
             transition: all 0.3s;
         }
         .ofertas a:hover, .area-clientes a:hover {
-            background-color: var(--color-rojo); 
-            color: var(--color-blanco) !important; 
+            background-color: var(--color-rojo); 
+            color: var(--color-blanco) !important; 
             border-color: var(--color-rojo);
         }
 
@@ -118,7 +118,7 @@
             position: absolute;
             background-color: var(--color-gris-oscuro);
             min-width: 160px;
-            box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.8); 
+            box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.8); 
             z-index: 1;
             padding: 5px 0;
             border-top: 3px solid var(--color-dorado);
@@ -139,16 +139,16 @@
         /* === SECCIÓN HERO (BANNER) === */
         #hero {
             text-align: center;
-            padding: 120px 0; 
-            /* RUTA CORREGIDA PARA EL FONDO DEL HERO */
-            background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), url('FOTOS TRABAJO EMPRESA COMIDA/CARNE/tomo_iberico_premium.jpg') no-repeat center center/cover;
+            padding: 120px 0; 
+            /* RUTA CORREGIDA: Usando ESPACIOS en lugar de guiones bajos */
+            background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), url('FOTOS TRABAJO EMPRESA COMIDA/CARNE/tomo iberico premium.jpg') no-repeat center center/cover;
         }
         #hero h1 {
-            color: var(--color-dorado); 
-            font-size: 3.8em; 
+            color: var(--color-dorado); 
+            font-size: 3.8em; 
             font-weight: 300;
             letter-spacing: 1.5px;
-            text-shadow: none; 
+            text-shadow: none; 
         }
         #hero p {
             font-size: 1.2em;
@@ -158,13 +158,13 @@
         .area-clientes-btn {
             display: inline-block;
             margin-top: 40px;
-            background-color: transparent; 
-            color: var(--color-rojo) !important; 
-            padding: 18px 40px; 
+            background-color: transparent; 
+            color: var(--color-rojo) !important; 
+            padding: 18px 40px; 
             border-radius: 2px;
             font-weight: 400;
             font-size: 1.2em;
-            border: 2px solid var(--color-dorado); 
+            border: 2px solid var(--color-dorado); 
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.3s;
@@ -176,8 +176,8 @@
 
         /* === COMPONENTES UX === */
         section {
-            padding: 80px 0; 
-            border-bottom: none; 
+            padding: 80px 0; 
+            border-bottom: none; 
         }
 
         /* Rutas de Navegación (Breadcrumbs) */
@@ -185,7 +185,7 @@
             padding: 30px 0 0 0;
             background-color: var(--color-negro);
             border: none;
-            margin-top: 5px; 
+            margin-top: 5px; 
         }
 
         /* Títulos de Sección */
@@ -195,7 +195,7 @@
             font-size: 2.8em;
             font-weight: 300;
             margin-bottom: 50px;
-            border-bottom: 1px solid var(--color-rojo); 
+            border-bottom: 1px solid var(--color-rojo); 
             padding-bottom: 15px;
             letter-spacing: 1px;
             display: block;
@@ -216,16 +216,16 @@
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px; 
+            gap: 40px; 
             margin-top: 20px;
         }
 
         /* Product Category Cards - Clickable */
         .product-card {
             background-color: var(--color-gris-oscuro);
-            padding: 30px; 
+            padding: 30px; 
             border-radius: 2px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.4); 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.4); 
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
             text-align: center;
@@ -238,8 +238,8 @@
             text-shadow: 0 0 5px var(--color-negro);
         }
         .product-card:hover {
-            transform: translateY(-8px); 
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 5px var(--color-dorado); 
+            transform: translateY(-8px); 
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 5px var(--color-dorado); 
         }
 
         /* === VISTA DE DETALLE (IMPORTANTE: PRODUCTOS INDIVIDUALES) === */
@@ -254,7 +254,7 @@
         .product-item {
             background-color: var(--color-gris-oscuro);
             border-radius: 2px;
-            overflow: hidden; 
+            overflow: hidden; 
             box-shadow: 0 2px 5px rgba(0,0,0,0.4);
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
@@ -268,14 +268,14 @@
         /* Contenedor de la Imagen para forzar la proporción limpia */
         .product-item-img-wrapper {
             width: 100%;
-            height: 250px; 
+            height: 250px; 
             overflow: hidden;
         }
 
         .product-item-img-wrapper img {
             width: 100%;
             height: 100%;
-            object-fit: cover; 
+            object-fit: cover; 
             display: block;
             transition: transform 0.5s;
         }
@@ -397,10 +397,10 @@
                 font-size: 1.8em;
             }
             .nav-links {
-                gap: 20px; 
+                gap: 20px; 
             }
             .card-grid, .product-item-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
                 gap: 30px;
             }
         }
@@ -420,11 +420,11 @@
                 letter-spacing: 1px;
             }
             .menu-toggle {
-                display: block; 
+                display: block; 
             }
             nav {
-                flex-direction: row; 
-                position: relative; 
+                flex-direction: row; 
+                position: relative; 
             }
 
             .nav-links {
@@ -432,16 +432,16 @@
                 width: 100%;
                 gap: 0;
                 position: absolute;
-                top: 55px; 
+                top: 55px; 
                 left: 0;
                 background-color: var(--color-negro);
                 border-top: 1px solid var(--color-dorado);
                 padding: 10px 0;
-                transform: translateX(-100%); 
-                display: flex; 
+                transform: translateX(-100%); 
+                display: flex; 
             }
             .nav-links.active {
-                transform: translateX(0); 
+                transform: translateX(0); 
             }
 
             .nav-links li {
@@ -454,11 +454,11 @@
                 border-bottom: none;
             }
             .dropdown-content {
-                position: static; 
+                position: static; 
                 width: 100%;
                 box-shadow: none;
                 border-top: none;
-                background-color: #242424; 
+                background-color: #242424; 
             }
             
             /* Hero */
@@ -485,7 +485,7 @@
             
             /* Grillas (Una columna en móvil) */
             .card-grid, .product-item-grid {
-                grid-template-columns: 1fr; 
+                grid-template-columns: 1fr; 
                 gap: 25px;
             }
             
@@ -505,7 +505,7 @@
         <div class="container">
             <nav>
                 <div class="logo"><a href="#">GOURMET IBÉRICO.SL</a></div>
-                <div class="menu-toggle" id="menu-toggle">☰</div> 
+                <div class="menu-toggle" id="menu-toggle">☰</div> 
 
                 <ul class="nav-links" id="nav-links">
                     <li class="dropdown">
@@ -545,43 +545,43 @@
 
                 <div class="card-grid">
                     
-                    <div class="product-card" data-category="CARNES" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('FOTOS TRABAJO EMPRESA COMIDA/CARNE/lomo_de_cerdo_iberico.jpg') no-repeat center center/cover;">
+                    <div class="product-card" data-category="CARNES" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('FOTOS TRABAJO EMPRESA COMIDA/CARNE/lomo de cerdo iberico.jpg') no-repeat center center/cover;">
                         <h3>🥩 CARNES</h3>
                         <p>Cortes ibéricos y de ternera de la más alta calidad.</p>
                         <span class="calidad-tag">Suministro diario.</span>
                     </div>
 
-                    <div class="product-card" data-category="PESCADO" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('FOTOS TRABAJO EMPRESA COMIDA/PESCADO/salmon_fresco.jpg') no-repeat center center/cover;">
+                    <div class="product-card" data-category="PESCADO" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('FOTOS TRABAJO EMPRESA COMIDA/PESCADO/salmon fresco.jpg') no-repeat center center/cover;">
                         <h3>🐟 PESCADO</h3>
                         <p>Salmón fresco, bacalao y marisco congelado premium.</p>
                         <span class="calidad-tag">Frescura garantizada.</span>
                     </div>
 
-                    <div class="product-card" data-category="VERDURAS Y FRUTAS" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('FOTOS TRABAJO EMPRESA COMIDA/FRUTAS/platano_canarias.jpg') no-repeat center center/cover;">
+                    <div class="product-card" data-category="VERDURAS Y FRUTAS" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('FOTOS TRABAJO EMPRESA COMIDA/FRUTAS/platano canarias.jpg') no-repeat center center/cover;">
                         <h3>🥦 VERDURAS Y FRUTAS</h3>
                         <p>Productos de temporada de la huerta local y tropicales.</p>
                         <span class="calidad-tag">Directo del productor.</span>
                     </div>
 
-                    <div class="product-card" data-category="OTROS FRESCOS" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('FOTOS TRABAJO EMPRESA COMIDA/HUEVOS/huevos_M_docena.jpg') no-repeat center center/cover;">
+                    <div class="product-card" data-category="OTROS FRESCOS" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('FOTOS TRABAJO EMPRESA COMIDA/HUEVOS/huevos M docena.jpg') no-repeat center center/cover;">
                         <h3>🥚 OTROS FRESCOS</h3>
                         <p>Huevos y lácteos esenciales para su negocio.</p>
                         <span class="calidad-tag">Envase profesional.</span>
                     </div>
                     
-                    <div class="product-card" data-category="ZUMOS Y REFRESCOS" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('FOTOS TRABAJO EMPRESA COMIDA/BEBIDA/coca_cola_1L.webp') no-repeat center center/cover;">
+                    <div class="product-card" data-category="ZUMOS Y REFRESCOS" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('FOTOS TRABAJO EMPRESA COMIDA/BEBIDA/coca cola 1L.webp') no-repeat center center/cover;">
                         <h3>🥤 ZUMOS Y REFRESCOS</h3>
                         <p>Marcas líderes de refrescos y zumos NFC de Zuvamesa.</p>
                         <span class="destacado">OFERTA ESPECIAL</span>
                     </div>
                     
-                    <div class="product-card" data-category="AGUAS" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('FOTOS TRABAJO EMPRESA COMIDA/BEBIDA/agua_mineral_garrafa_nestle.png') no-repeat center center/cover;">
+                    <div class="product-card" data-category="AGUAS" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('FOTOS TRABAJO EMPRESA COMIDA/BEBIDA/agua mineral garrafa nestle.png') no-repeat center center/cover;">
                         <h3>💧 AGUAS</h3>
                         <p>Agua mineral natural en formatos de hostelería.</p>
                         <span class="calidad-tag">Botellas retornables.</span>
                     </div>
                     
-                    <div class="product-card" data-category="BEBIDAS ALCOHÓLICAS" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('FOTOS TRABAJO EMPRESA COMIDA/BEBIDAS ALCOHÓLICAS/ron_zacapa.jpg') no-repeat center center/cover;">
+                    <div class="product-card" data-category="BEBIDAS ALCOHÓLICAS" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('FOTOS TRABAJO EMPRESA COMIDA/BEBIDAS ALCOHÓLICAS/ron zacapa.jpg') no-repeat center center/cover;">
                         <h3>🍾 BEBIDAS ALCOHÓLICAS</h3>
                         <p>Ron, Whisky y licores premium para coctelería.</p>
                         <span class="destacado">Marcas exclusivas.</span>
@@ -663,42 +663,49 @@
         // Base de datos de productos y sus imágenes/detalles
         const productData = {
             "CARNES": [
-                { name: "Lomo de cerdo ibérico", image: "FOTOS TRABAJO EMPRESA COMIDA/CARNE/lomo_de_cerdo_iberico.jpg", detail: "Lomo ibérico de alta calidad, ideal para hostelería." },
-                { name: "Chuletón de ternera", image: "FOTOS TRABAJO EMPRESA COMIDA/CARNE/chuleton_de_ternera.jpg", detail: "Cortes premium de ternera. Suministro Grupo Medina." },
-                { name: "Carne de cordero", image: "FOTOS TRABAJO EMPRESA COMIDA/CARNE/carne_de_cordero.jpg", detail: "Cordero seleccionado para platos gourmet." },
-                { name: "Muslos de pollo", image: "FOTOS TRABAJO EMPRESA COMIDA/CARNE/muslos_de_pollo.jpg", detail: "Muslos de pollo frescos." }
+                // CORREGIDO: Reemplazados los _ por ESPACIOS
+                { name: "Lomo de cerdo ibérico", image: "FOTOS TRABAJO EMPRESA COMIDA/CARNE/lomo de cerdo iberico.jpg", detail: "Lomo ibérico de alta calidad, ideal para hostelería." },
+                { name: "Chuletón de ternera", image: "FOTOS TRABAJO EMPRESA COMIDA/CARNE/chuleton de ternera.jpg", detail: "Cortes premium de ternera. Suministro Grupo Medina." },
+                { name: "Carne de cordero", image: "FOTOS TRABAJO EMPRESA COMIDA/CARNE/carne de cordero.jpg", detail: "Cordero seleccionado para platos gourmet." },
+                { name: "Muslos de pollo", image: "FOTOS TRABAJO EMPRESA COMIDA/CARNE/muslos de pollo.jpg", detail: "Muslos de pollo frescos." }
             ],
             "PESCADO": [
-                { name: "Gambón grande", image: "FOTOS TRABAJO EMPRESA COMIDA/PESCADO/gambon_grande.jpg", detail: "Gambón congelado de gran tamaño." },
-                { name: "Bacalao congelado", image: "FOTOS TRABAJO EMPRESA COMIDA/PESCADO/bacalao_congelado.jpg", detail: "Lomos de bacalao de primera." },
-                { name: "SALMÓN FRESCO", image: "FOTOS TRABAJO EMPRESA COMIDA/PESCADO/salmon_fresco.jpg", detail: "Salmón fresco, listo para corte." },
-                { name: "Merluza fresca", image: "FOTOS TRABAJO EMPRESA COMIDA/PESCADO/merluza_fresca.jpg", detail: "Merluza del día, garantizando frescura." }
+                // CORREGIDO: Reemplazados los _ por ESPACIOS
+                { name: "Gambón grande", image: "FOTOS TRABAJO EMPRESA COMIDA/PESCADO/gambon grande.jpg", detail: "Gambón congelado de gran tamaño." },
+                { name: "Bacalao congelado", image: "FOTOS TRABAJO EMPRESA COMIDA/PESCADO/bacalao congelado.jpg", detail: "Lomos de bacalao de primera." },
+                { name: "SALMÓN FRESCO", image: "FOTOS TRABAJO EMPRESA COMIDA/PESCADO/salmon fresco.jpg", detail: "Salmón fresco, listo para corte." },
+                { name: "Merluza fresca", image: "FOTOS TRABAJO EMPRESA COMIDA/PESCADO/merluza fresca.jpg", detail: "Merluza del día, garantizando frescura." }
             ],
             "VERDURAS Y FRUTAS": [
+                // CORREGIDO: Reemplazados los _ por ESPACIOS
                 { name: "Patatas", image: "FOTOS TRABAJO EMPRESA COMIDA/FRUTAS/patatas.jpg", detail: "Patatas de la Horta Nord. Proveedor García." },
                 { name: "Zanahoria", image: "FOTOS TRABAJO EMPRESA COMIDA/FRUTAS/zanahoria.jpg", detail: "Zanahorias frescas." },
                 { name: "Tomate", image: "FOTOS TRABAJO EMPRESA COMIDA/FRUTAS/tomate.jpg", detail: "Tomate de temporada, alta calidad." },
                 { name: "Naranja", image: "FOTOS TRABAJO EMPRESA COMIDA/FRUTAS/naranja.jpg", detail: "Naranja de Canarias/Valencia." },
-                { name: "Plátano de Canarias", image: "FOTOS TRABAJO EMPRESA COMIDA/FRUTAS/platano_canarias.jpg", detail: "Plátano con Denominación de Origen." },
-                { name: "Uva blanca", image: "FOTOS TRABAJO EMPRESA COMIDA/FRUTAS/uva_blanca.jpg", detail: "Uva de mesa blanca." }
+                { name: "Plátano de Canarias", image: "FOTOS TRABAJO EMPRESA COMIDA/FRUTAS/platano canarias.jpg", detail: "Plátano con Denominación de Origen." },
+                { name: "Uva blanca", image: "FOTOS TRABAJO EMPRESA COMIDA/FRUTAS/uva blanca.jpg", detail: "Uva de mesa blanca." }
             ],
             "OTROS FRESCOS": [
-                { name: "Huevos M (docena)", image: "FOTOS TRABAJO EMPRESA COMIDA/HUEVOS/huevos_M_docena.jpg", detail: "Huevos M por docenas." },
-                { name: "Queso curado", image: "FOTOS TRABAJO EMPRESA COMIDA/HUEVOS/queso_curado.jpg", detail: "Queso curado premium." }
+                // CORREGIDO: Reemplazados los _ por ESPACIOS
+                { name: "Huevos M (docena)", image: "FOTOS TRABAJO EMPRESA COMIDA/HUEVOS/huevos M docena.jpg", detail: "Huevos M por docenas." },
+                { name: "Queso curado", image: "FOTOS TRABAJO EMPRESA COMIDA/HUEVOS/queso curado.jpg", detail: "Queso curado premium." }
             ],
             "ZUMOS Y REFRESCOS": [
-                { name: "COCA-COLA / Coca-Cola", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDA/coca_cola_1L.webp", detail: "Variedad de Coca-Cola (regular y zero)." },
-                { name: "ZUMO DE NARANJA NFC (1L)", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDA/zumo_naranja_nfc.jpg", detail: "Zumo NFC de Zuvamesa en formato 1L." }
+                // CORREGIDO: Reemplazados los _ por ESPACIOS
+                { name: "COCA-COLA / Coca-Cola", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDA/coca cola 1L.webp", detail: "Variedad de Coca-Cola (regular y zero)." },
+                { name: "ZUMO DE NARANJA NFC (1L)", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDA/zumo naranja nfc.jpg", detail: "Zumo NFC de Zuvamesa en formato 1L." }
             ],
             "AGUAS": [
-                { name: "AGUA MINERAL (1.5L)", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDA/agua_mineral_1_5L.jpg", detail: "Agua mineral natural en formatos de hostelería 1.5L." },
-                { name: "AGUA MINERAL (Garrafa 8L)", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDA/agua_mineral_garrafa_nestle.png", detail: "Agua mineral natural en formato garrafa de 8L." }
+                // CORREGIDO: Reemplazados los _ por ESPACIOS
+                { name: "AGUA MINERAL (1.5L)", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDA/agua mineral 1 5L.jpg", detail: "Agua mineral natural en formatos de hostelería 1.5L." },
+                { name: "AGUA MINERAL (Garrafa 8L)", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDA/agua mineral garrafa nestle.png", detail: "Agua mineral natural en formato garrafa de 8L." }
             ],
             "BEBIDAS ALCOHÓLICAS": [
-                { name: "Ron Zacapa", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDAS ALCOHÓLICAS/ron_zacapa.jpg", detail: "Ron premium para coctelería." },
-                { name: "Whisky Jack Daniel's", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDAS ALCOHÓLICAS/whisky_jack_daniels.jpg", detail: "Whisky clásico." },
+                // CORREGIDO: Reemplazados los _ por ESPACIOS
+                { name: "Ron Zacapa", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDAS ALCOHÓLICAS/ron zacapa.jpg", detail: "Ron premium para coctelería." },
+                { name: "Whisky Jack Daniel's", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDAS ALCOHÓLICAS/whisky jack daniels.jpg", detail: "Whisky clásico." },
                 { name: "Jägermeister", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDAS ALCOHÓLICAS/jagermeister.jpg", detail: "Licor de hierbas." },
-                { name: "Havan Club ANEJO 3 AN", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDAS ALCOHÓLICAS/havana_club_anejo.jpg", detail: "Ron añejo." }
+                { name: "Havan Club ANEJO 3 AN", image: "FOTOS TRABAJO EMPRESA COMIDA/BEBIDAS ALCOHÓLICAS/havana club anejo.jpg", detail: "Ron añejo." }
             ]
         };
 
@@ -770,6 +777,26 @@
             
             alert(`Detalles del Producto: ${product.name}\n\nDescripción: ${product.detail}\n\n(En una web real, esto abriría una página de detalle con más información.)`);
         }
+        
+        // Manejar el click en las tarjetas de categoría
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('click', (event) => {
+                const category = event.currentTarget.getAttribute('data-category');
+                if (category) {
+                    renderProductList(category);
+                }
+            });
+        });
+
+        // Volver al Catálogo Principal (desde la vista de detalle)
+        document.getElementById('back-to-catalogue').addEventListener('click', (e) => {
+            e.preventDefault();
+            switchView(false);
+            // Revertir breadcrumbs
+            breadcrumbsPath.innerHTML = `<a href="#hero" id="home-link">Inicio</a>`;
+            window.location.hash = 'main-catalogue-view';
+        });
+
 
         // Lógica de inicialización
         document.addEventListener('DOMContentLoaded', () => {
@@ -784,68 +811,17 @@
                 });
             }
 
-            // 1. Manejo de los botones CTA
-            document.querySelectorAll('.area-clientes a, .ofertas a, .area-clientes-btn').forEach(button => {
-                button.addEventListener('click', (e) => {
-                    if (button.getAttribute('href') === '#') {
-                        e.preventDefault();
-                        setTimeout(() => { alert('Accediendo a la plataforma profesional...'); }, 300);
-                    }
-                });
-            });
-
-            // 2. Funcionalidad Sticky Header
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.style.backgroundColor = 'rgba(26, 26, 26, 0.98)'; 
-                    header.style.boxShadow = '0 1px 10px rgba(0,0,0,0.7)';
-                } else {
-                    header.style.backgroundColor = colorNegro; 
-                    header.style.boxShadow = 'none';
-                }
-            });
-
-            // 3. Manejo de clicks en las tarjetas de Categoría
-            document.querySelectorAll('.product-card').forEach(card => {
-                card.addEventListener('click', (e) => {
-                    const category = card.dataset.category;
-                    if (category) {
-                        renderProductList(category);
-                        // Cerrar menú móvil si está abierto
+            // Ocultar el menú al hacer clic en un enlace (en móvil)
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 768) {
                         navLinks.classList.remove('active');
                     }
                 });
             });
 
-            // 4. Manejo del botón de "Volver"
-            document.getElementById('back-to-catalogue').addEventListener('click', (e) => {
-                e.preventDefault();
-                switchView(false); // Volver a la vista principal
-                breadcrumbsPath.innerHTML = `<a href="#hero" id="home-link">Inicio</a>`;
-            });
-            
-            // 5. Manejo de enlaces dinámicos (breadcrumbs y menú)
-            document.addEventListener('click', (e) => {
-                // Si se hace clic en el enlace de "Inicio" o "Catálogo" en el breadcrumb
-                if (e.target.id === 'home-link' || e.target.id === 'catalogue-link') {
-                    e.preventDefault();
-                    switchView(false);
-                    // Restaurar breadcrumb al estado inicial
-                    breadcrumbsPath.innerHTML = `<a href="#hero" id="home-link">Inicio</a>`;
-                    
-                    // Si el click fue en el catálogo (fuera de la vista principal)
-                    if (e.target.id === 'catalogue-link') {
-                        document.getElementById('main-catalogue-view').scrollIntoView();
-                    }
-                }
-                
-                // Cierre del menú móvil después de hacer clic en un enlace de navegación
-                if (e.target.closest('.nav-links a')) {
-                    if (navLinks.classList.contains('active')) {
-                        navLinks.classList.remove('active');
-                    }
-                }
-            });
+            // Asegurar que al cargar la página se muestre la vista principal
+            switchView(false);
         });
     </script>
 </body>
