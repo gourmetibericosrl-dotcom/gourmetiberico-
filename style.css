@@ -1,11 +1,11 @@
 /* === PALETA DE COLORES === */
 :root {
-    --color-negro: #121212;      /* Fondo, Dominante */
+    --color-negro: #121212;       /* Fondo, Dominante */
     --color-gris-oscuro: #555555; /* Fondo de Cards y Dropdown */
-    --color-dorado: #D4AF37;     /* Branding, Calidad, Premium */
-    --color-rojo: #C82333;       /* CTAs, Ofertas, Alertas */
-    --color-blanco: #E0E0E0;     /* Texto Principal */
-    --color-gris-claro: #888888; /* Texto Secundario/Breadcrumbs */
+    --color-dorado: #D4AF37;       /* Branding, Calidad, Premium */
+    --color-rojo: #C82333;         /* CTAs, Ofertas, Alertas */
+    --color-blanco: #87CEFA;       /* ¡MODIFICADO! Texto Principal (Azul Claro) */
+    --color-gris-claro: #AAAAAA;   /* ¡MODIFICADO! Texto Secundario/Breadcrumbs */
 }
 
 /* === ESTILOS GENERALES Y FIX DE SCROLL === */
