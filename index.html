@@ -6,33 +6,32 @@
     <title>GOURMET IBÉRICO.SL - Catálogo Premium</title>
     
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    
     <link rel="icon" type="image/png" href="URL_DEL_LOGO_GOURMET_IBERICO.png">
     
     <style>
         /* === PALETA DE COLORES ELEGANTES === */
         :root {
-            --color-negro: #1A1A1A;      /* Fondo Oscuro Refinado */
+            --color-negro: #1A1A1A;      /* Fondo Oscuro Refinado */
             --color-gris-oscuro: #2C2C2C; /* Fondo de Cards Sobrio */
-            --color-dorado: #A3885C;     /* Dorado Antiguo/Mate para Elegancia */
-            --color-rojo: #C60807;       /* Rojo Intenso de Marca */
-            --color-blanco: #F5F5F5;     /* Texto Limpio */
+            --color-dorado: #A3885C;     /* Dorado Antiguo/Mate para Elegancia */
+            --color-rojo: #C60807;       /* Rojo Intenso de Marca */
+            --color-blanco: #F5F5F5;     /* Texto Limpio */
             --color-gris-claro: #AAAAAA; /* Texto Secundario Suave */
         }
 
         /* === ESTILOS GENERALES Y TIPOGRAFÍA === */
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 80px; 
+            scroll-padding-top: 80px; 
         }
 
         body {
             background-color: var(--color-negro);
             color: var(--color-blanco);
-            font-family: 'Times New Roman', Times, serif; 
+            font-family: 'Times New Roman', Times, serif; 
             margin: 0;
             padding: 0;
-            line-height: 1.7; 
+            line-height: 1.7; 
             min-height: 100vh;
         }
 
@@ -47,7 +46,7 @@
         }
 
         .container {
-            width: 85%; 
+            width: 85%; 
             max-width: 1300px;
             margin: 0 auto;
         }
@@ -55,11 +54,12 @@
         /* === I. ENCABEZADO Y NAVEGACIÓN PRINCIPAL === */
         header {
             background-color: var(--color-negro);
-            border-bottom: 1px solid var(--color-dorado); 
-            padding: 20px 0; 
+            border-bottom: 1px solid var(--color-dorado); 
+            padding: 20px 0; 
             position: sticky;
             top: 0;
             z-index: 1000;
+            transition: background-color 0.3s, box-shadow 0.3s; /* Para el efecto sticky */
         }
 
         nav {
@@ -68,30 +68,26 @@
             align-items: center;
         }
         
-        /* ⚠️ AÑADIR ESPACIO PARA EL LOGO Y BUSCADOR (Si se desea en este header) */
-        /* Ya que la estructura original usa solo nav y logo/links, mantendré el texto por ahora. */
-        /* Si quieres el logo PNG al lado del buscador, la estructura HTML debe cambiar a la de mi respuesta anterior. */
-        /* Si solo quieres el texto del logo: */
         .logo a {
-            font-size: 2em; 
-            font-weight: 300; 
+            font-size: 2em; 
+            font-weight: 300; 
             color: var(--color-dorado) !important;
-            letter-spacing: 2px; 
+            letter-spacing: 2px; 
             text-transform: uppercase;
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 35px; 
+            gap: 35px; 
             align-items: center;
             font-weight: 300;
-            transition: transform 0.3s ease-in-out; /* Transición para el menú móvil */
+            transition: transform 0.3s ease-in-out; 
         }
 
         /* Botón de menú hamburguesa (solo visible en móvil) */
         .menu-toggle {
-            display: none; 
+            display: none; 
             font-size: 1.8em;
             cursor: pointer;
             color: var(--color-dorado);
@@ -103,17 +99,17 @@
 
         /* Botones y CTAs */
         .ofertas a, .area-clientes a {
-            background-color: transparent; 
+            background-color: transparent; 
             padding: 10px 18px;
-            border-radius: 2px; 
+            border-radius: 2px; 
             font-weight: 400;
-            color: var(--color-rojo) !important; 
-            border: 1px solid var(--color-rojo); 
+            color: var(--color-rojo) !important; 
+            border: 1px solid var(--color-rojo); 
             transition: all 0.3s;
         }
         .ofertas a:hover, .area-clientes a:hover {
-            background-color: var(--color-rojo); 
-            color: var(--color-blanco) !important; 
+            background-color: var(--color-rojo); 
+            color: var(--color-blanco) !important; 
             border-color: var(--color-rojo);
         }
 
@@ -127,7 +123,7 @@
             position: absolute;
             background-color: var(--color-gris-oscuro);
             min-width: 160px;
-            box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.8); 
+            box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.8); 
             z-index: 1;
             padding: 5px 0;
             border-top: 3px solid var(--color-dorado);
@@ -148,15 +144,15 @@
         /* === SECCIÓN HERO (BANNER) === */
         #hero {
             text-align: center;
-            padding: 120px 0; 
+            padding: 120px 0; 
             background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), url('https://picsum.photos/1200/600') no-repeat center center/cover;
         }
         #hero h1 {
-            color: var(--color-dorado); 
-            font-size: 3.8em; 
+            color: var(--color-dorado); 
+            font-size: 3.8em; 
             font-weight: 300;
             letter-spacing: 1.5px;
-            text-shadow: none; 
+            text-shadow: none; 
         }
         #hero p {
             font-size: 1.2em;
@@ -166,13 +162,13 @@
         .area-clientes-btn {
             display: inline-block;
             margin-top: 40px;
-            background-color: transparent; 
-            color: var(--color-rojo) !important; 
-            padding: 18px 40px; 
+            background-color: transparent; 
+            color: var(--color-rojo) !important; 
+            padding: 18px 40px; 
             border-radius: 2px;
             font-weight: 400;
             font-size: 1.2em;
-            border: 2px solid var(--color-dorado); 
+            border: 2px solid var(--color-dorado); 
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.3s;
@@ -184,8 +180,8 @@
 
         /* === COMPONENTES UX === */
         section {
-            padding: 80px 0; 
-            border-bottom: none; 
+            padding: 80px 0; 
+            border-bottom: none; 
         }
 
         /* Rutas de Navegación (Breadcrumbs) */
@@ -193,9 +189,8 @@
             padding: 30px 0 0 0;
             background-color: var(--color-negro);
             border: none;
-            margin-top: 5px; 
+            margin-top: 5px; 
         }
-        /* ... estilos breadcrumbs sin cambios ... */
 
         /* Títulos de Sección */
         h2 {
@@ -204,7 +199,7 @@
             font-size: 2.8em;
             font-weight: 300;
             margin-bottom: 50px;
-            border-bottom: 1px solid var(--color-rojo); 
+            border-bottom: 1px solid var(--color-rojo); 
             padding-bottom: 15px;
             letter-spacing: 1px;
             display: block;
@@ -225,28 +220,26 @@
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px; 
+            gap: 40px; 
             margin-top: 20px;
         }
 
         /* Product Category Cards - Clickable */
         .product-card {
             background-color: var(--color-gris-oscuro);
-            padding: 30px; 
+            padding: 30px; 
             border-radius: 2px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.4); 
+            box-shadow: 0 2px 5px rgba(0,0,0,0.4); 
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
             text-align: center;
         }
         .product-card:hover {
-            transform: translateY(-8px); 
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 5px var(--color-dorado); 
+            transform: translateY(-8px); 
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5), 0 0 5px var(--color-dorado); 
         }
-        /* ... otros estilos de cards sin cambios ... */
-
+        
         /* III. SECCIÓN DE CALIDAD Y PROVEEDORES */
-        /* Estilos específicos de proveedores, necesarios para la vista */
         .proveedor-item {
             background-color: var(--color-gris-oscuro);
             padding: 20px 30px;
@@ -261,7 +254,7 @@
             margin-right: 5px;
         }
 
-        /* === VISTA DE DETALLE === */
+        /* === VISTA DE DETALLE (Productos Individuales) === */
         .product-item-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -361,18 +354,18 @@
                 font-size: 1.8em;
             }
             .nav-links {
-                gap: 20px; 
+                gap: 20px; 
             }
             /* Las grillas mantienen 2 o 3 columnas, pero con un minmax más estricto */
             .card-grid, .product-item-grid {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
                 gap: 30px;
             }
             .footer-grid {
                  grid-template-columns: repeat(2, 1fr);
             }
         }
-                
+                
         /* 2. Ajustes para MÓVIL (hasta 768px) */
         @media (max-width: 768px) {
             .container {
@@ -407,9 +400,17 @@
                 padding: 10px 0;
                 transform: translateX(-100%); /* Oculto inicialmente */
                 display: flex; /* Siempre en display, oculto con transform */
+                height: auto; /* Permite que se expanda */
+                /* Asegura que no se muestre hasta que se active */
+                visibility: hidden; 
+                opacity: 0;
+                transition: transform 0.3s ease-in-out, visibility 0s 0.3s, opacity 0.3s;
             }
             .nav-links.active {
                 transform: translateX(0); /* Muestra el menú al activarse */
+                visibility: visible;
+                opacity: 1;
+                transition: transform 0.3s ease-in-out, opacity 0.3s;
             }
 
             .nav-links li {
@@ -423,11 +424,14 @@
             }
             /* Los elementos del dropdown se apilan */
             .dropdown-content {
-                position: static; 
+                position: static; 
                 width: 100%;
                 box-shadow: none;
                 border-top: none;
                 background-color: #242424; /* Tono ligeramente más claro para el submenú */
+            }
+            .dropdown:hover .dropdown-content {
+                display: block; /* Mantenemos el hover para desktop si la barra es >768px */
             }
             
             /* Hero */
@@ -454,7 +458,7 @@
             
             /* Grillas (Una columna en móvil) */
             .card-grid, .product-item-grid {
-                grid-template-columns: 1fr; 
+                grid-template-columns: 1fr; 
                 gap: 25px;
             }
             
@@ -474,7 +478,7 @@
         <div class="container">
             <nav>
                 <div class="logo"><a href="#">GOURMET IBÉRICO.SL</a></div>
-                <div class="menu-toggle" id="menu-toggle">☰</div> 
+                <div class="menu-toggle" id="menu-toggle">☰</div> 
 
                 <ul class="nav-links" id="nav-links">
                     <li class="dropdown">
@@ -596,10 +600,10 @@
             <div class="container">
                 <a href="#" class="back-link" id="back-to-catalogue">&lt; Volver al Catálogo Principal</a>
                 
-                <h2 id="detail-view-title"></h2> 
+                <h2 id="detail-view-title"></h2> 
                 
                 <div class="product-item-grid" id="product-list-container">
-                    </div>
+                </div>
             </div>
         </section>
 
@@ -712,35 +716,49 @@
             productListContainer.innerHTML = '';
 
             // 3. Crear HTML para cada producto
-            products.forEach((product, index) => {
-                const productHtml = `
-                    <div class="product-item" data-product-index="${index}" data-category-name="${categoryName}">
-                        <img src="${product.image}" alt="Imagen de ${product.name}">
-                        <div class="product-item-content">
-                            <h4>${product.name}</h4>
-                        </div>
-                    </div>
-                `;
-                productListContainer.insertAdjacentHTML('beforeend', productHtml);
-            });
+            if (products) {
+                products.forEach((product, index) => {
+                    const productHtml = `
+                        <a href="#" class="product-item" data-product-index="${index}" data-category-name="${categoryName}">
+                            <div class="product-item-img-wrapper">
+                                <img src="${product.image}" alt="Imagen de ${product.name}">
+                            </div>
+                            <div class="product-item-content">
+                                <h4>${product.name}</h4>
+                            </div>
+                        </a>
+                    `;
+                    productListContainer.insertAdjacentHTML('beforeend', productHtml);
+                });
+            } else {
+                 productListContainer.innerHTML = `<p>No se encontraron productos para la categoría: ${categoryName}</p>`;
+            }
 
-            // 4. Añadir listeners de click a los productos individuales
-            document.querySelectorAll('.product-item').forEach(item => {
-                item.addEventListener('click', handleProductClick);
-            });
-
-            // 5. Mostrar la vista de detalle
+            // 4. Mostrar la vista de detalle
             switchView(true);
         }
 
         // Manejar el click en un producto individual
-        function handleProductClick(event) {
-            const item = event.currentTarget;
-            const categoryName = item.dataset.categoryName;
-            const productIndex = parseInt(item.dataset.product-index);
-            const product = productData[categoryName][productIndex];
+        function handleProductItemClick(event) {
+            const item = event.target.closest('.product-item'); 
             
-            alert(`Detalles del Producto: ${product.name}\n\nDescripción: ${product.detail}\n\n(En una web real, esto abriría una página de detalle con más información.)`);
+            if (!item) return;
+            event.preventDefault(); // Prevenir navegación del <a>
+
+            const categoryName = item.dataset.categoryName;
+            // Usamos getAttribute para leer correctamente data-product-index
+            const productIndex = parseInt(item.getAttribute('data-product-index'));
+            
+            const product = productData[categoryName] ? productData[categoryName][productIndex] : null;
+            
+            if (product) {
+                alert(`
+Detalles del Producto: ${product.name}
+------------------------------------
+Descripción: ${product.detail}
+
+(En una aplicación real, esto abriría una página de detalle con más información.)`);
+            }
         }
 
         // Lógica de inicialización
@@ -769,15 +787,15 @@
             // 2. Funcionalidad Sticky Header
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
-                    header.style.backgroundColor = 'rgba(26, 26, 26, 0.98)'; 
+                    header.style.backgroundColor = 'rgba(26, 26, 26, 0.98)'; 
                     header.style.boxShadow = '0 1px 10px rgba(0,0,0,0.7)';
                 } else {
-                    header.style.backgroundColor = colorNegro; 
+                    header.style.backgroundColor = colorNegro; 
                     header.style.boxShadow = 'none';
                 }
             });
 
-            // 3. Manejo de clicks en las tarjetas de Categoría
+            // 3. Manejo de clicks en las tarjetas de Categoría (Vista principal)
             document.querySelectorAll('.product-card').forEach(card => {
                 card.addEventListener('click', (e) => {
                     const category = card.dataset.category;
@@ -796,21 +814,29 @@
                 breadcrumbsPath.innerHTML = `<a href="#hero" id="home-link">Inicio</a>`;
             });
             
-            // 5. Manejo de enlaces dinámicos y cierre de menú
+            // 5. Manejo de clicks en los productos individuales (Delegación de eventos)
+            productListContainer.addEventListener('click', handleProductItemClick);
+            
+            // 6. Manejo de enlaces dinámicos en Breadcrumbs y cierre de menú móvil
             document.addEventListener('click', (e) => {
                 if (e.target.id === 'home-link-dynamic' || e.target.id === 'category-link') {
                     e.preventDefault();
-                    if(e.target.id !== 'category-link') {
-                        switchView(false);
+                    if(e.target.id === 'home-link-dynamic') {
+                        switchView(false); // Volver al catálogo principal
                         breadcrumbsPath.innerHTML = `<a href="#hero" id="home-link">Inicio</a>`;
+                    } else if (e.target.id === 'category-link') {
+                        // Si hacen click en la categoría del breadcrumb, volvemos a renderizar la lista
+                        const category = e.target.textContent;
+                        renderProductList(category);
                     }
                 }
                 
                 // Cierre del menú móvil después de hacer clic en un enlace de navegación
+                // Se ejecuta después de la lógica de navegación para asegurar que el link se procese.
                 if (navLinks.classList.contains('active')) {
                     const linkClicked = e.target.closest('.nav-links a');
-                    // Cierra a menos que sea el enlace principal de un dropdown
-                    if (linkClicked && !e.target.closest('.dropdown > a')) { 
+                    // Cierra a menos que sea el enlace principal del dropdown "CATÁLOGO"
+                    if (linkClicked && !e.target.closest('.dropdown > a')) { 
                         navLinks.classList.remove('active');
                     }
                 }
