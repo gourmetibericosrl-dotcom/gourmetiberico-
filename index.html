@@ -8,24 +8,20 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="icon" type="image/png" href="URL_DEL_LOGO_GOURMET_IBERICO.png">
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-
     <style>
-        /* === PALETA DE COLORES PROFESIONAL (TEMA CLARO) === */
+        /* === PALETA DE COLORES (OSCURO - ALTO CONTRASTE) === */
         :root {
-            /* Colores de Fondo y Texto */
-            --color-fondo: #FFFFFF;
-            --color-fondo-secundario: #F8F9FA; /* Gris pálido para footer/secciones */
-            --color-fondo-card: #FFFFFF;
-            --color-texto-principal: #212529; /* Gris muy oscuro (más suave que el negro) */
-            --color-texto-secundario: #6C757D;
-            --color-borde: #DEE2E6;
-
-            /* Colores de Marca y Acentos */
-            --color-primario: #A3885C;  /* Dorado (Branding) */
-            --color-secundario: #C60807; /* Rojo (CTAs/Ofertas) */
+            --color-negro: #1A1A1A;       /* Fondo Oscuro Refinado */
+            /* MODIFICADO: Gris más claro para que los recuadros destaquen */
+            --color-gris-oscuro: #333333; /* Fondo de Cards Sobrio */
+            --color-dorado: #A3885C;      /* Dorado Antiguo/Mate para Elegancia */
+            --color-rojo: #C60807;        /* Rojo Intenso de Marca */
+            /* MODIFICADO: Blanco puro para máxima legibilidad */
+            --color-blanco: #FFFFFF;      /* Texto Limpio */
+            /* MODIFICADO: Gris más claro para texto secundario */
+            --color-gris-claro: #BBBBBB;   /* Texto Secundario Suave */
+            
+            --color-borde-sutil: #444444; /* Borde para definir recuadros */
         }
 
         /* === ESTILOS GENERALES Y TIPOGRAFÍA === */
@@ -35,25 +31,23 @@
         }
 
         body {
-            background-color: var(--color-fondo);
-            color: var(--color-texto-principal);
-            /* Tipografía Profesional Sans-Serif */
-            font-family: 'Lato', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            font-weight: 400;
+            background-color: var(--color-negro);
+            color: var(--color-blanco);
+            font-family: 'Times New Roman', Times, serif; 
             margin: 0;
             padding: 0;
-            line-height: 1.6; 
+            line-height: 1.7; 
             min-height: 100vh;
         }
 
         a {
-            color: var(--color-texto-principal);
+            color: var(--color-blanco);
             text-decoration: none;
             transition: color 0.3s;
         }
 
         a:hover {
-            color: var(--color-primario);
+            color: var(--color-dorado);
         }
 
         .container {
@@ -64,18 +58,13 @@
 
         /* === I. ENCABEZADO Y NAVEGACIÓN PRINCIPAL === */
         header {
-            background-color: var(--color-fondo);
-            border-bottom: 1px solid var(--color-borde); 
+            background-color: var(--color-negro);
+            border-bottom: 1px solid var(--color-dorado); 
             padding: 20px 0; 
             position: sticky;
             top: 0;
             z-index: 1000;
-            transition: box-shadow 0.3s;
-        }
-        
-        /* Estilo 'sticky' para el header */
-        .header-scrolled {
-             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: background-color 0.3s, box-shadow 0.3s;
         }
 
         nav {
@@ -86,9 +75,9 @@
         
         .logo a {
             font-size: 2em; 
-            font-weight: 700; /* Más peso para el logo */
-            color: var(--color-primario) !important;
-            letter-spacing: 1px; 
+            font-weight: 300; 
+            color: var(--color-dorado) !important;
+            letter-spacing: 2px; 
             text-transform: uppercase;
         }
 
@@ -97,50 +86,36 @@
             display: flex;
             gap: 35px; 
             align-items: center;
-            font-weight: 400;
-            transition: transform 0.3s ease-in-out; 
+            font-weight: 300;
+            transition: transform 0.3s ease-in-out;
         }
 
         .menu-toggle {
             display: none; 
             font-size: 1.8em;
             cursor: pointer;
-            color: var(--color-primario);
+            color: var(--color-dorado);
             position: absolute;
             right: 20px;
             top: 50%;
             transform: translateY(-50%);
         }
 
-        /* Botones y CTAs (Rojo y Dorado) */
-        .ofertas a {
-            background-color: var(--color-secundario); 
+        /* Botones y CTAs */
+        .ofertas a, .area-clientes a {
+            background-color: transparent; 
             padding: 10px 18px;
-            border-radius: 4px; /* Bordes redondeados suaves */
-            font-weight: 700;
-            color: var(--color-fondo) !important; 
-            border: 1px solid var(--color-secundario); 
+            border-radius: 2px; 
+            font-weight: 400;
+            color: var(--color-rojo) !important; 
+            border: 1px solid var(--color-rojo); 
             transition: all 0.3s;
         }
-        .ofertas a:hover {
-             background-color: #A00706; /* Rojo más oscuro al pasar el ratón */
-             border-color: #A00706;
+        .ofertas a:hover, .area-clientes a:hover {
+            background-color: var(--color-rojo); 
+            color: var(--color-blanco) !important; 
+            border-color: var(--color-rojo);
         }
-        
-        .area-clientes a {
-            background-color: transparent;
-            padding: 10px 18px;
-            border-radius: 4px;
-            font-weight: 700;
-            color: var(--color-primario) !important;
-            border: 1px solid var(--color-primario);
-            transition: all 0.3s;
-        }
-        .area-clientes a:hover {
-            background-color: var(--color-primario);
-            color: var(--color-fondo) !important;
-        }
-
 
         /* Dropdown Catálogo */
         .dropdown {
@@ -150,22 +125,21 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: var(--color-fondo-card);
+            background-color: var(--color-gris-oscuro);
             min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1); /* Sombra profesional */
+            box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.8); 
             z-index: 1;
             padding: 5px 0;
-            border-radius: 4px;
-            border-top: 3px solid var(--color-primario);
+            border-top: 3px solid var(--color-dorado);
         }
         .dropdown-content a {
-            color: var(--color-texto-principal);
+            color: var(--color-blanco);
             padding: 12px 16px;
             text-decoration: none;
             display: block;
         }
         .dropdown-content a:hover {
-            background-color: var(--color-fondo-secundario);
+            background-color: var(--color-negro);
         }
         .dropdown:hover .dropdown-content {
             display: block;
@@ -175,96 +149,84 @@
         #hero {
             text-align: center;
             padding: 120px 0; 
-            /* Gradiente más suave para el fondo */
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://picsum.photos/1200/600') no-repeat center center/cover;
-            color: #FFFFFF; /* Texto blanco sobre la imagen */
+            background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), url('https://picsum.photos/1200/600') no-repeat center center/cover;
         }
         #hero h1 {
-            color: #FFFFFF; /* Texto blanco limpio */
+            color: var(--color-dorado); 
             font-size: 3.8em; 
-            font-weight: 700;
+            font-weight: 300;
             letter-spacing: 1.5px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Sombra de texto sutil */
+            text-shadow: none; 
         }
         #hero p {
             font-size: 1.2em;
-            color: rgba(255, 255, 255, 0.9); /* Blanco semi-transparente */
+            color: var(--color-gris-claro);
         }
 
         .area-clientes-btn {
             display: inline-block;
             margin-top: 40px;
-            background-color: var(--color-primario); /* Botón Dorado */
-            color: var(--color-fondo) !important; 
+            background-color: transparent; 
+            color: var(--color-rojo) !important; 
             padding: 18px 40px; 
-            border-radius: 4px;
-            font-weight: 700;
+            border-radius: 2px;
+            font-weight: 400;
             font-size: 1.2em;
-            border: 2px solid var(--color-primario); 
+            border: 2px solid var(--color-dorado); 
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.3s;
         }
         .area-clientes-btn:hover {
-            background-color: transparent;
-            color: var(--color-primario) !important;
-            border-color: var(--color-primario);
+            background-color: var(--color-dorado);
+            color: var(--color-negro) !important;
         }
 
         /* === COMPONENTES UX === */
         section {
             padding: 80px 0; 
-            border-bottom: 1px solid var(--color-borde); /* Separador sutil */
-        }
-        
-        #hero, #breadcrumbs {
-            border-bottom: none; /* Hero y breadcrumbs no necesitan borde */
-        }
-        
-        /* Sección de Calidad con fondo gris pálido para diferenciarla */
-        #calidad {
-            background-color: var(--color-fondo-secundario);
+            border-bottom: none; 
         }
 
         /* Rutas de Navegación (Breadcrumbs) */
         #breadcrumbs {
-            padding: 20px 0 0 0;
-            background-color: var(--color-fondo);
+            padding: 30px 0 0 0;
+            background-color: var(--color-negro);
+            border: none;
             margin-top: 5px; 
         }
-         .breadcrumbs-path, .breadcrumbs-path a {
-             color: var(--color-texto-secundario);
-             font-size: 0.9em;
-         }
-         .breadcrumbs-path a:hover {
-             color: var(--color-primario);
-         }
+        .breadcrumbs-path, .breadcrumbs-path a {
+             color: var(--color-gris-claro); /* Usa el nuevo gris claro */
+        }
+        .breadcrumbs-path a:hover {
+             color: var(--color-dorado);
+        }
 
 
         /* Títulos de Sección */
         h2 {
-            color: var(--color-texto-principal);
+            color: var(--color-dorado);
             text-align: center;
             font-size: 2.8em;
-            font-weight: 700;
+            font-weight: 300;
             margin-bottom: 50px;
-            border-bottom: 2px solid var(--color-primario); /* Acento dorado */
+            border-bottom: 1px solid var(--color-rojo); 
             padding-bottom: 15px;
             letter-spacing: 1px;
             display: block;
-            width: fit-content; /* Ajusta el ancho al contenido */
+            width: auto;
             margin-left: auto;
             margin-right: auto;
         }
 
         h3 {
-            color: var(--color-texto-principal);
+            color: var(--color-blanco);
             font-size: 1.6em;
-            font-weight: 700;
+            font-weight: 400;
             margin-top: 0;
             margin-bottom: 10px;
         }
-        
+
         /* Grid y Cards - General */
         .card-grid {
             display: grid;
@@ -275,46 +237,52 @@
 
         /* Product Category Cards - Clickable */
         .product-card {
-            background-color: var(--color-fondo-card);
+            background-color: var(--color-gris-oscuro);
             padding: 30px; 
-            border-radius: 4px;
-            border: 1px solid var(--color-borde);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Sombra sutil */
-            transition: transform 0.3s, box-shadow 0.3s;
+            border-radius: 2px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.4); 
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
             cursor: pointer;
             text-align: center;
+            /* MODIFICADO: Borde sutil para definir el recuadro */
+            border: 1px solid var(--color-borde-sutil);
         }
         .product-card:hover {
             transform: translateY(-8px); 
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08); /* Sombra más pronunciada */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); 
+            /* MODIFICADO: Borde dorado al pasar el ratón */
+            border-color: var(--color-dorado);
         }
-        .product-card h3 {
-            color: var(--color-primario); /* Título de tarjeta dorado */
+        .product-card p {
+            color: var(--color-gris-claro); /* Usa el nuevo gris claro */
         }
-
+        
         /* Etiquetas de Calidad/Destacado (Rojo y Dorado) */
         .calidad-tag {
-            color: var(--color-secundario);
-            font-weight: 700;
+            color: var(--color-rojo);
+            font-weight: bold;
         }
         .destacado {
-            color: var(--color-primario);
-            font-weight: 700;
+            color: var(--color-dorado);
+            font-weight: bold;
         }
 
 
         /* III. SECCIÓN DE CALIDAD Y PROVEEDORES */
         .proveedor-item {
-            background-color: var(--color-fondo-card);
+            background-color: var(--color-gris-oscuro);
             padding: 20px 30px;
             margin-bottom: 20px;
-            border: 1px solid var(--color-borde);
-            border-left: 5px solid var(--color-primario);
-            border-radius: 4px;
+            border-left: 5px solid var(--color-dorado);
+            border-radius: 2px;
+            /* MODIFICADO: Borde sutil */
+            border-top: 1px solid var(--color-borde-sutil);
+            border-right: 1px solid var(--color-borde-sutil);
+            border-bottom: 1px solid var(--color-borde-sutil);
         }
 
         .certificacion-icon {
-            color: var(--color-primario);
+            color: var(--color-dorado);
             font-size: 1.1em;
             margin-right: 5px;
         }
@@ -328,41 +296,42 @@
         }
 
         .product-item {
-            background-color: var(--color-fondo-card);
-            border-radius: 4px;
-            border: 1px solid var(--color-borde);
+            background-color: var(--color-gris-oscuro);
+            border-radius: 2px;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
             cursor: pointer;
+            /* MODIFICADO: Borde sutil para definir el recuadro */
+            border: 1px solid var(--color-borde-sutil);
         }
 
         .product-item:hover {
             transform: translateY(-4px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            /* MODIFICADO: Borde dorado al pasar el ratón */
+            border-color: var(--color-dorado);
         }
 
         .product-item img {
             width: 100%;
             height: 200px; 
             object-fit: cover;
-            border-bottom: 1px solid var(--color-borde);
+            border-bottom: 1px solid var(--color-borde-sutil);
         }
 
         .product-item-content {
-            padding: 20px;
+            padding: 15px;
         }
 
         .product-item-content h4 {
-            color: var(--color-texto-principal);
+            color: var(--color-blanco);
             margin-top: 0;
             font-size: 1.1em;
-            font-weight: 700;
         }
         
         .back-link {
-            color: var(--color-secundario); /* Enlace de volver en rojo */
-            font-weight: 700;
+            color: var(--color-rojo);
             margin-bottom: 30px;
             display: inline-block;
         }
@@ -372,10 +341,10 @@
         
         /* FOOTER STYLES */
         footer {
-            background-color: var(--color-fondo-secundario); /* Fondo gris pálido */
-            border-top: 1px solid var(--color-borde);
+            background-color: var(--color-gris-oscuro);
+            border-top: 1px solid var(--color-dorado);
             padding: 40px 0 20px 0;
-            color: var(--color-texto-secundario);
+            color: var(--color-gris-claro); /* Usa el nuevo gris claro */
         }
 
         .footer-grid {
@@ -386,9 +355,8 @@
         }
 
         .footer-col h4 {
-            color: var(--color-primario); /* Títulos dorados */
+            color: var(--color-dorado);
             font-size: 1.4em;
-            font-weight: 700;
             margin-bottom: 15px;
         }
 
@@ -396,27 +364,27 @@
             list-style: none;
             padding: 0;
         }
-        
+
         .footer-col ul li {
             margin-bottom: 8px;
         }
-        
+
         .footer-col ul li a {
-            color: var(--color-texto-secundario);
+            color: var(--color-gris-claro);
         }
-        
         .footer-col ul li a:hover {
-            color: var(--color-primario);
+            color: var(--color-blanco);
         }
+
 
         .footer-copy {
             grid-column: 1 / -1;
             text-align: center;
-            border-top: 1px solid var(--color-borde);
+            border-top: 1px solid var(--color-borde-sutil);
             padding-top: 20px;
             margin-top: 20px;
             font-size: 0.85em;
-            color: var(--color-texto-secundario);
+            color: var(--color-gris-claro);
         }
         
         /* ======================================= */
@@ -449,10 +417,6 @@
                 width: 90%;
             }
             
-            body {
-                line-height: 1.5; /* Ligeramente más compacto en móvil */
-            }
-            
             /* Header y Navegación */
             header {
                 padding: 15px 0;
@@ -474,20 +438,19 @@
                 width: 100%;
                 gap: 0;
                 position: absolute;
-                top: 55px; /* Ajustado a la altura del header */
+                top: 55px; 
                 left: 0;
-                background-color: var(--color-fondo);
-                border-top: 1px solid var(--color-borde);
+                background-color: var(--color-negro);
+                border-top: 1px solid var(--color-dorado);
                 padding: 10px 0;
                 transform: translateX(-100%); 
                 display: flex; 
                 visibility: hidden; 
                 opacity: 0;
-                box-shadow: 0 4px 10px rgba(0,0,0,0.05);
                 transition: transform 0.3s ease-in-out, visibility 0s 0.3s, opacity 0.3s;
             }
             .nav-links.active {
-                transform: translateX(0);
+                transform: translateX(0); 
                 visibility: visible;
                 opacity: 1;
                 transition: transform 0.3s ease-in-out, opacity 0.3s;
@@ -497,7 +460,7 @@
                 width: 100%;
                 text-align: center;
                 padding: 10px 0;
-                border-bottom: 1px solid var(--color-borde);
+                border-bottom: 1px solid var(--color-borde-sutil);
             }
             .nav-links li:last-child {
                 border-bottom: none;
@@ -506,8 +469,8 @@
                 position: static; 
                 width: 100%;
                 box-shadow: none;
-                border: none;
-                background-color: var(--color-fondo-secundario);
+                border-top: none;
+                background-color: #242424; 
             }
             
             /* Hero */
@@ -550,7 +513,7 @@
     </style>
 </head>
 <body>
-    <header id="main-header">
+    <header>
         <div class="container">
             <nav>
                 <div class="logo"><a href="#">GOURMET IBÉRICO.SL</a></div>
@@ -734,7 +697,7 @@
                 { name: "Patatas", image: "https://picsum.photos/400/300?random=10", detail: "Patatas de la Horta Nord. Proveedor García." },
                 { name: "Zanahoria", image: "https://picsum.photos/400/300?random=11", detail: "Zanahorias frescas." },
                 { name: "Tomate", image: "https://picsum.photos/400/300?random=12", detail: "Tomate de temporada, alta calidad." },
-                { name:G "Cebolla", image: "https://picsum.photos/400/300?random=13", detail: "Cebolla fresca." },
+                { name: "Cebolla", image: "https://picsum.photos/400/300?random=13", detail: "Cebolla fresca." },
                 { name: "Naranja", image: "https://picsum.photos/400/300?random=14", detail: "Naranja de Canarias/Valencia." },
                 { name: "Plátano de Canarias", image: "https://picsum.photos/400/300?random=15", detail: "Plátano con Denominación de Origen." },
                 { name: "Uva blanca", image: "https://picsum.photos/400/300?random=16", detail: "Uva de mesa blanca." }
@@ -758,17 +721,19 @@
             ]
         };
 
+        // --- Selectores del DOM ---
         const mainCatalogueView = document.getElementById('main-catalogue-view');
         const productDetailView = document.getElementById('product-detail-view');
         const detailViewTitle = document.getElementById('detail-view-title');
         const productListContainer = document.getElementById('product-list-container');
         const breadcrumbsPath = document.querySelector('.breadcrumbs-path');
-        const homeLink = document.getElementById('home-link');
         const navLinks = document.getElementById('nav-links');
         const menuToggle = document.getElementById('menu-toggle');
-        const header = document.getElementById('main-header'); // Selecciona el header
+        const header = document.querySelector('header');
 
-        // Función para cambiar la vista
+        // --- Funciones de Navegación ---
+
+        // Función para cambiar entre la vista de catálogo y la de detalle
         function switchView(showDetail) {
             if (showDetail) {
                 mainCatalogueView.style.display = 'none';
@@ -784,17 +749,19 @@
         function renderProductList(categoryName) {
             const products = productData[categoryName];
             
+            // 1. Actualizar título y breadcrumbs
             detailViewTitle.textContent = categoryName;
             breadcrumbsPath.innerHTML = `<a href="#hero" id="home-link-dynamic">Inicio</a> > <a href="#" id="category-link">${categoryName}</a>`;
+            
+            // 2. Limpiar contenedor
             productListContainer.innerHTML = '';
 
+            // 3. Crear HTML para cada producto
             if (products) {
                 products.forEach((product, index) => {
                     const productHtml = `
                         <a href="#" class="product-item" data-product-index="${index}" data-category-name="${categoryName}">
-                            <div class="product-item-img-wrapper">
-                                <img src="${product.image}" alt="Imagen de ${product.name}">
-                            </div>
+                            <img src="${product.image}" alt="Imagen de ${product.name}">
                             <div class="product-item-content">
                                 <h4>${product.name}</h4>
                             </div>
@@ -805,17 +772,24 @@
             } else {
                  productListContainer.innerHTML = `<p>No se encontraron productos para la categoría: ${categoryName}</p>`;
             }
+
+            // 4. Mostrar la vista de detalle
             switchView(true);
         }
+
+        // --- Manejadores de Eventos ---
 
         // Manejar el click en un producto individual
         function handleProductItemClick(event) {
             const item = event.target.closest('.product-item'); 
             if (!item) return;
-            event.preventDefault(); 
+            
+            event.preventDefault(); // Prevenir que el enlace <a> navegue
 
             const categoryName = item.dataset.categoryName;
+            // **CORRECCIÓN CLAVE:** Usar .getAttribute() para leer 'data-product-index'
             const productIndex = parseInt(item.getAttribute('data-product-index'));
+            
             const product = productData[categoryName] ? productData[categoryName][productIndex] : null;
             
             if (product) {
@@ -828,8 +802,10 @@ Descripción: ${product.detail}
             }
         }
 
-        // Lógica de inicialización
+        // Lógica de inicialización cuando el DOM esté cargado
         document.addEventListener('DOMContentLoaded', () => {
+            const rootStyle = getComputedStyle(document.documentElement);
+            const colorNegro = rootStyle.getPropertyValue('--color-negro').trim() || '#1A1A1A';
             
             // 0. Lógica de Menú Móvil
             if (menuToggle && navLinks) {
@@ -848,12 +824,14 @@ Descripción: ${product.detail}
                 });
             });
 
-            // 2. Funcionalidad Sticky Header (con clase CSS)
+            // 2. Funcionalidad Sticky Header
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
-                    header.classList.add('header-scrolled');
+                    header.style.backgroundColor = 'rgba(26, 26, 26, 0.98)'; 
+                    header.style.boxShadow = '0 1px 10px rgba(0,0,0,0.7)';
                 } else {
-                    header.classList.remove('header-scrolled');
+                    header.style.backgroundColor = colorNegro; 
+                    header.style.boxShadow = 'none';
                 }
             });
 
@@ -871,20 +849,21 @@ Descripción: ${product.detail}
             // 4. Manejo del botón de "Volver"
             document.getElementById('back-to-catalogue').addEventListener('click', (e) => {
                 e.preventDefault();
-                switchView(false); 
+                switchView(false); // Volver a la vista principal
                 breadcrumbsPath.innerHTML = `<a href="#hero" id="home-link">Inicio</a>`;
             });
             
-            // 5. Manejo de clicks en los productos individuales (Delegación de eventos)
+            // 5. Manejo de clicks en los productos individuales (Usando Delegación de eventos)
+            // Se añade el listener al contenedor padre
             productListContainer.addEventListener('click', handleProductItemClick);
             
             // 6. Manejo de enlaces dinámicos en Breadcrumbs y cierre de menú móvil
             document.addEventListener('click', (e) => {
-                // Lógica de Breadcrumbs
+                // Lógica de Breadcrumbs dinámicos
                 if (e.target.id === 'home-link-dynamic' || e.target.id === 'category-link') {
                     e.preventDefault();
                     if(e.target.id === 'home-link-dynamic') {
-                        switchView(false);
+                        switchView(false); // Volver al catálogo principal
                         breadcrumbsPath.innerHTML = `<a href="#hero" id="home-link">Inicio</a>`;
                     } else if (e.target.id === 'category-link') {
                         const category = e.target.textContent;
@@ -892,10 +871,10 @@ Descripción: ${product.detail}
                     }
                 }
                 
-                // Cierre del menú móvil al hacer clic en un enlace (excepto el dropdown principal)
+                // Cierre del menú móvil al hacer clic en un enlace
                 if (navLinks.classList.contains('active')) {
                     const linkClicked = e.target.closest('.nav-links a');
-                    // Cierra si se hace clic en un enlace Y no es el enlace padre de un dropdown
+                    // Cierra a menos que sea el enlace principal del dropdown "CATÁLOGO"
                     if (linkClicked && !e.target.matches('.dropdown > a')) { 
                         navLinks.classList.remove('active');
                     }
