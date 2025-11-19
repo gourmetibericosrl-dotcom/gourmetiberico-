@@ -41,11 +41,11 @@ function createProductCard(product) {
             </div>
             <div class="product-item-content">
                 <div>
-                    <h2>${product.name}</h2>
+                    <h4>${product.name}</h4>
                     <p>${product.description}</p>
                 </div>
-                <div>
-                    <div class="product-item-price">${product.price}</div>
+                <div class="product-item-footer">
+                    <span class="product-price-display">${product.price}</span> 
                     <button class="btn-primary add-to-cart-btn" data-id="${product.id}">
                         Añadir al carrito
                     </button>
@@ -60,7 +60,7 @@ function renderProducts() {
     const gridContainer = document.querySelector('.product-item-grid');
     
     if (!gridContainer) {
-        console.error("Contenedor .product-item-grid no encontrado.");
+        console.error("Contenedor .product-item-grid no encontrado. Asegúrate de que existe en tu HTML.");
         return;
     }
 
@@ -72,6 +72,11 @@ function renderProducts() {
 
     gridContainer.innerHTML = htmlContent;
     
+    // Si la cuadrícula está vacía, mostrar un mensaje
+    if (products.length === 0) {
+        gridContainer.innerHTML = '<p class="section-subtitle">No hay productos disponibles en este momento.</p>';
+    }
+
     addCartButtonListeners();
 }
 
@@ -86,10 +91,13 @@ function addCartButtonListeners() {
             event.stopPropagation(); // Detiene la propagación del evento
 
             const productId = event.target.dataset.id;
-            const productName = products.find(p => p.id == productId).name;
+            const product = products.find(p => p.id == productId);
 
-            // Feedback simple al usuario
-            alert(`✅ Producto "${productName}" (ID: ${productId}) añadido al carrito!`);
+            if (product) {
+                // Feedback simple al usuario
+                alert(`✅ Producto "${product.name}" (ID: ${productId}) añadido al carrito!`);
+                // Aquí iría la lógica real para actualizar el carrito (por ejemplo, local storage o una API)
+            }
         });
     });
 }
