@@ -134,8 +134,8 @@ nav {
 #hero {
     text-align: center;
     padding: 120px 0; 
-    /* Ajuste de imagen para verse bien */
-    background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), url('imagenes/lomo de cerdo iberico.jpg') no-repeat center center/cover;
+    /* MODIFICADO: Apunta directamente al archivo sin 'imagenes/' */
+    background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), url('lomo de cerdo iberico.jpg') no-repeat center center/cover;
     background-attachment: fixed;
 }
 #hero h1 {
