@@ -6,88 +6,14 @@
     <title>GOURMET IBÉRICO.SL - Catálogo Premium</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
     <link rel="icon" type="image/x-icon" href="favico.ico">
+    <link rel="stylesheet" href="style.css">
     
     <style>
-        :root {
-            --color-negro: #1A1A1A;
-            --color-gris-oscuro: #333333;
-            --color-dorado: #A3885C;
-            --color-rojo: #C60807;
-            --color-blanco: #FFFFFF;
-            --color-gris-claro: #BBBBBB;
-            --color-borde-sutil: #444444;
-        }
-
-        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-        body { background-color: var(--color-negro); color: var(--color-blanco); font-family: 'Times New Roman', Times, serif; margin: 0; padding: 0; line-height: 1.7; min-height: 100vh; }
-        a { color: var(--color-blanco); text-decoration: none; transition: color 0.3s; }
-        a:hover { color: var(--color-dorado); }
-        .container { width: 85%; max-width: 1300px; margin: 0 auto; }
-
-        /* HEADER */
-        header { background-color: var(--color-negro); border-bottom: 1px solid var(--color-dorado); padding: 20px 0; position: sticky; top: 0; z-index: 1000; }
-        nav { display: flex; justify-content: space-between; align-items: center; }
-        .logo a { font-size: 2em; font-weight: 300; color: var(--color-dorado) !important; letter-spacing: 2px; text-transform: uppercase; }
-        .nav-links { list-style: none; display: flex; gap: 35px; align-items: center; font-weight: 300; }
-        .menu-toggle { display: none; font-size: 1.8em; cursor: pointer; color: var(--color-dorado); position: absolute; right: 20px; top: 50%; transform: translateY(-50%); }
-
-        /* BOTONES */
-        .ofertas a, .area-clientes a { background-color: transparent; padding: 10px 18px; border-radius: 2px; font-weight: 400; color: var(--color-rojo) !important; border: 1px solid var(--color-rojo); transition: all 0.3s; }
-        .ofertas a:hover, .area-clientes a:hover { background-color: var(--color-rojo); color: var(--color-blanco) !important; border-color: var(--color-rojo); }
-
-        /* DROPDOWN */
-        .dropdown { position: relative; display: inline-block; }
-        .dropdown-content { display: none; position: absolute; background-color: var(--color-gris-oscuro); min-width: 160px; box-shadow: 0px 4px 8px 0px rgba(0,0,0,0.8); z-index: 1; padding: 5px 0; border-top: 3px solid var(--color-dorado); }
-        .dropdown-content a { color: var(--color-blanco); padding: 12px 16px; display: block; }
-        .dropdown-content a:hover { background-color: var(--color-negro); }
-        .dropdown:hover .dropdown-content { display: block; }
-
-        /* HERO */
-        #hero { text-align: center; padding: 120px 0; background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), url('imagenes/lomo de cerdo iberico.jpg') no-repeat center center/cover; background-attachment: fixed; }
-        #hero h1 { color: var(--color-dorado); font-size: 3.8em; font-weight: 300; letter-spacing: 1.5px; text-shadow: none; }
-        #hero p { font-size: 1.2em; color: var(--color-gris-claro); }
-        .area-clientes-btn { display: inline-block; margin-top: 40px; background-color: transparent; color: var(--color-rojo) !important; padding: 18px 40px; border-radius: 2px; font-weight: 400; font-size: 1.2em; border: 2px solid var(--color-dorado); text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s; }
-        .area-clientes-btn:hover { background-color: var(--color-dorado); color: var(--color-negro) !important; }
-
-        /* SECCIONES */
-        section { padding: 80px 0; }
-        h2 { color: var(--color-dorado); text-align: center; font-size: 2.8em; font-weight: 300; margin-bottom: 50px; border-bottom: 1px solid var(--color-rojo); padding-bottom: 15px; display: block; width: auto; margin-left: auto; margin-right: auto; }
-        h3 { color: var(--color-blanco); font-size: 1.6em; font-weight: 400; margin-top: 0; margin-bottom: 10px; }
-
-        /* CARDS */
-        .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 20px; }
-        .product-card { background-color: var(--color-gris-oscuro); padding: 30px; border-radius: 2px; box-shadow: 0 2px 5px rgba(0,0,0,0.4); transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; cursor: pointer; text-align: center; border: 1px solid var(--color-borde-sutil); }
-        .product-card:hover { transform: translateY(-8px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); border-color: var(--color-dorado); }
-        .product-card p { color: var(--color-gris-claro); }
-
-        /* TAGS */
-        .calidad-tag { color: var(--color-rojo); font-weight: bold; }
-        .destacado { color: var(--color-dorado); font-weight: bold; }
-
-        /* LISTA PRODUCTOS */
-        .product-item-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-top: 40px; }
-        .product-item { background-color: var(--color-gris-oscuro); border-radius: 2px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.4); transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; cursor: pointer; border: 1px solid var(--color-borde-sutil); }
-        .product-item:hover { transform: translateY(-4px); box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); border-color: var(--color-dorado); }
-        .product-item img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid var(--color-borde-sutil); }
-        .product-item-content { padding: 15px; }
-        .product-item-content h4 { color: var(--color-blanco); margin-top: 0; font-size: 1.1em; }
-
-        /* FOOTER */
-        footer { background-color: var(--color-gris-oscuro); border-top: 1px solid var(--color-dorado); padding: 40px 0 20px 0; color: var(--color-gris-claro); }
-        .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; padding-bottom: 20px; }
-        .footer-col h4 { color: var(--color-dorado); font-size: 1.4em; margin-bottom: 15px; }
-        .footer-col ul { list-style: none; padding: 0; }
-        .footer-col ul li { margin-bottom: 8px; }
-        .footer-copy { grid-column: 1 / -1; text-align: center; border-top: 1px solid var(--color-borde-sutil); padding-top: 20px; margin-top: 20px; font-size: 0.85em; }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .nav-links { display: none; flex-direction: column; width: 100%; background-color: var(--color-gris-oscuro); position: absolute; top: 70px; left: 0; padding: 15px 0; border-top: 1px solid var(--color-dorado); }
-            .nav-links.active { display: flex; }
-            .menu-toggle { display: block; }
-            .card-grid, .product-item-grid, .footer-grid { grid-template-columns: 1fr; }
+        #hero {
+            /* Usamos la imagen del lomo como fondo del banner */
+            background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), url('lomo de cerdo iberico.jpg') no-repeat center center/cover;
+            background-attachment: fixed;
         }
     </style>
 </head>
@@ -99,8 +25,9 @@
                 <div class="logo">
                     <a href="#">Gourmet Ibérico.SL</a>
                 </div>
-                <span class="menu-toggle" onclick="toggleMenu()">&#9776;</span>
-                <ul class="nav-links">
+                <span class="menu-toggle" id="mobile-menu-btn">&#9776;</span>
+                
+                <ul class="nav-links" id="nav-list">
                     <li><a href="#inicio">Inicio</a></li>
                     <li class="dropdown">
                         <a href="#catalogo">Catálogo <span class="fa fa-caret-down"></span></a>
@@ -156,7 +83,7 @@
             <div class="product-item-grid">
                 
                 <div class="product-item">
-                    <img src="imagenes/lomo de cerdo iberico.jpg" alt="Lomo Ibérico">
+                    <img src="lomo de cerdo iberico.jpg" alt="Lomo Ibérico">
                     <div class="product-item-content">
                         <h4>Lomo de Cerdo Ibérico</h4>
                         <p class="destacado">Pieza seleccionada</p>
@@ -164,7 +91,7 @@
                 </div>
 
                 <div class="product-item">
-                    <img src="imagenes/chuletas de ternera.jpg" alt="Chuletas Ternera">
+                    <img src="chuletas de ternera.jpg" alt="Chuletas Ternera">
                     <div class="product-item-content">
                         <h4>Chuletas de Ternera</h4>
                         <p>Corte fresco y tierno</p>
@@ -172,7 +99,7 @@
                 </div>
 
                 <div class="product-item">
-                    <img src="imagenes/carne de cordero.jpg" alt="Carne Cordero">
+                    <img src="carne de cordero.jpg" alt="Carne Cordero">
                     <div class="product-item-content">
                         <h4>Carne de Cordero</h4>
                         <p>Ideal para asados</p>
@@ -189,7 +116,7 @@
             <div class="product-item-grid">
                 
                 <div class="product-item">
-                    <img src="imagenes/bacalao.jpg" alt="Bacalao">
+                    <img src="bacalao.jpg" alt="Bacalao">
                     <div class="product-item-content">
                         <h4>Bacalao Premium</h4>
                         <p>Salazón o fresco</p>
@@ -197,7 +124,7 @@
                 </div>
 
                 <div class="product-item">
-                    <img src="imagenes/salmón.jpg" alt="Salmón">
+                    <img src="salmón.jpg" alt="Salmón">
                     <div class="product-item-content">
                         <h4>Salmón Fresco</h4>
                         <p class="destacado">Rico en Omega 3</p>
@@ -205,7 +132,7 @@
                 </div>
 
                 <div class="product-item">
-                    <img src="imagenes/gambón grande.jpg" alt="Gambón">
+                    <img src="gambón grande.jpg" alt="Gambón">
                     <div class="product-item-content">
                         <h4>Gambón Grande</h4>
                         <p>Calidad Extra</p>
@@ -222,37 +149,37 @@
             <div class="product-item-grid">
                 
                 <div class="product-item">
-                    <img src="imagenes/naranjas.jpg" alt="Naranjas">
+                    <img src="naranjas.jpg" alt="Naranjas">
                     <div class="product-item-content"><h4>Naranjas de Mesa</h4></div>
                 </div>
 
                 <div class="product-item">
-                    <img src="imagenes/plátanos de canarias.jpg" alt="Plátanos">
+                    <img src="plátanos de canarias.jpg" alt="Plátanos">
                     <div class="product-item-content"><h4>Plátanos de Canarias</h4></div>
                 </div>
 
                 <div class="product-item">
-                    <img src="imagenes/uva blanca.jpg" alt="Uva Blanca">
+                    <img src="uva blanca.jpg" alt="Uva Blanca">
                     <div class="product-item-content"><h4>Uva Blanca Dulce</h4></div>
                 </div>
 
                 <div class="product-item">
-                    <img src="imagenes/tomates.jpg" alt="Tomates">
+                    <img src="tomates.jpg" alt="Tomates">
                     <div class="product-item-content"><h4>Tomates de Huerto</h4></div>
                 </div>
 
                 <div class="product-item">
-                    <img src="imagenes/cebolla.jpg" alt="Cebolla">
+                    <img src="cebolla.jpg" alt="Cebolla">
                     <div class="product-item-content"><h4>Cebollas</h4></div>
                 </div>
 
                 <div class="product-item">
-                    <img src="imagenes/patatas.jpg" alt="Patatas">
+                    <img src="patatas.jpg" alt="Patatas">
                     <div class="product-item-content"><h4>Patatas Seleccionadas</h4></div>
                 </div>
 
                 <div class="product-item">
-                    <img src="imagenes/zanahorias.jfif" alt="Zanahorias">
+                    <img src="zanahorias.jfif" alt="Zanahorias">
                     <div class="product-item-content"><h4>Zanahorias Frescas</h4></div>
                 </div>
 
@@ -266,7 +193,7 @@
             <div class="product-item-grid">
                 
                 <div class="product-item">
-                    <img src="imagenes/ron zacapa.jpg" alt="Ron Zacapa">
+                    <img src="ron zacapa.jpg" alt="Ron Zacapa">
                     <div class="product-item-content">
                         <h4>Ron Zacapa</h4>
                         <p class="destacado">Añejo Gran Reserva</p>
@@ -274,7 +201,7 @@
                 </div>
 
                 <div class="product-item">
-                    <img src="imagenes/whisky jack daniel's.jpg" alt="Jack Daniels">
+                    <img src="whisky jack daniel's.jpg" alt="Jack Daniels">
                     <div class="product-item-content">
                         <h4>Whisky Jack Daniel's</h4>
                         <p>Old No. 7</p>
@@ -282,22 +209,22 @@
                 </div>
 
                 <div class="product-item">
-                    <img src="imagenes/coca cola 1L.jpg" alt="Coca Cola">
+                    <img src="coca cola 1L.jpg" alt="Coca Cola">
                     <div class="product-item-content"><h4>Coca Cola 1L</h4></div>
                 </div>
 
                 <div class="product-item">
-                    <img src="imagenes/agua mineral garrafa nestle.jpg" alt="Agua Nestle">
+                    <img src="agua mineral garrafa nestle.jpg" alt="Agua Nestle">
                     <div class="product-item-content"><h4>Agua Mineral Nestlé</h4></div>
                 </div>
 
                 <div class="product-item">
-                    <img src="imagenes/huevos L.jpg" alt="Huevos L">
+                    <img src="huevos L.jpg" alt="Huevos L">
                     <div class="product-item-content"><h4>Huevos Talla L</h4></div>
                 </div>
                 
                 <div class="product-item">
-                    <img src="imagenes/huevos M.jpg" alt="Huevos M">
+                    <img src="huevos M.jpg" alt="Huevos M">
                     <div class="product-item-content"><h4>Huevos Talla M</h4></div>
                 </div>
 
@@ -341,12 +268,7 @@
         </div>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
-        }
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
