@@ -3,272 +3,245 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GOURMET IBÉRICO.SL - Catálogo Premium</title>
+    <title>GOURMET IBÉRICO S.L. - Catálogo Completo</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="favico.ico">
-    <link rel="stylesheet" href="style.css">
     
-    <style>
-        #hero {
-            /* Usamos la imagen del lomo como fondo del banner */
-            background: linear-gradient(rgba(26, 26, 26, 0.8), rgba(26, 26, 26, 0.8)), url('lomo de cerdo iberico.jpg') no-repeat center center/cover;
-            background-attachment: fixed;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">
-                    <a href="#">Gourmet Ibérico.SL</a>
-                </div>
-                <span class="menu-toggle" id="mobile-menu-btn">&#9776;</span>
-                
-                <ul class="nav-links" id="nav-list">
-                    <li><a href="#inicio">Inicio</a></li>
+    <header id="main-header">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="#">Gourmet Ibérico<span class="dot">.</span></a>
+            </div>
+            <div class="menu-toggle" id="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            
+            <nav class="nav-menu" id="nav-list">
+                <ul>
+                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
                     <li class="dropdown">
-                        <a href="#catalogo">Catálogo <span class="fa fa-caret-down"></span></a>
+                        <a href="#catalogo" class="nav-link">Catálogo <i class="fa fa-caret-down"></i></a>
                         <div class="dropdown-content">
                             <a href="#carniceria">Carnicería</a>
                             <a href="#pescaderia">Pescadería</a>
-                            <a href="#fruteria">Frutas y Verduras</a>
-                            <a href="#bodega">Bodega y Despensa</a>
+                            <a href="#fruteria">Huerta</a>
+                            <a href="#bodega">Bodega</a>
                         </div>
                     </li>
-                    <li class="ofertas"><a href="#ofertas">Ofertas</a></li>
-                    <li class="area-clientes"><a href="#clientes">Clientes</a></li>
+                    <li><a href="#contacto" class="btn-cliente">Contacto</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="hero">
-        <div class="container">
+    <section id="inicio" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
             <h1>Calidad Suprema en su Mesa</h1>
-            <p>Desde las mejores carnes ibéricas hasta la frescura de la huerta y el mar.</p>
-            <a href="#catalogo" class="area-clientes-btn">Ver Productos</a>
-        </div>
-    </section>
-
-    <section id="catalogo">
-        <div class="container">
-            <h2>🥇 Nuestras Secciones</h2>
-            <div class="card-grid">
-                <a href="#carniceria" class="product-card">
-                    <h3>Carnicería Premium</h3>
-                    <p class="calidad-tag">Ibéricos y Cortes Selectos</p>
-                </a>
-                <a href="#pescaderia" class="product-card">
-                    <h3>Pescadería Fresca</h3>
-                    <p>Del mar a su casa</p>
-                </a>
-                <a href="#fruteria" class="product-card">
-                    <h3>Huerta Ecológica</h3>
-                    <p class="destacado">Frutas y Verduras</p>
-                </a>
-                <a href="#bodega" class="product-card">
-                    <h3>Bodega y Despensa</h3>
-                    <p>Vinos, Licores y Básicos</p>
-                </a>
+            <p>Descubra nuestra selección de ibéricos, carnes frescas, pescados del día y productos de la huerta.</p>
+            <div class="hero-btns">
+                <a href="#carniceria" class="btn-primary">Ver Carnes</a>
+                <a href="#bodega" class="btn-outline">Ver Bodega</a>
             </div>
         </div>
     </section>
 
-    <section id="carniceria">
+    <section id="carniceria" class="section-padding">
         <div class="container">
-            <h2>🥩 Carnicería</h2>
-            <div class="product-item-grid">
-                
-                <div class="product-item">
-                    <img src="lomo de cerdo iberico.jpg" alt="Lomo Ibérico">
-                    <div class="product-item-content">
+            <h2 class="section-title">🥩 Carnicería y Aves</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="img-container">
+                        <img src="lomo de cerdo iberico.jpg" alt="Lomo Ibérico">
+                        <span class="badge">Premium</span>
+                    </div>
+                    <div class="card-info">
                         <h4>Lomo de Cerdo Ibérico</h4>
-                        <p class="destacado">Pieza seleccionada</p>
+                        <p>Curación selecta.</p>
+                        <button class="btn-add">Añadir</button>
                     </div>
                 </div>
-
-                <div class="product-item">
-                    <img src="chuletas de ternera.jpg" alt="Chuletas Ternera">
-                    <div class="product-item-content">
+                <div class="product-card">
+                    <div class="img-container">
+                        <img src="chuletas de ternera.jpg" alt="Chuletas">
+                    </div>
+                    <div class="card-info">
                         <h4>Chuletas de Ternera</h4>
-                        <p>Corte fresco y tierno</p>
+                        <p>Corte tierno nacional.</p>
+                        <button class="btn-add">Añadir</button>
                     </div>
                 </div>
-
-                <div class="product-item">
-                    <img src="carne de cordero.jpg" alt="Carne Cordero">
-                    <div class="product-item-content">
+                <div class="product-card">
+                    <div class="img-container">
+                        <img src="carne de cordero.jpg" alt="Cordero">
+                    </div>
+                    <div class="card-info">
                         <h4>Carne de Cordero</h4>
-                        <p>Ideal para asados</p>
+                        <p>Ideal para asados.</p>
+                        <button class="btn-add">Añadir</button>
                     </div>
                 </div>
-
+                <div class="product-card">
+                    <div class="img-container">
+                        <img src="pollo entero.jpg" alt="Pollo Entero">
+                    </div>
+                    <div class="card-info">
+                        <h4>Pollo Entero</h4>
+                        <p>Fresco de granja.</p>
+                        <button class="btn-add">Añadir</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="img-container">
+                        <img src="muslos de pollo.jpg" alt="Muslos de Pollo">
+                    </div>
+                    <div class="card-info">
+                        <h4>Muslos de Pollo</h4>
+                        <p>Pack ahorro familiar.</p>
+                        <button class="btn-add">Añadir</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="pescaderia">
+    <section id="pescaderia" class="section-bg section-padding">
         <div class="container">
-            <h2>🐟 Pescadería</h2>
-            <div class="product-item-grid">
-                
-                <div class="product-item">
-                    <img src="bacalao.jpg" alt="Bacalao">
-                    <div class="product-item-content">
-                        <h4>Bacalao Premium</h4>
-                        <p>Salazón o fresco</p>
+            <h2 class="section-title">🐟 Pescadería</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="img-container">
+                        <img src="bacalao.jpg" alt="Bacalao">
+                    </div>
+                    <div class="card-info">
+                        <h4>Bacalao</h4>
+                        <p>Al punto de sal.</p>
+                        <button class="btn-add">Añadir</button>
                     </div>
                 </div>
-
-                <div class="product-item">
-                    <img src="salmón.jpg" alt="Salmón">
-                    <div class="product-item-content">
+                <div class="product-card">
+                    <div class="img-container">
+                        <img src="salmón.jpg" alt="Salmón">
+                        <span class="badge fresh">Omega 3</span>
+                    </div>
+                    <div class="card-info">
                         <h4>Salmón Fresco</h4>
-                        <p class="destacado">Rico en Omega 3</p>
+                        <p>Lomos limpios.</p>
+                        <button class="btn-add">Añadir</button>
                     </div>
                 </div>
-
-                <div class="product-item">
-                    <img src="gambón grande.jpg" alt="Gambón">
-                    <div class="product-item-content">
+                <div class="product-card">
+                    <div class="img-container">
+                        <img src="gambón grande.jpg" alt="Gambón">
+                    </div>
+                    <div class="card-info">
                         <h4>Gambón Grande</h4>
-                        <p>Calidad Extra</p>
+                        <p>Especial plancha.</p>
+                        <button class="btn-add">Añadir</button>
                     </div>
                 </div>
-
+                <div class="product-card">
+                    <div class="img-container">
+                        <img src="merluza.jpg" alt="Merluza">
+                        <span class="badge fresh">Fresco</span>
+                    </div>
+                    <div class="card-info">
+                        <h4>Merluza del Cantábrico</h4>
+                        <p>Pieza fresca diaria.</p>
+                        <button class="btn-add">Añadir</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="fruteria">
+    <section id="fruteria" class="section-padding">
         <div class="container">
-            <h2>🥕 Frutas y Verduras</h2>
-            <div class="product-item-grid">
-                
-                <div class="product-item">
+            <h2 class="section-title">🥕 La Huerta</h2>
+            <div class="product-grid">
+                <div class="product-card">
                     <img src="naranjas.jpg" alt="Naranjas">
-                    <div class="product-item-content"><h4>Naranjas de Mesa</h4></div>
+                    <div class="card-info"><h4>Naranjas de Mesa</h4><button class="btn-add">Añadir</button></div>
                 </div>
-
-                <div class="product-item">
+                <div class="product-card">
                     <img src="plátanos de canarias.jpg" alt="Plátanos">
-                    <div class="product-item-content"><h4>Plátanos de Canarias</h4></div>
+                    <div class="card-info"><h4>Plátano de Canarias</h4><button class="btn-add">Añadir</button></div>
                 </div>
-
-                <div class="product-item">
-                    <img src="uva blanca.jpg" alt="Uva Blanca">
-                    <div class="product-item-content"><h4>Uva Blanca Dulce</h4></div>
+                <div class="product-card">
+                    <img src="uva blanca.jpg" alt="Uva">
+                    <div class="card-info"><h4>Uva Blanca</h4><button class="btn-add">Añadir</button></div>
                 </div>
-
-                <div class="product-item">
+                <div class="product-card">
                     <img src="tomates.jpg" alt="Tomates">
-                    <div class="product-item-content"><h4>Tomates de Huerto</h4></div>
+                    <div class="card-info"><h4>Tomates Ensalada</h4><button class="btn-add">Añadir</button></div>
                 </div>
-
-                <div class="product-item">
+                <div class="product-card">
                     <img src="cebolla.jpg" alt="Cebolla">
-                    <div class="product-item-content"><h4>Cebollas</h4></div>
+                    <div class="card-info"><h4>Cebollas</h4><button class="btn-add">Añadir</button></div>
                 </div>
-
-                <div class="product-item">
+                <div class="product-card">
                     <img src="patatas.jpg" alt="Patatas">
-                    <div class="product-item-content"><h4>Patatas Seleccionadas</h4></div>
+                    <div class="card-info"><h4>Patatas</h4><button class="btn-add">Añadir</button></div>
                 </div>
-
-                <div class="product-item">
+                <div class="product-card">
                     <img src="zanahorias.jfif" alt="Zanahorias">
-                    <div class="product-item-content"><h4>Zanahorias Frescas</h4></div>
+                    <div class="card-info"><h4>Zanahorias</h4><button class="btn-add">Añadir</button></div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <section id="bodega">
+    <section id="bodega" class="section-bg section-padding">
         <div class="container">
-            <h2>🍷 Bodega y Despensa</h2>
-            <div class="product-item-grid">
-                
-                <div class="product-item">
-                    <img src="ron zacapa.jpg" alt="Ron Zacapa">
-                    <div class="product-item-content">
-                        <h4>Ron Zacapa</h4>
-                        <p class="destacado">Añejo Gran Reserva</p>
-                    </div>
+            <h2 class="section-title">🍷 Bodega y Despensa</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="ron zacapa.jpg" alt="Ron">
+                    <div class="card-info"><h4>Ron Zacapa 23</h4><button class="btn-add">Añadir</button></div>
                 </div>
-
-                <div class="product-item">
-                    <img src="whisky jack daniel's.jpg" alt="Jack Daniels">
-                    <div class="product-item-content">
-                        <h4>Whisky Jack Daniel's</h4>
-                        <p>Old No. 7</p>
-                    </div>
+                <div class="product-card">
+                    <img src="whisky jack daniel's.jpg" alt="Whisky">
+                    <div class="card-info"><h4>Jack Daniel's</h4><button class="btn-add">Añadir</button></div>
                 </div>
-
-                <div class="product-item">
+                <div class="product-card">
                     <img src="coca cola 1L.jpg" alt="Coca Cola">
-                    <div class="product-item-content"><h4>Coca Cola 1L</h4></div>
+                    <div class="card-info"><h4>Coca Cola 1L</h4><button class="btn-add">Añadir</button></div>
                 </div>
-
-                <div class="product-item">
-                    <img src="agua mineral garrafa nestle.jpg" alt="Agua Nestle">
-                    <div class="product-item-content"><h4>Agua Mineral Nestlé</h4></div>
+                <div class="product-card">
+                    <img src="agua mineral garrafa nestle.jpg" alt="Agua">
+                    <div class="card-info"><h4>Agua Nestlé (Garrafa)</h4><button class="btn-add">Añadir</button></div>
                 </div>
-
-                <div class="product-item">
+                <div class="product-card">
+                    <img src="zumo de naranja 1L.jpg" alt="Zumo">
+                    <div class="card-info"><h4>Zumo Naranja 1L</h4><button class="btn-add">Añadir</button></div>
+                </div>
+                <div class="product-card">
                     <img src="huevos L.jpg" alt="Huevos L">
-                    <div class="product-item-content"><h4>Huevos Talla L</h4></div>
+                    <div class="card-info"><h4>Huevos Talla L</h4><button class="btn-add">Añadir</button></div>
                 </div>
-                
-                <div class="product-item">
+                <div class="product-card">
                     <img src="huevos M.jpg" alt="Huevos M">
-                    <div class="product-item-content"><h4>Huevos Talla M</h4></div>
+                    <div class="card-info"><h4>Huevos Talla M</h4><button class="btn-add">Añadir</button></div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>Gourmet Ibérico.SL</h4>
-                    <p>Calidad y servicio en cada entrega.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Secciones</h4>
-                    <ul>
-                        <li><a href="#carniceria">Carnicería</a></li>
-                        <li><a href="#pescaderia">Pescadería</a></li>
-                        <li><a href="#fruteria">Frutería</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contacto</h4>
-                    <ul>
-                        <li><a href="#">Atención al Cliente</a></li>
-                        <li><a href="#">Envíos</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Síguenos</h4>
-                    <ul>
-                        <li><a href="#">Facebook</a></li>
-                        <li><a href="#">Instagram</a></li>
-                    </ul>
-                </div>
-                <div class="footer-copy">
-                    <p>&copy; 2025 GOURMET IBÉRICO.SL. Todos los derechos reservados.</p>
-                </div>
-            </div>
+    <footer id="contacto">
+        <div class="container footer-content">
+            <p>&copy; 2025 GOURMET IBÉRICO S.L. - Todos los derechos reservados.</p>
         </div>
     </footer>
 
     <script src="script.js"></script>
-
 </body>
 </html>
