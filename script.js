@@ -1,22 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Seleccionar elementos
-    const menuToggle = document.getElementById('mobile-menu-btn');
-    const navLinks = document.getElementById('nav-list');
+    // Menú Hamburguesa para Móvil
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const navMenu = document.getElementById('nav-list');
 
-    // Función para alternar el menú
-    if (menuToggle && navLinks) {
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-    }
+    menuBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        
+        // Cambiar icono
+        const icon = menuBtn.querySelector('i');
+        if (navMenu.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    });
 
-    // Opcional: Cerrar menú al hacer click en un enlace
-    const enlaces = document.querySelectorAll('.nav-links a');
-    enlaces.forEach(enlace => {
-        enlace.addEventListener('click', () => {
-            if (window.innerWidth <= 768) {
-                navLinks.classList.remove('active');
-            }
+    // Cerrar menú al hacer clic en un enlace
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            menuBtn.querySelector('i').classList.remove('fa-times');
+            menuBtn.querySelector('i').classList.add('fa-bars');
         });
     });
 });
